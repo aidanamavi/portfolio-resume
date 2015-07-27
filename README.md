@@ -53,7 +53,8 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 ## Setup
 
-Set up your about page.
+#####Set up your about page.
+
 1. Select 'Pages' and then 'Add New'
 2. Set the page title to 'About'
 3. Set the page template to 'About'
@@ -61,7 +62,8 @@ Set up your about page.
 5. Ensure your permalink points to yourdomain.com/about/
 6. To edit your new page, manually edit the code in the index-about.php template file.
 
-Set up your work posts.
+#####Set up your work posts.
+
 1. Select 'Work' and then 'Add Work'
 2. Add your images to the img theme folder.
 3. Add your image or YouTube URL to your slide.
