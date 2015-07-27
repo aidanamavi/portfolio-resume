@@ -4,7 +4,7 @@
 	*
 	* @package WordPress
 	* @subpackage AidanAmavi
-	* @version 0.3
+	* @version 0.2
 	*
 	* @author Aidan Amavi <mail@aidanamavi.com>
 	* @link http://www.aidanamavi.com Author's Web Site
