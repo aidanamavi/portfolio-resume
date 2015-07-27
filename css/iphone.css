@@ -1,0 +1,12 @@
+@media only screen and (orientation:portrait) and (min-device-width: 320px) and (max-device-width: 480px){
+   /* iPhone in Portrait orientation */
+
+}
+
+@media only screen (orientation:landscape) and (min-device-width: 320px) and (max-device-width: 480px){
+  /* iPhone in Landscape orientation */
+
+}
+.highlights_credit {
+font-weight: 400 !important;
+}
