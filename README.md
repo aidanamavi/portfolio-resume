@@ -1,7 +1,6 @@
-**Easily create a minimalist and great looking portfolio and resume with this [Wordpress](http://www.wordpress.org) theme.**
+A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 
 ![](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/img/markdown_screenshot.png)
-
 
 
 
