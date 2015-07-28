@@ -59,7 +59,7 @@ function custom_the_category($separator = '', $parents='', $post_id = false) {
 			if ( $i > 0 ) {
 				$thelist .= $separator;
 			}
-			$thelist .= '<a href="' . esc_url(get_category_link($cat->term_id)) . '" data-category-id="' . $cat->term_id . '" data-post-type="category" title="View all posts in '. esc_attr($cat->name) . '">' . $cat->cat_name . '</a>';
+			$thelist .= '<a href="' . esc_url(get_category_link($cat->term_id)) . '" data-category-id="' . $cat->term_id . '" data-post-type="category" data-link-type="postNavigation" title="View all posts in '. esc_attr($cat->name) . '">' . $cat->cat_name . '</a>';
 			$i++;
 		}
 		echo $thelist;
@@ -210,7 +210,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			foreach($fetchedPosts as $post) {
 				setup_postdata($post); ?>
 				<article class="blog_list">
-					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post"><?php the_title(); ?></a></h1>
+					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
 					<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 				</article><?php
 				wp_reset_postdata();
@@ -245,7 +245,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			setup_postdata( $post );
 			?>
 			<article class="blog_list">
-				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
+				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
 				<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 			</article>
 			<?php

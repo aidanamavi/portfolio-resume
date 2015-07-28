@@ -38,7 +38,7 @@
 					foreach($myposts as $post) : setup_postdata($post);
 					?>
 					<article class="blog_list">
-						<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post"><?php the_title(); ?></a></h1>
+						<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
 						<h4 class="blog_date_categories_tags"><?php echo get_the_date(); ?> • <?php custom_the_category(', '); ?><?php the_tags(' • '); ?></h4>
 					</article>
 <?php
