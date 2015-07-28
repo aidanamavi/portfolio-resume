@@ -36,7 +36,6 @@ And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resum
 ## Requirements
 
 * PHP >= 5.3
-* MySQL >= 5.1
 * Wordpress >= 4.2.3
 
 
