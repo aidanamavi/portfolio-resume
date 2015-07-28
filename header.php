@@ -88,20 +88,6 @@
 									<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
 								</a>
 							</div>
-<?php if ($_POST['action'] == 'order') : ?>
-							<div>
-								<a href="/services" data-link-type="headerNavigation">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_services@2x.png" class="off" alt="">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_services_on@2x.png" class="on" alt="">
-								</a>
-							</div>
-							<div>
-								<a href="/contact" data-link-type="headerNavigation">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_contact@2x.png" class="off" alt="">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_contact_on@2x.png" class="on" alt="">
-								</a>
-							</div>
-<?php endif; ?>
 							<div>
 								<a href="/blog" data-link-type="headerNavigation">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
