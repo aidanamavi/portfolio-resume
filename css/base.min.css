@@ -149,7 +149,7 @@ div#wrapper {
 }
 #header_wrapper {
 	height: 27px;
-	margin-top: 60px;
+	margin-top: 25px;
 }
 header {
 }
@@ -226,14 +226,10 @@ nav div:hover {
 	display: none;
 	opacity: 0;
 }
-div.highlights_text,
-div.service_listing {
+div.highlights_text {
 	line-height: 26px;
 	clear: both;
 	cursor: default;
-}
-div.service_title {
-	text-transform: uppercase;
 }
 div.highlights_text div.masonry_wrapper {
 	width: 100%;
@@ -287,79 +283,9 @@ div.highlights_text div.skills div.skills_column_wide ul {
 div.highlights_text div.skills div.skills_column_wide ul:not(:first-child) {
 	margin-top: 26px;
 }
-div#page_services,
 div#page_about {
 	text-align: left;
 }
-div#page_services div.service_listing {
-	margin-top: 20px;
-	cursor: default;
-}
-div#highlight_services div.service_listing div.service_title {
-	width: 18%;
-	float: left;
-}
-div#highlight_services div.service_listing div.service_description {
-	width: 82%;
-	float: right;
-	padding-bottom: 20px;
-}
-div#highlight_services form {
-	margin: 20px auto;
-	display: none;
-	opacity: 0;
-}
-div#highlight_services form.invalid {
-	border-color: #e88;
-	-webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	-moz-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	-o-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	-ms-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
-	box-shadow:0 0 5px rgba(255, 0, 0, .8);
-}
-div#highlight_services form.required {
-	border-color: #88a;
-	-webkit-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
-	-moz-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
-	-o-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
-	-ms-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
-	box-shadow: 0 0 5px rgba(0, 0, 255, .5);
-}
-div#highlight_services form div {
-	width: 300px;
-}
-div#highlight_services form div label {
-	display: none;
-}
-div#highlight_services form div:last-child label {
-	display: inline-block;
-}
-div#highlight_services form div:last-child label[for=station_promo] {
-	display: none;
-}
-div#highlight_services form div:last-child label[for=total],
-div#highlight_services form div:last-child output[name=total] {
-	font-size: 1.5em;
-	color: #00ea01;
-	text-transform: capitalize;
-}
-div#highlight_services form div div.header {
-	font-size: 1.5em;
-	margin: 0;
-}
-div#highlight_services form div:first-child {
-	margin-right: 20px;
-	margin-left: 18%;
-	float: left;
-}
-div#highlight_services form div:nth-child(2) {
-	float: right;
-}
-div#highlight_services form div:last-child {
-	float: right;
-	margin-top: 40px;
-}
-
 #comment {
 	border: 1px solid #ccc;
 	width: 300px;
