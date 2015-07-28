@@ -291,7 +291,6 @@ function isSeparateGroup($metaGroup, $previousEntry, $nextEntry) {
 	foreach($allGroups as $group) {
 		static $groupIndex = 0;
 		foreach($group as $key => $value) {
-			//error_log('isSeparateGroup-> group: '.$groupIndex.'key: '.$key);
 			if ($key === $previousEntry) {
 				$previousEntryGroup = $groupIndex;
 			}
