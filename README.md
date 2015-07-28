@@ -45,7 +45,7 @@ And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resum
 1. Place the theme directory into the wp-content/themes/ folder.
 2. Navigate to appearance > themes and activate the theme.
 
-If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). Please follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md) so all the info necessary to debug and fix the problem is available. Thanks!
+If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). Please follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md), so all the info necessary to debug and fix the problem is available. Thanks!
 
 
 
