@@ -142,10 +142,10 @@ function getAjaxData( $category='', $offset='10' ) {
 	$offset = $_POST[ 'offset' ];
 	$category = $_POST[ 'category' ];
 
-	function validateIntegerInput($page) {
-		$page = intval($page);
-		filter_var($page, FILTER_SANITIZE_NUMBER_INT);
-		if (!is_int($page) && !filter_var($page, FILTER_VALIDATE_INT)) {
+	function validateIntegerInput($input) {
+		$input = abs(intval($input));
+		filter_var($input, FILTER_SANITIZE_NUMBER_INT);
+		if (!is_int($input) && !filter_var($input, FILTER_VALIDATE_INT)) {
 			echo 'Invalid page input.';
 			exit(0);
 		}
