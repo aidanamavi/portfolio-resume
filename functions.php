@@ -150,6 +150,12 @@ function getAjaxData( $category='', $offset='10' ) {
 			exit(0);
 		}
 	}
+	// Validate cross-site request forgery security token.
+	if (!check_ajax_referer( 'ajax_fetch_nonce', 'token', false )) {
+		header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
+		get_template_part( 'templates/index', '403' );
+		exit(0);
+	}
 
 	if ($folder === 'index') {
 		if ($page === 'about' || $page === 'work' || $page === 'blog') {
@@ -200,7 +206,7 @@ function getAjaxData( $category='', $offset='10' ) {
 		);
 		$fetchedPosts = get_posts( $args );
 		?>
-		<div id="page_category_<?php echo $category; ?>"  data-page-title="<?php echo get_the_category_by_id($category); ?>">
+		<div id="page_category_<?php echo $category; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($category))); ?>">
 			<div class="title_wrapper">
 				<div class="titles">
 					<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">

@@ -12,9 +12,9 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_work_<?php the_ID(); ?>" data-page-title="<?php the_title(); ?>">
+				<div id="page_work_<?php the_ID(); ?>" data-page-title="<?php the_title_attribute(); ?>">
 <?php
-					$slideTotal = get_post_meta( get_the_ID(), 'slideTotal', true );
+					$slideTotal = (int) get_post_meta( get_the_ID(), 'slideTotal', true );
 					$numberCount = 1; $slideCount = 1;
 
 					if ($slideTotal > $numberCount) : ?>
@@ -32,15 +32,15 @@
 <?php 		endif; ?>
 					<div class="title_wrapper">
 						<div class="titles">
-							<img src="<?php echo get_post_meta( get_the_ID(), 'title_image_url', true ); ?>" alt="">
+							<img src="<?php echo esc_url(get_post_meta( get_the_ID(), 'title_image_url', true )); ?>" alt="">
 						</div>
 					</div>
 					<div class="highlight_slides">
 <?php 		while ($slideCount <= $slideTotal) :
 							$slideId = 'slide_'.$slideCount; ?>
 						<div class="slide<?php if ($slideCount > 1) : echo ' hide toggleFade'; endif; ?>" data-slide="<?php echo $slideCount; ?>">
-<?php					$slideImageUrl = get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true );
-							$slideYouTubeUrl = get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_youtube_url', true );
+<?php					$slideImageUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true ));
+							$slideYouTubeUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_youtube_url', true ));
 							if ($slideYouTubeUrl) : ?>
 							<iframe width="940" height="492" src="<?php echo $slideYouTubeUrl; ?>" allowfullscreen></iframe>
 <?php 				else: ?>

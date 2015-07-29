@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_post_<?php the_ID(); ?>"  data-page-title="<?php the_title(); ?>">
+				<div id="page_post_<?php the_ID(); ?>"  data-page-title="<?php the_title_attribute(); ?>">
 					<div class="title_wrapper">
 						<div class="titles">
 							<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">

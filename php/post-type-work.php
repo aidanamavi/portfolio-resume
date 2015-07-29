@@ -629,27 +629,41 @@ function slide_info_html_custom_box($post, $arguments) {
 	unset($prevTool);
 	echo '</p>';
 }
-/* When the post is saved, saves our custom data */
+/**
+	* When the post is saved, saves our custom data.
+	* @param $post_id
+	*/
 function slide_info_save_postdata( $post_id )
 {
-  // verify if this is an auto save routine.
-  // If it is our form has not been submitted, so we dont want to do anything
+  // If auto-save action, do nothing.
   if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
     return;
 	}
-  // verify this came from our screen and with proper authorization,
-  // because save_post can be triggered at other times
-  if ( !wp_verify_nonce( $_POST['work_info_noncename'], 'work_info_field_nonce' ) ) {
+  // Validate cross-site request forgery security token.
+  if (!wp_verify_nonce($_POST['work_info_noncename'], 'work_info_field_nonce')) {
     return;
 	}
 
+	// @todo reduce code, by creating a sanatize function for URLs.
 	if ( isset($_POST['title_image_url']) && $_POST['title_image_url'] !== '' ){
-		update_post_meta( $post_id, 'title_image_url', $_POST['title_image_url'] );
+		$titleImageUrl = esc_url_raw($_POST['title_image_url']);
+		$sanatizedUrl = filter_var($titleImageUrl, FILTER_SANITIZE_URL);
+		if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
+			update_post_meta( $post_id, 'title_image_url', $sanatizedUrl );
+		} else {
+			error_log('Invalid URL type detected for title image url.');
+		}
 	} else {
 		delete_post_meta($post_id, 'title_image_url'  );
 	}
 	if ( isset($_POST['work_page_image_url']) && $_POST['work_page_image_url'] !== '' ){
-		update_post_meta( $post_id, 'work_page_image_url', $_POST['work_page_image_url'] );
+		$workPageImageUrl = esc_url_raw($_POST['work_page_image_url']);
+		$sanatizedUrl = filter_var($workPageImageUrl, FILTER_SANITIZE_URL);
+		if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
+			update_post_meta( $post_id, 'work_page_image_url', $sanatizedUrl );
+		} else {
+			error_log('Invalid URL type detected for work page image url.');
+		}
 	} else {
 		delete_post_meta($post_id, 'work_page_image_url'  );
 	}
@@ -663,7 +677,8 @@ function slide_info_save_postdata( $post_id )
 		$slideDetected = false;
 
 		if ( isset($_POST[$slideId.'_url']) && $_POST[$slideId.'_url'] !== '' ){
-			$sanatizedUrl = filter_var($_POST[$slideId.'_url'], FILTER_SANITIZE_URL);
+			$slideImageUrl = esc_url_raw($_POST[$slideId.'_url']);
+			$sanatizedUrl = filter_var($slideImageUrl, FILTER_SANITIZE_URL);
 			if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
 				update_post_meta( $post_id, $slideId.'_url', $sanatizedUrl );
 				$slideDetected = true;
@@ -675,7 +690,8 @@ function slide_info_save_postdata( $post_id )
 	  	delete_post_meta($post_id, $slideId.'_url'  );
 	  }
 		if ( isset($_POST[$slideId.'_youtube_url']) && $_POST[$slideId.'_youtube_url'] !== '' ){
-			$sanatizedUrl = filter_var($_POST[$slideId.'_youtube_url'], FILTER_SANITIZE_URL);
+			$slideYouTubeUrl = esc_url_raw($_POST[$slideId.'_youtube_url']);
+			$sanatizedUrl = filter_var($slideYouTubeUrl, FILTER_SANITIZE_URL);
 			if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
 	    	update_post_meta( $post_id, $slideId.'_youtube_url', $sanatizedUrl );
 				$slideDetected = true;

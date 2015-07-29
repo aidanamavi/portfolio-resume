@@ -61,7 +61,7 @@
 		global $cat;
 		global $current_user;
 		$userId = $current_user->ID;
-		$nonce = wp_create_nonce( 'new_post_nonce' );
+		$nonce = wp_create_nonce( 'ajax_fetch_nonce' );
 		$siteName = get_bloginfo('name');
 		$categoryName = single_cat_title('', false); ?>
 		<script>
