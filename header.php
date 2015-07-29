@@ -20,14 +20,16 @@
 <?php if (is_single()) :
 		global $post;
 		setup_postdata($post); ?>
-		<meta name="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
-<?php
-		wp_reset_postdata();
+		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
+<?php wp_reset_postdata();
 		elseif (is_home() || is_page()) : ?>
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 <?php
 		elseif (is_category()) : ?>
 		<meta name="description" content="<?php echo trim(strip_tags(category_description())); ?>" />
+<?php
+		elseif (is_archive()) : ?>
+		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
 <?php endif; ?>
 		<meta name="keywords" content="new york, production, producer, director, digital, media, cinematographer, photographer, graphic, designer, web site, developer, musician, sound mixer, sound recorder">
 <?php global $is_IE;
