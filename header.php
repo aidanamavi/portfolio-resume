@@ -31,7 +31,7 @@
 		elseif (is_archive()) : ?>
 		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
 <?php endif; ?>
-		<meta name="keywords" content="new york, production, producer, director, digital, media, cinematographer, photographer, graphic, designer, web site, developer, musician, sound mixer, sound recorder">
+		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
 <?php global $is_IE;
 		if ($is_IE) : ?>
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php bloginfo('template_url'); ?>/img/browser_icon.ico" />

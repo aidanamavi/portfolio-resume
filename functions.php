@@ -129,6 +129,35 @@ global $menu;
 add_action('admin_menu', 'remove_menus');
 
 /**
+ * Adds the individual sections, settings, and controls to the theme customizer.
+ */
+function customize_seo_keywords( $wp_customize ) {
+  $wp_customize->add_section(
+      'seo_section',
+      array(
+        'title' => 'SEO Keywords',
+        'priority' => 35,
+      )
+  );
+	$wp_customize->add_setting(
+    'seo_keywords_textbox',
+    array(
+      'default' => 'portfolio, resume, blog',
+			'transport'   => 'postMessage',
+    )
+	);
+	$wp_customize->add_control(
+    'seo_keywords_textbox',
+    array(
+      'label' => 'Keywords',
+      'section' => 'seo_section',
+      'type' => 'text',
+    )
+	);
+}
+add_action( 'customize_register', 'customize_seo_keywords' );
+
+/**
  * Must use global $post to use setup_postdata().
  * Must echo the response, and use exit(0) to complete the callback.
  * This is necessary for wp_ajax to complete the return.
