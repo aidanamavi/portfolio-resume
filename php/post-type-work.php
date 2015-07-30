@@ -352,6 +352,17 @@ function work_image_url_meta_boxes() {
     'high'
   );
 }
+/* Adds the upload functions for the images. */
+add_action('admin_enqueue_scripts', 'image_upload_scripts');
+function image_upload_scripts() {
+	global $post_type;
+	if (($_GET['post_type'] == 'work') || ($post_type == 'work')) {
+		error_log('loading upload javascript');
+    wp_enqueue_media();
+    wp_register_script('upload-slide-image', get_bloginfo('template_url').'/js/upload-slide-image.js', array('jquery'));
+    wp_enqueue_script('upload-slide-image');
+  }
+}
 /* Prints the box content */
 function work_image_url_meta_boxes_html($post, $arguments) {
 	printf(
@@ -359,15 +370,16 @@ function work_image_url_meta_boxes_html($post, $arguments) {
 		__('Title Image URL', 'changeMe')
 	);
 	$saved = get_post_meta( $post->ID, 'title_image_url', true );
-	$label = __('Title Image URL', 'changeMe');
+	$label = __('Enter a URL or upload an image', 'changeMe');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="title_image_url" value="%1$s" id="title_image_url" style="width: 100&#37;" />'.
-    '<br>',
+    '<input type="text" name="title_image_url" value="%1$s" id="title_image_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
+		'<input type="button" value="Upload Image" class="button button-small upload_button" id="title_image_button" />'.
+    '<label for="title_image_url"> %2$s </label>',
     esc_attr($imageUrl),
 		esc_html($label)
   );
@@ -378,15 +390,16 @@ function work_image_url_meta_boxes_html($post, $arguments) {
 		__('Work Page Image URL', 'changeMe')
 	);
 	$saved = get_post_meta( $post->ID, 'work_page_image_url', true );
-	$label = __('work Page Image URL', 'changeMe');
+	$label = __('Enter a URL or upload an image', 'changeMe');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="work_page_image_url" value="%1$s" id="work_page_image_url" style="width: 100&#37;" />'.
-    '<br>',
+    '<input type="text" name="work_page_image_url" value="%1$s" id="work_page_image_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
+		'<input type="button" value="Upload Image" class="button button-small upload_button" id="work_page_image_button" />'.
+    '<label for="title_image_url"> %2$s </label>',
     esc_attr($imageUrl),
 		esc_html($label)
   );
@@ -429,16 +442,17 @@ function slide_info_html_custom_box($post, $arguments) {
 		__('Project Slide', 'changeMe')
 	);
 	$saved = get_post_meta( $post->ID, $slideId.'_url', true );
-	$label = __('Slide Image URL', 'changeMe');
+	$label = __('Enter a URL or upload an image', 'changeMe');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="'.$slideId.'_url" value="%1$s" id="'.$slideId.'_url" style="width: 100&#37;" />'.
-    '<label for="'.$slideId.'_url"> %2$s ' .
-    '</label><br>',
+    '<input type="text" name="'.$slideId.'_url" value="%1$s" id="'.$slideId.'_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
+		'<input type="button" value="Upload Image" class="button button-small upload_button" id="'.$slideId.'_button" />'.
+    '<label for="'.$slideId.'_url"> %2$s </label>'.
+		'<br /><br />',
     esc_attr($imageUrl),
 		esc_html($label)
   );
@@ -451,9 +465,9 @@ function slide_info_html_custom_box($post, $arguments) {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="'.$slideId.'_youtube_url" value="%1$s" id="'.$slideId.'_youtube_url" style="width: 100&#37;" />'.
+    '<input type="text" name="'.$slideId.'_youtube_url" value="%1$s" id="'.$slideId.'_youtube_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
     '<label for="'.$slideId.'_youtube_url"> %2$s ' .
-    '</label><br>',
+    '</label><br />',
     esc_attr($imageUrl),
 		esc_html($label)
   );
@@ -481,7 +495,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	    printf(
 	      '<input type="checkbox" name="'.$slideId.'_roles[]" value="%1$s" id="'.$slideId.'_roles[%1$s]" %3$s />'.
 	      '<label for="'.$slideId.'_roles[%1$s]"> %2$s ' .
-	      '</label><br>',
+	      '</label><br />',
 	      esc_attr($key),
 	      esc_html($label),
 				$checked
@@ -515,7 +529,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	    printf(
 	      '<input type="checkbox" name="'.$slideId.'_disciplines[]" value="%1$s" id="'.$slideId.'_disciplines[%1$s]" %3$s />'.
 	      '<label for="'.$slideId.'_disciplines[%1$s]"> %2$s ' .
-	      '</label><br>',
+	      '</label><br />',
 	      esc_attr($key),
 	      esc_html($label),
 				$checked
@@ -549,7 +563,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	    printf(
 	      '<input type="checkbox" name="'.$slideId.'_tools[]" value="%1$s" id="'.$slideId.'_tools[%1$s]" %3$s />'.
 	      '<label for="'.$slideId.'_tools[%1$s]"> %2$s ' .
-	      '</label><br>',
+	      '</label><br />',
 	      esc_attr($key),
 	      esc_html($label),
 				$checked
@@ -583,7 +597,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	    printf(
 	      '<input type="checkbox" name="'.$slideId.'_products[]" value="%1$s" id="'.$slideId.'_products[%1$s]" %3$s />'.
 	      '<label for="'.$slideId.'_products[%1$s]"> %2$s ' .
-	      '</label><br>',
+	      '</label><br />',
 	      esc_attr($key),
 	      esc_html($label),
 				$checked
@@ -617,7 +631,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	    printf(
 	      '<input type="checkbox" name="'.$slideId.'_presentations[]" value="%1$s" id="'.$slideId.'_presentations[%1$s]" %3$s />'.
 	      '<label for="'.$slideId.'_presentations[%1$s]"> %2$s ' .
-	      '</label><br>',
+	      '</label><br />',
 	      esc_attr($key),
 	      esc_html($label),
 				$checked
