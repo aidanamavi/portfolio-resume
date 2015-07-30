@@ -19,7 +19,6 @@ And in the works for [version 0.2](https://github.com/aidanamavi/portfolio-resum
 * :art: **UX/UI** Better post type back-end styling.
 * :warning: **UX/UI** Input validation feedback for Work post type meta boxes.
 * :rocket: **WP Integration** Even better Wordpress integration for work posts.
-* :rocket: **WP Integration** Theme customization options for Piwik.
 * :paperclip: **WP Integration** Better image attachment support
 * :iphone: **UX/UI** Responsive design for even smaller devices; single column view.
 
