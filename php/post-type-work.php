@@ -356,11 +356,22 @@ function work_image_url_meta_boxes() {
 add_action('admin_enqueue_scripts', 'image_upload_scripts');
 function image_upload_scripts() {
 	global $post_type;
-	if (($_GET['post_type'] == 'work') || ($post_type == 'work')) {
-		error_log('loading upload javascript');
-    wp_enqueue_media();
+	$post_type = $post_type ? $post_type : $_GET['post_type'];
+	$action = $_GET['action'];
+	if ($post_type === 'work' && $action === 'edit') {
     wp_register_script('upload-slide-image', get_bloginfo('template_url').'/js/upload-slide-image.js', array('jquery'));
     wp_enqueue_script('upload-slide-image');
+  }
+}
+/* Adds the styles for the forms. */
+add_action('admin_enqueue_scripts', 'work_post_type_styles');
+function work_post_type_styles() {
+	global $post_type;
+	$post_type = $post_type ? $post_type : $_GET['post_type'];
+	$action = $_GET['action'];
+	if ($post_type === 'work' && $action === 'edit') {
+    wp_register_style('work_post_type_styles', get_bloginfo('template_url').'/css/post-type-work.css');
+    wp_enqueue_style('work_post_type_styles');
   }
 }
 /* Prints the box content */
@@ -479,11 +490,14 @@ function slide_info_html_custom_box($post, $arguments) {
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_roles', true );
   global $roleGroups;
-	echo '<p>';
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
 	foreach($roleGroups as $group) {
 	  foreach($group as $key => $label) {
 			if (!empty($prevRole) && isSeparateGroup('roles', $prevRole, $key)) {
 				echo '<br />';
+				echo '</div>';
+				echo '<div class="masonry_column">';
 			}
 			if (!empty($saved)) {
 				if (in_array($key, $saved)) {
@@ -505,7 +519,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevRole);
-	echo '</p><hr>';
+	echo '</div></div><hr>';
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
@@ -513,11 +527,14 @@ function slide_info_html_custom_box($post, $arguments) {
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_disciplines', true );
   global $disciplineGroups;
-	echo '<p>';
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
 	foreach($disciplineGroups as $group) {
 	  foreach($group as $key => $label) {
 			if (!empty($prevDiscipline) && isSeparateGroup('disciplines', $prevDiscipline, $key)) {
 				echo '<br />';
+				echo '</div>';
+				echo '<div class="masonry_column">';
 			}
 			if (!empty($saved)) {
 				if (in_array($key, $saved)) {
@@ -539,7 +556,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevDiscipline);
-	echo '</p><hr>';
+	echo '</div></div><hr>';
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
@@ -547,11 +564,14 @@ function slide_info_html_custom_box($post, $arguments) {
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_tools', true );
   global $toolGroups;
-	echo '<p>';
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
 	foreach ($toolGroups as $groups) {
 	  foreach($groups as $key => $label) {
 			if (!empty($prevTool) && isSeparateGroup('tools', $prevTool, $key)) {
 				echo '<br />';
+				echo '</div>';
+				echo '<div class="masonry_column">';
 			}
 			if (!empty($saved)) {
 				if (in_array($key, $saved)) {
@@ -573,7 +593,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevTool);
-	echo '</p><hr>';
+	echo '</div></div><hr>';
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
@@ -581,11 +601,14 @@ function slide_info_html_custom_box($post, $arguments) {
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_products', true );
   global $productGroups;
-	echo '<p>';
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
 	foreach ($productGroups as $group) {
 	  foreach($group as $key => $label) {
 			if (!empty($prevProduct) && isSeparateGroup('products', $prevProduct, $key)) {
 				echo '<br />';
+				echo '</div>';
+				echo '<div class="masonry_column">';
 			}
 			if (!empty($saved)) {
 				if (in_array($key, $saved)) {
@@ -607,7 +630,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevProduct);
-	echo '</p><hr>';
+	echo '</div></div><hr>';
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
@@ -615,11 +638,14 @@ function slide_info_html_custom_box($post, $arguments) {
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_presentations', true );
   global $presentationGroups;
-	echo '<p>';
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
 	foreach ($presentationGroups as $groups) {
 	  foreach($groups as $key => $label) {
 			if (!empty($prevPresentation) && isSeparateGroup('presentations', $prevPresentation, $key)) {
 				echo '<br />';
+				echo '</div>';
+				echo '<div class="masonry_column">';
 			}
 			if (!empty($saved)) {
 				if (in_array($key, $saved)) {
@@ -641,7 +667,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevTool);
-	echo '</p>';
+	echo '</div></div>';
 }
 /**
 	* When the post is saved, saves our custom data.
