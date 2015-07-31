@@ -349,10 +349,6 @@ input[type=submit]:active {
 	width: 100%;
 	height: auto;
 }
-.row {
-	width: 100%;
-	overflow: auto;
-}
 .column {
 	width: 300px;
 	height: 169px;

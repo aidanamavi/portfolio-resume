@@ -66,6 +66,23 @@ function custom_the_category($separator = '', $parents='', $post_id = false) {
 	}
 }
 
+function custom_meta_description() {
+	global $post;
+	if (is_single()) {
+		$description = get_post_meta( get_the_ID(), 'description', true );
+	} elseif (is_home() || is_page()) {
+		$description =  get_bloginfo( 'description' );
+	} elseif (is_category()) {
+		$description =  trim(strip_tags(category_description()));
+	} elseif (is_archive()) {
+		$description =  'Archive of all '.$post->post_type.' posts.';
+	}
+	if (empty($description)) {
+		$description =  get_bloginfo( 'description' );
+	}
+	echo $description;
+}
+
 function custom_page_title() {
 	$title = bloginfo('name');
 	if (is_single()) {

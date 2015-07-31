@@ -24,111 +24,38 @@
 							<a href="#" class="new_glow" data-project-type="sound" data-link-type="workNavigation">Sound</a>
 						</div>
 					</div>
-					<div class="row">
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/aidan-amavi" data-post-id="402" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_aidanamavi@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all video">
-							<a href="/work/chinx-drugz" data-post-id="408" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_chinxdrugz@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/tribeca-film-festival" data-post-id="409" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_tribecafilmfestival@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/aviiva" data-post-id="410" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_aviiva@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/urban-ink" data-post-id="412" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_urbanink@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/kal-rieman" data-post-id="413" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_kalrieman@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/trump-models" data-post-id="414" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_trumpmodels@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/duel-arena" data-post-id="415" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_duelarena@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/astarte" data-post-id="416" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_astarte@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all photo">
-							<a href="/work/dance-couture" data-post-id="417" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_dancecouture@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/derrick-cobb" data-post-id="418" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_derrickcobb@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all graphic">
-							<a href="/work/infinity" data-post-id="419" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_infinity@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/fresh-new-video" data-post-id="420" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_freshnewvideo@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all video">
-							<a href="/work/dont-look-away" data-post-id="424" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_dontlookaway@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all video">
-							<a href="/work/writing-on-glass" data-post-id="425" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_writingonglass@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all video">
-							<a href="/work/coffee" data-post-id="426" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_coffee@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web graphic">
-							<a href="/work/carbon-fiber-xpress" data-post-id="427" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_carbonfiberxpress@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all graphic">
-							<a href="/work/paradiso-resort" data-post-id="428" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_paradisoresort@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web sound">
-							<a href="/work/paul-oakenfold" data-post-id="429" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_pauloakenfold@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web sound">
-							<a href="/work/the-crystal-method" data-post-id="430" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_thecrystalmethod@2x.jpg" alt="">
-							</a>
-						</div>
-						<div class="column" data-project-type="all web sound">
-							<a href="/work/the-streets" data-post-id="431" data-post-type="work" data-link-type="postNavigation">
-								<img src="<?php bloginfo('template_url'); ?>/img/showcase_thestreets@2x.jpg" alt="">
-							</a>
-						</div>
+<?php
+					$args = array(
+						'posts_per_page'   => 35,
+						'offset'           => 0,
+						'category'         => '',
+						'orderby'          => 'post_date',
+						'order'            => 'ASC',
+						'include'          => '',
+						'exclude'          => '',
+						'meta_key'         => '',
+						'meta_value'       => '',
+						'post_type'        => 'work',
+						'post_mime_type'   => '',
+						'post_parent'      => '',
+						'post_status'      => 'publish',
+						'suppress_filters' => true );
+					$myposts = get_posts( $args );
+					foreach($myposts as $post) : setup_postdata($post);
+						$keywords = get_post_meta( get_the_ID(), 'shortcut_keywords', true );
+						if ($keywords) :
+							foreach ($keywords as $keyword) :
+								if (!empty($keywordList)) : $keywordList.= ' '; endif;
+								$keywordList .= $keyword;
+							endforeach;
+						endif;
+					?>
+					<div class="column" data-project-type="<?php echo $keywordList; ?>">
+						<a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="work" data-link-type="postNavigation">
+							<?php the_post_thumbnail(); echo PHP_EOL; ?>
+						</a>
 					</div>
+<?php
+					unset($keywordList);
+					endforeach; wp_reset_postdata(); ?>
 				</div>
