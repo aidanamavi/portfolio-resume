@@ -17,20 +17,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><?php custom_page_title();?></title>
-<?php if (is_single()) :
-		global $post;
-		setup_postdata($post); ?>
-		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
-<?php wp_reset_postdata();
-		elseif (is_home() || is_page()) : ?>
-		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-<?php
-		elseif (is_category()) : ?>
-		<meta name="description" content="<?php echo trim(strip_tags(category_description())); ?>" />
-<?php
-		elseif (is_archive()) : ?>
-		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
-<?php endif; ?>
+		<meta name="description" content="<?php custom_meta_description(); ?>" />
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
 <?php global $is_IE;
 		if ($is_IE) : ?>

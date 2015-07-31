@@ -40,7 +40,7 @@ function add_post_type_work() {
 		'hierarchical' => true,
 		'menu_position' => 5,
 		'map_meta_cap' => true,
-		'supports' => array('author','title','thumbnail','page-attributes')
+		'supports' => array('author','title','thumbnail')
 	);
 	register_post_type('work',$args);
 }
@@ -261,6 +261,16 @@ $presentationGroups = array(
 		'internet'				=> __('Internet', 'changeMe'),
 	)
 );
+$shortcutGroups = array(
+	array(
+		'all'							=> __('All', 'changeMe'),
+		'web'							=> __('Web', 'changeMe'),
+		'video'						=> __('Video', 'changeMe'),
+		'photo'						=> __('Photo', 'changeMe'),
+		'graphic'					=> __('Graphic', 'changeMe'),
+		'sound'						=> __('Sound', 'changeMe'),
+	)
+);
 
 /**
  *
@@ -314,6 +324,7 @@ function displayMetaLabel($metaGroup, $metaKey) {
 	global $toolGroups;
 	global $productGroups;
 	global $presentationGroups;
+	global $shortcutGroups;
 	if ($metaGroup === 'roles') {
 		$allGroups = $roleGroups;
 	} elseif ($metaGroup === 'disciplines') {
@@ -324,6 +335,8 @@ function displayMetaLabel($metaGroup, $metaKey) {
 		$allGroups = $productGroups;
 	} elseif ($metaGroup === 'presentations') {
 		$allGroups = $presentationGroups;
+	} elseif ($metaGroup === 'shortcut') {
+		$allGroups = $shortcutGroups;
 	} else {
 		error_log('Undefined metaGroup.');
 	}
@@ -338,15 +351,15 @@ function displayMetaLabel($metaGroup, $metaKey) {
 
 
 /* Define the custom box */
-add_action( 'add_meta_boxes_work', 'work_image_url_meta_boxes' );
+add_action( 'add_meta_boxes_work', 'project_info_meta_boxes' );
 /* Do something with the data entered */
 //add_action( 'save_post', 'work_info_save_postdata' );
 /* Adds a box to the main column on the Work post type edit screens */
-function work_image_url_meta_boxes() {
+function project_info_meta_boxes() {
 	add_meta_box(
-    'work_info_title_image_url',
-    __('Work Image URLs', 'changeMe'),
-    'work_image_url_meta_boxes_html',
+    'project_info_meta_boxes',
+    __('Project Info', 'changeMe'),
+    'project_info_meta_boxes_html',
     'work',
     'normal',
     'high'
@@ -375,7 +388,7 @@ function work_post_type_styles() {
   }
 }
 /* Prints the box content */
-function work_image_url_meta_boxes_html($post, $arguments) {
+function project_info_meta_boxes_html($post, $arguments) {
 	printf(
 		'<p><strong>%1$s</strong></p>',
 		__('Title Image URL', 'changeMe')
@@ -398,23 +411,45 @@ function work_image_url_meta_boxes_html($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Work Page Image URL', 'changeMe')
+		__('Description', 'changeMe')
 	);
-	$saved = get_post_meta( $post->ID, 'work_page_image_url', true );
-	$label = __('Enter a URL or upload an image', 'changeMe');
-	if ($saved) {
-		$imageUrl = $saved;
-	} else {
-		$imageUrl = '';
-	}
+	$saved = get_post_meta( $post->ID, 'description', true );
   printf(
-    '<input type="text" name="work_page_image_url" value="%1$s" id="work_page_image_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
-		'<input type="button" value="Upload Image" class="button button-small upload_button" id="work_page_image_button" />'.
-    '<label for="title_image_url"> %2$s </label>',
-    esc_attr($imageUrl),
-		esc_html($label)
+    '<textarea name="description" id="description" placeholder="Enter your description here...">%1$s</textarea>'.
+    '<br />',
+    esc_attr($saved)
   );
-	echo '</p>';
+	echo '<br/><hr>';
+
+	printf(
+		'<p><strong>%1$s</strong></p>',
+		__('Shortcut Keywords', 'changeMe')
+	);
+	$saved = get_post_meta( $post->ID, 'shortcut_keywords', true );
+  global $shortcutGroups;
+	echo '<div class="masonry_wrapper">';
+	echo '<div class="masonry_column">';
+	foreach ($shortcutGroups as $group) {
+	  foreach($group as $key => $label) {
+			if (!empty($saved)) {
+				if (in_array($key, $saved)) {
+					$checked = 'checked="checked"';
+				} else {
+					$checked = '';
+				}
+			}
+	    printf(
+	      '<input type="checkbox" name="shortcut_keywords[]" value="%1$s" id="shortcut_keywords[%1$s]" %3$s />'.
+	      '<label for="shortcut_keywords[%1$s]"> %2$s ' .
+	      '</label><br />',
+	      esc_attr($key),
+	      esc_html($label),
+				$checked
+	    );
+			unset($checked);
+	  }
+	}
+	echo '</div></div>';
 }
 
 $numberOfSlides = 4;
@@ -696,16 +731,15 @@ function slide_info_save_postdata( $post_id )
 	} else {
 		delete_post_meta($post_id, 'title_image_url'  );
 	}
-	if ( isset($_POST['work_page_image_url']) && $_POST['work_page_image_url'] !== '' ){
-		$workPageImageUrl = esc_url_raw($_POST['work_page_image_url']);
-		$sanatizedUrl = filter_var($workPageImageUrl, FILTER_SANITIZE_URL);
-		if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
-			update_post_meta( $post_id, 'work_page_image_url', $sanatizedUrl );
-		} else {
-			error_log('Invalid URL type detected for work page image url.');
-		}
+	if ( isset($_POST['description']) && $_POST['description'] !== '' ){
+		update_post_meta( $post_id, 'description', $_POST['description'] );
 	} else {
-		delete_post_meta($post_id, 'work_page_image_url'  );
+		delete_post_meta($post_id, 'description'  );
+	}
+	if ( isset($_POST['shortcut_keywords']) && $_POST['shortcut_keywords'] !== '' ){
+		update_post_meta( $post_id, 'shortcut_keywords', $_POST['shortcut_keywords'] );
+	} else {
+		delete_post_meta($post_id, 'shortcut_keywords'  );
 	}
 
 	global $numberOfSlides;
