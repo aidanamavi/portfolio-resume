@@ -24,6 +24,7 @@
 							<a href="#" class="new_glow" data-project-type="sound" data-link-type="workNavigation">Sound</a>
 						</div>
 					</div>
+					<div class="row">
 <?php
 					$args = array(
 						'posts_per_page'   => 35,
@@ -50,12 +51,13 @@
 							endforeach;
 						endif;
 					?>
-					<div class="column" data-project-type="<?php echo $keywordList; ?>">
-						<a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="work" data-link-type="postNavigation">
-							<?php the_post_thumbnail(); echo PHP_EOL; ?>
-						</a>
-					</div>
+						<div class="column" data-project-type="<?php echo $keywordList; ?>">
+							<a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="work" data-link-type="postNavigation">
+								<?php the_post_thumbnail(); echo PHP_EOL; ?>
+							</a>
+						</div>
 <?php
 					unset($keywordList);
 					endforeach; wp_reset_postdata(); ?>
+					</div>
 				</div>

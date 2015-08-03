@@ -348,6 +348,8 @@ input[type=submit]:active {
 .highlight_slides div img {
 	width: 100%;
 	height: auto;
+	max-width: 940px;
+	max-height: 529px;
 }
 .column {
 	width: 300px;
