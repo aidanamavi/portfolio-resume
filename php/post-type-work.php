@@ -371,7 +371,7 @@ function image_upload_scripts() {
 	global $post_type;
 	$post_type = $post_type ? $post_type : $_GET['post_type'];
 	$action = $_GET['action'];
-	if ($post_type === 'work' && $action === 'edit') {
+	if ($post_type === 'work') {
     wp_register_script('upload-slide-image', get_bloginfo('template_url').'/js/upload-slide-image.js', array('jquery'));
     wp_enqueue_script('upload-slide-image');
   }
@@ -382,7 +382,7 @@ function work_post_type_styles() {
 	global $post_type;
 	$post_type = $post_type ? $post_type : $_GET['post_type'];
 	$action = $_GET['action'];
-	if ($post_type === 'work' && $action === 'edit') {
+	if ($post_type === 'work') {
     wp_register_style('work_post_type_styles', get_bloginfo('template_url').'/css/post-type-work.css');
     wp_enqueue_style('work_post_type_styles');
   }
