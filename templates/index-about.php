@@ -23,7 +23,7 @@
 							<img src="<?php bloginfo('template_url'); ?>/img/highlight_about_1.jpg" class="highlight" alt="">
 							<div class="highlights_text">
 								<p>
-									Aidan Amavi is a professional producer based out of New York City who specializes in digital media. He has over a decade of experience as a leader and facilitator for a variety of creative projects. His previous clients have included celebrities, models and artists as well as small, medium, and Fortune 500 companies.
+									Aidan Amavi is a creative professional who specializes in web, video, photo, graphic, and sound productions. He has over a decade of experience as a leader and facilitator for a variety of creative projects. His previous clients have included celebrities, models and artists as well as small, medium, and Fortune 500 companies.
 								</p>
 								<p>
 									Past clients and colleagues praise his ability and professionalism having said that he does “outstanding work,” is a “thought leader,” has an “advanced skill set,” and leaves them “impressed.”
