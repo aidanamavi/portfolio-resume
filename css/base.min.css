@@ -38,6 +38,9 @@ a:hover, a:active {
 	}
 }
 @media print {
+	* {
+		background-color: #FFFFFF !important;
+	}
 	html {
 		color: #000000 !important;
 		font-size: 11pt !important;
