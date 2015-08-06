@@ -161,6 +161,23 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 										</div>
 									</div>
 								</div>
+<?php 				endif;
+
+							$description = get_post_meta( get_the_ID(), $slideId.'_description', true );
+							if ($description) : ?>
+								<div class="skills">
+									<div class="skills_title">
+										<strong>description</strong>
+									</div>
+									<div class="masonry_wrapper">
+										<div class="masonry_column">
+<?php
+echo '											'.nl2br($description).'<br />'.PHP_EOL;
+										unset($description); ?>
+											<br />
+										</div>
+									</div>
+								</div>
 <?php 				endif; ?>
 							</div>
 						</div>
