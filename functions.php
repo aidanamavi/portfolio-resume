@@ -69,7 +69,7 @@ function custom_the_category($separator = '', $parents='', $post_id = false) {
 function custom_meta_description() {
 	global $post;
 	if (is_single()) {
-		$description = get_post_meta( get_the_ID(), 'description', true );
+		$description = get_post_meta( get_the_ID(), 'slide_1_description', true );
 	} elseif (is_home() || is_page()) {
 		$description =  get_bloginfo( 'description' );
 	} elseif (is_category()) {

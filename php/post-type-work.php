@@ -411,18 +411,6 @@ function project_info_meta_boxes_html($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Description', 'changeMe')
-	);
-	$saved = get_post_meta( $post->ID, 'description', true );
-  printf(
-    '<textarea name="description" id="description" placeholder="Enter your description here...">%1$s</textarea>'.
-    '<br />',
-    esc_attr($saved)
-  );
-	echo '<br/><hr>';
-
-	printf(
-		'<p><strong>%1$s</strong></p>',
 		__('Shortcut Keywords', 'changeMe')
 	);
 	$saved = get_post_meta( $post->ID, 'shortcut_keywords', true );
@@ -702,7 +690,19 @@ function slide_info_html_custom_box($post, $arguments) {
 	  }
 	}
 	unset($prevTool);
-	echo '</div></div>';
+	echo '</div></div><hr>';
+
+	printf(
+		'<p><strong>%1$s</strong></p>',
+		__('Description', 'changeMe')
+	);
+	$saved = get_post_meta( $post->ID, $slideId.'_description', true );
+	printf(
+		'<textarea name="'.$slideId.'_description" id="'.$slideId.'_description" placeholder="Enter your description here...">%1$s</textarea>'.
+		'<br />',
+		esc_attr($saved)
+	);
+	echo '<br/>';
 }
 /**
 	* When the post is saved, saves our custom data.
@@ -802,6 +802,12 @@ function slide_info_save_postdata( $post_id )
 	    update_post_meta( $post_id, $slideId.'_presentations', $_POST[$slideId.'_presentations'] );
 	  } else {
 	  	delete_post_meta($post_id, $slideId.'_presentations'  );
+	  }
+		if ( isset($_POST[$slideId.'_description']) && $_POST[$slideId.'_description'] !== '' ){
+			$slideDescription = trim(esc_textarea($_POST[$slideId.'_description']));
+			update_post_meta( $post_id, $slideId.'_description', $slideDescription );
+	  } else {
+	  	delete_post_meta($post_id, $slideId.'_description'  );
 	  }
 	}
 	update_post_meta( $post_id, 'slideTotal', $slideTotal );
