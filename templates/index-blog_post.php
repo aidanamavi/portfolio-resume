@@ -25,7 +25,7 @@
 									<h1 class="blog_title"><a href="<?php the_permalink() ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
 									<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 									<div class="blog_content">
-										<?php the_content(); ?>
+										<?php global $post; setup_postdata($post); the_content(); wp_reset_postdata(); ?>
 									</div>
 <?php 							if(comments_open()): ?>
 										<div id="comments">
