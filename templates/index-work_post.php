@@ -169,13 +169,11 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 									<div class="skills_title">
 										<strong>description</strong>
 									</div>
-									<div class="masonry_wrapper">
-										<div class="masonry_column">
+									<div>
 <?php
-echo '											'.nl2br($description).'<br />'.PHP_EOL;
+echo '										'.nl2br($description).'<br />'.PHP_EOL;
 										unset($description); ?>
-											<br />
-										</div>
+										<br />
 									</div>
 								</div>
 <?php 				endif; ?>
