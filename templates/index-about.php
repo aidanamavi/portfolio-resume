@@ -35,169 +35,177 @@
 									To view Aidan's endorsements, testimonials, and references from those he has worked with, please connect with him on <a href="https://www.linkedin.com/in/aidanamavi" class="new_glow" target=”_blank” onclick="javascript:_paq.push(['trackPageView', 'navigation/about/outlink/linkedin']);">LinkedIn</a>.
 								</p>
 								<div class="skills pagebreakhere">
-									<div class="skills_column">
-										<strong>Leadership</strong><br />
+									<div class="skills_title">
+										<strong>leadership</strong><br />
 									</div>
-									<div class="skills_column">
-										Creative Strategy<br />
-										Creative Production<br />
-										Creative Direction<br />
-									</div>
-									<div class="skills_column">
-										Pre-production<br />
-										Post-production<br />
-										Production Management<br />
-									</div>
-									<div class="skills_column">
-										Event Planning<br />
-										Event Management<br />
-									</div>
-								</div><br />
-								<div class="skills">
-									<div class="skills_column">
-										<strong>Disciplines</strong><br />
-									</div>
-									<div class="skills_column">
-										Digital Media<br />
-										New Media<br />
-										Social Media<br /><br />
-										Marketing<br />
-										Market Research<br />
-										Advertising<br />
-									</div>
-									<div class="skills_column">
-										Experience Design<br />
-										Network Design<br />
-										Graphic Design<br />
-										Interactive Design<br />
-										Web Design<br />
-										Sound Design<br />
-										Lighting Design<br />
-									</div>
-									<div class="skills_column">
-										Systems Administration<br />
-										Information Architecture<br />
-										Web Development<br /><br />
-										Photography<br />
-										Videography<br />
-										Audiography<br /><br />
-									</div>
-									<div class="skills_column">
-										AM/FM Broadcasting<br /><br />
-										Acting<br />
-										Copywriting<br />
-										Composition<br /><br />
-										Talent Acquisition<br />
+									<div class="masonry_wrapper">
+										<div class="masonry_column">
+											Creative Strategy<br />
+											Creative Production<br />
+											Creative Direction<br />
+										</div>
+										<div class="masonry_column">
+											Pre-production<br />
+											Post-production<br />
+											Production Management<br />
+										</div>
+										<div class="masonry_column">
+											Event Planning<br />
+											Event Management<br />
+										</div>
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Tools</strong><br />
+									<div class="skills_title">
+										<strong>disciplines</strong><br />
 									</div>
-									<div class="skills_column">
-										Roland<br />
-										Zoom<br />
-										Sennheiser<br />
-										Rode<br />
-										M-Audio<br /><br />
-										Canon<br />
-										Nikon<br />
-										Sony<br />
-										RED<br /><br />
-										Matthews Dolly<br />
-										Spider Dolly<br />
-										Losmandy Porta-Jib<br />
-										Easyrig Cinema 3<br /><br />
-										Autopoles<br />
-										Backdrops<br />
-										Combo Stands<br />
-										C-Stands<br />
-										Cardellini Clamps<br />
-										Sand Bags<br />
-									</div>
-									<div class="skills_column">
-										Arri<br />
-										Bron<br />
-										Chimera<br />
-										Kino Flo<br />
-										Litepanels<br />
-										Mole Richardson<br />
-										Profoto<br /><br />
-										Beauty Dish<br />
-										Flag Kit<br />
-										Duvetyne/Muslin<br />
-										Gel Filters<br />
-										Reflectors<br />
-										Foil<br />
-										Tapes<br />
-										Stingers<br />
-									</div>
-									<div class="skills_column">
-										iWork<br />
-										Office<br />
-										OpenOffice<br /><br />
-										Illustrator<br />
-										Lightroom<br />
-										Photoshop<br />
-										Premier<br />
-										After Effects<br />
-										Bridge<br /><br />
-										Unreal Engine<br />
-										Chaoscope<br /><br />
-										Final Cut Pro<br /><br />
-										Live<br />
-									</div>
-									<div class="skills_column">
-										CentOS<br />
-										RHEL<br />
-										Mac OS<br />
-										Windows<br /><br />
-										Apache<br /><br />
-										Icecast<br />
-										Shoutcast<br /><br />
-										Wordpress<br />
-										Piwik<br /><br />
-										PHP<br />
-										MySQL<br />
-										Javascript<br />
-										HTML<br />
-										CSS<br />
-										GIT<br />
+									<div class="masonry_wrapper">
+										<div class="masonry_column">
+											Digital Media<br />
+											New Media<br />
+											Social Media<br /><br />
+											Marketing<br />
+											Market Research<br />
+											Advertising<br />
+										</div>
+										<div class="masonry_column">
+											Experience Design<br />
+											Network Design<br />
+											Graphic Design<br />
+											Interactive Design<br />
+											Web Design<br />
+											Sound Design<br />
+											Lighting Design<br />
+										</div>
+										<div class="masonry_column">
+											Systems Administration<br />
+											Information Architecture<br />
+											Web Development<br /><br />
+											Photography<br />
+											Videography<br />
+											Audiography<br /><br />
+										</div>
+										<div class="masonry_column">
+											AM/FM Broadcasting<br /><br />
+											Acting<br />
+											Copywriting<br />
+											Composition<br /><br />
+											Talent Acquisition<br />
+										</div>
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Mediums</strong><br />
+									<div class="skills_title">
+										<strong>tools</strong><br />
 									</div>
-									<div class="skills_column">
-										Web Sites<br />
-										Web Pages<br />
-										Web Apps<br /><br />
-										Fine Art<br />
-									</div>
-									<div class="skills_column">
-										Brand Names<br />
-										Brand Logos<br />
-										Photography<br />
-									</div>
-									<div class="skills_column">
-										Films<br />
-										Television<br />
-										Music Videos<br />
-										Animations<br />
-									</div>
-									<div class="skills_column">
-										Web Radio<br />
-										AM/FM Radio<br />
-										Music<br />
-										Field Recordings<br />
+									<div class="masonry_wrapper">
+										<div class="masonry_column">
+											Roland<br />
+											Zoom<br />
+											Sennheiser<br />
+											Rode<br />
+											M-Audio<br /><br />
+											Canon<br />
+											Nikon<br />
+											Sony<br />
+											RED<br /><br />
+											Matthews Dolly<br />
+											Spider Dolly<br />
+											Losmandy Porta-Jib<br />
+											Easyrig Cinema 3<br /><br />
+											Autopoles<br />
+											Backdrops<br />
+											Combo Stands<br />
+											C-Stands<br />
+											Cardellini Clamps<br />
+											Sand Bags<br />
+										</div>
+										<div class="masonry_column">
+											Arri<br />
+											Bron<br />
+											Chimera<br />
+											Kino Flo<br />
+											Litepanels<br />
+											Mole Richardson<br />
+											Profoto<br /><br />
+											Beauty Dish<br />
+											Flag Kit<br />
+											Duvetyne/Muslin<br />
+											Gel Filters<br />
+											Reflectors<br />
+											Foil<br />
+											Tapes<br />
+											Stingers<br />
+										</div>
+										<div class="masonry_column">
+											iWork<br />
+											Office<br />
+											OpenOffice<br /><br />
+											Illustrator<br />
+											Lightroom<br />
+											Photoshop<br />
+											Premier<br />
+											After Effects<br />
+											Bridge<br /><br />
+											Unreal Engine<br />
+											Chaoscope<br /><br />
+											Final Cut Pro<br /><br />
+											Live<br />
+										</div>
+										<div class="masonry_column">
+											CentOS<br />
+											RHEL<br />
+											Mac OS<br />
+											Windows<br /><br />
+											Apache<br /><br />
+											Icecast<br />
+											Shoutcast<br /><br />
+											Wordpress<br />
+											Piwik<br /><br />
+											PHP<br />
+											MySQL<br />
+											Javascript<br />
+											HTML<br />
+											CSS<br />
+											GIT<br />
+										</div>
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Highlights</strong><br />
+									<div class="skills_title">
+										<strong>mediums</strong><br />
 									</div>
-									<div class="skills_column_wide">
+									<div class="masonry_wrapper">
+										<div class="masonry_column">
+											Web Sites<br />
+											Web Pages<br />
+											Web Apps<br /><br />
+											Fine Art<br />
+										</div>
+										<div class="masonry_column">
+											Brand Names<br />
+											Brand Logos<br />
+											Photography<br />
+										</div>
+										<div class="masonry_column">
+											Films<br />
+											Television<br />
+											Music Videos<br />
+											Animations<br />
+										</div>
+										<div class="masonry_column">
+											Web Radio<br />
+											AM/FM Radio<br />
+											Music<br />
+											Field Recordings<br />
+										</div>
+									</div>
+								</div><br />
+								<div class="skills">
+									<div class="skills_title">
+										<strong>highlights</strong><br />
+									</div>
+									<div>
 										<ul class="first">
 											<li>15 years experience working in the creative industry.</li>
 											<li>Creative and technical skills, e.g., cinematography, photography, graphic design, sound mixing, sound design, composition, web development, information architecture, systems administration, etc.</li>
@@ -217,10 +225,10 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Responsibilities</strong><br />
+									<div class="skills_title">
+										<strong>responsibilities</strong><br />
 									</div>
-									<div class="skills_column_wide">
+									<div>
 										<ul>
 											<li>Creates, and presents pitches for clients, vendors, partners and personnel.</li>
 											<li>Excels in leading pre-production, production, and post-production processes.</li>
@@ -239,8 +247,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Professional Org.</strong><br />
+									<div class="skills_title">
+										<strong>professional org.</strong><br />
 									</div>
 									<div class="skills_column_half">
 										American Institute of Graphic Arts<br />
@@ -256,8 +264,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Charity Org.</strong><br />
+									<div class="skills_title">
+										<strong>charity org.</strong><br />
 									</div>
 									<div class="skills_column_half">
 										ASPCA<br />
@@ -273,8 +281,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Languages</strong><br />
+									<div class="skills_title">
+										<strong>languages</strong><br />
 									</div>
 									<div class="skills_column_half">
 										English<br />
@@ -286,8 +294,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Psychology</strong><br />
+									<div class="skills_title">
+										<strong>psychology</strong><br />
 									</div>
 									<div class="skills_column_half">
 										ENTJ<br />
@@ -299,8 +307,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Hobbies</strong><br />
+									<div class="skills_title">
+										<strong>hobbies</strong><br />
 									</div>
 									<div class="skills_column_half">
 										Traveling<br />
@@ -320,8 +328,8 @@
 									</div>
 								</div><br />
 								<div class="skills">
-									<div class="skills_column">
-										<strong>Contact Info</strong><br />
+									<div class="skills_title">
+										<strong>contact info</strong><br />
 									</div>
 									<div class="skills_column_half">
 										<?php if ($_GET['b'] == 'b') : ?>
