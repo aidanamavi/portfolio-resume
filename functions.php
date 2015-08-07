@@ -41,6 +41,20 @@ function browser_body_class($classes) {
 // Remove the_generator meta tag.
 add_filter( 'the_generator', create_function('$a', "return null;") );
 
+// Add Shortcode
+function blod_text_shortcode( $atts , $content = null ) {
+return '<strong>' . $content . '</strong>';
+}
+add_shortcode( 'b', 'blod_text_shortcode' );
+function unordered_list_shortcode( $atts , $content = null ) {
+return '<ul>' . do_shortcode($content) . '</ul>';
+}
+add_shortcode( 'ul', 'unordered_list_shortcode' );
+function list_item_shortcode( $atts , $content = null ) {
+return '<li>' . do_shortcode($content) . '</li>';
+}
+add_shortcode( 'li', 'list_item_shortcode' );
+
 // Add custom logo.
 function custom_logo() { ?>
 	<style type="text/css">
@@ -70,7 +84,13 @@ function custom_meta_description() {
 	global $post;
 	function prepare_content($content){
 		$content = ucfirst(trim(strip_tags($content)));
+		// Remove shortcodes, but leave content.
+		$content = preg_replace('/\[.*?\]/', '', $content);
 		// Remove new lines.
+		$content = preg_replace('~[\r\n]+~', ' ', $content);
+		// Removes everything except these characters.
+		$content = preg_replace('/[^a-zA-Z0-9_.\-,\s]/', '', $content);
+		// Remove extra spaces.
 		$content = preg_replace('/\s+/', ' ', $content);
 		// Shortens length. May not be needed. Testing with Google indexing.
 		if (strlen($content) > 4000) {

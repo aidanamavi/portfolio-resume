@@ -31,6 +31,9 @@ a:hover, a:active {
 	-o-transition: 250ms linear 0s;
 	transition: 250ms linear 0s;
 }
+strong {
+	font-weight: 400;
+}
 /* Mobile browsers only */
 @media only screen and (max-device-width: 480px) {
 	html {
@@ -126,8 +129,8 @@ html {
 	background-color: #000;
 	opacity: 0;
 	color: #ccc;
-	line-height: 16px;
-	font-size: 16px;
+	line-height: 12pt;
+	font-size: 12pt;
 	font-weight: 300;
 	font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif !important;
 	overflow-y: scroll;
@@ -257,12 +260,11 @@ div.highlights_text div.skills {
 	width: 100%;
 }
 div.highlights_text div.skills div.skills_title {
-	width: 160px;
+	width: 200px;
 	height: 100%;
 	display: table-cell;
 	vertical-align: top;
 	text-transform: uppercase;
-	font-weight: 300;
 }
 div.highlights_text div.skills div.skills_column {
 	width: 19%;
@@ -270,20 +272,15 @@ div.highlights_text div.skills div.skills_column {
 	vertical-align: top;
 }
 div.highlights_text div.skills div.skills_column_half {
-	width: 39%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
 }
-div.highlights_text div.skills div.skills_column_wide {
-	width: 80%;
-	display: inline-block;
-	vertical-align: top;
-}
-div.highlights_text div.skills div.skills_column_wide ul {
+ul {
 	padding: 0;
 	margin: 0;
 }
-div.highlights_text div.skills div.skills_column_wide ul:not(:first-child) {
+ul:not(:first-child) {
 	margin-top: 26px;
 }
 div#page_about {

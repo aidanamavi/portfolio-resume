@@ -52,7 +52,7 @@
 							if ($roles) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>roles</strong>
+										<strong>occupations</strong>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -171,7 +171,7 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 									</div>
 									<div>
 <?php
-echo '										'.nl2br($description).'<br />'.PHP_EOL;
+echo '										'.do_shortcode(nl2br($description)).'<br />'.PHP_EOL;
 										unset($description); ?>
 										<br />
 									</div>
