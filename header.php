@@ -72,19 +72,19 @@
 					<div id="navigation_wrapper">
 						<nav>
 							<div>
-								<a href="/work" data-link-type="headerNavigation">
+								<a href="/work" data-link-type="headerNavigation" data-page="archive" data-post-type="work">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
 								</a>
 							</div>
 							<div>
-								<a href="/blog" data-link-type="headerNavigation">
+								<a href="/blog" data-link-type="headerNavigation" data-page="archive" data-post-type="blog">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
 								</a>
 							</div>
 							<div>
-								<a href="/about" data-link-type="headerNavigation">
+								<a href="/about" data-link-type="headerNavigation" data-page="archive" data-post-type="about">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
 								</a>

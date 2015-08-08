@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_about" data-page-title="About">
+				<div id="page_archive_about" data-page-title="About">
 					<div class="title_wrapper">
 						<div class="titles">
 							<img src="<?php bloginfo('template_url'); ?>/img/title_aidanamavi@2x.png" alt="">

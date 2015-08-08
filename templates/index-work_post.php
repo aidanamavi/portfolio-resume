@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_work_<?php the_ID(); ?>" data-page-title="<?php the_title_attribute(); ?>">
+				<div id="page_single_work_<?php the_ID(); ?>" data-page-title="<?php the_title_attribute(); ?>">
 <?php
 					$slideTotal = (int) get_post_meta( get_the_ID(), 'slideTotal', true );
 					$numberCount = 1; $slideCount = 1;

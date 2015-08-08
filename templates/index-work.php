@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_work" data-page-title="Work">
+				<div id="page_archive_work" data-page-title="Work">
 					<div class="title_wrapper">
 						<div class="titles">
 							&nbsp;&nbsp;
@@ -52,7 +52,7 @@
 						endif;
 					?>
 						<div class="column" data-project-type="<?php echo $keywordList; ?>">
-							<a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="work" data-link-type="postNavigation">
+							<a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="work" data-post-id="<?php the_ID(); ?>">
 								<?php the_post_thumbnail(); echo PHP_EOL; ?>
 							</a>
 						</div>
