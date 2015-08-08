@@ -12,7 +12,7 @@
 	* @license http://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
 	*/
 ?>
-				<div id="page_blog" data-page-title="Blog">
+				<div id="page_archive_blog" data-page-title="Blog">
 					<div class="title_wrapper">
 						<div class="titles">
 							<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
@@ -38,7 +38,7 @@
 					foreach($myposts as $post) : setup_postdata($post);
 					?>
 					<article class="blog_list">
-						<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
+						<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
 						<h4 class="blog_date_categories_tags"><?php echo get_the_date(); ?> • <?php custom_the_category(', '); ?><?php the_tags(' • '); ?></h4>
 					</article>
 <?php

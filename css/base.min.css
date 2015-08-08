@@ -200,7 +200,7 @@ nav div:hover {
 	margin: 0 auto;
 	height: 100%;
 }
-#content_wrapper>*:not(#page_work) {
+#content_wrapper>*:not(#page_archive_work) {
 	top: 25px;
 	padding: 10px;
 }

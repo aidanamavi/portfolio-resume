@@ -73,7 +73,7 @@ function custom_the_category($separator = '', $parents='', $post_id = false) {
 			if ( $i > 0 ) {
 				$thelist .= $separator;
 			}
-			$thelist .= '<a href="' . esc_url(get_category_link($cat->term_id)) . '" data-category-id="' . $cat->term_id . '" data-post-type="category" data-link-type="postNavigation" title="View all posts in '. esc_attr($cat->name) . '">' . $cat->cat_name . '</a>';
+			$thelist .= '<a href="' . esc_url(get_category_link($cat->term_id)) . '" data-category-id="' . $cat->term_id . '" data-page="category" data-link-type="postNavigation" title="View all posts in '. esc_attr($cat->name) . '">' . $cat->cat_name . '</a>';
 			$i++;
 		}
 		echo $thelist;
@@ -264,8 +264,9 @@ add_action( 'wp_ajax_getAjaxData', 'getAjaxData' );
 add_action( 'wp_ajax_nopriv_getAjaxData', 'getAjaxData' );
 // Uses AJAX data object {action: fetch-data $_POST[ 'key' ]: value}
 function getAjaxData( $category='', $offset='10' ) {
-	$folder = $_POST[ 'folder' ];
 	$page = $_POST[ 'page' ];
+	$postType = $_POST[ 'postType' ];
+	$id = $_POST[ 'id' ];
 	$offset = $_POST[ 'offset' ];
 	$category = $_POST[ 'category' ];
 
@@ -284,37 +285,33 @@ function getAjaxData( $category='', $offset='10' ) {
 		exit(0);
 	}
 
-	if ($folder === 'index') {
-		if ($page === 'about' || $page === 'work' || $page === 'blog') {
-			get_template_part( 'templates/index', $page );
+	if ($page === 'archive') {
+		if ($postType === 'about' || $postType === 'work' || $postType === 'blog') {
+			get_template_part( 'templates/index', $postType );
 		} else {
 			echo 'Invalid page input.';
 		}
 		exit(0);
 
 	// page, postId & postType;				categoryId & offset
-	} elseif ($folder === 'work') {
-		validateIntegerInput($page);
+	} elseif ($page === 'single') {
+		if ($postType === 'work') {
+			$name = 'work_post';
+		} elseif ($postType === 'blog') {
+			$name = 'blog_post';
+		}
+		validateIntegerInput($id);
 		global $post;
-		$post = get_post($page);
+		$post = get_post($id);
 		setup_postdata($post);
-		get_template_part( 'templates/index', 'work_post' );
+		get_template_part( 'templates/index', $name );
 		wp_reset_postdata();
 		exit(0);
 
-	} elseif ($folder === 'post') {
-		validateIntegerInput($page);
+	} elseif ($page === 'category') {
+		validateIntegerInput($id);
 		global $post;
-		$post = get_post($page);
-		setup_postdata($post);
-		get_template_part( 'templates/index', 'blog_post' );
-		wp_reset_postdata();
-		exit(0);
-
-	} elseif ($folder === 'category') {
-		validateIntegerInput($page);
-		global $post;
-		$category = $page;
+		$category = $id;
 		$args = array(
 			'posts_per_page'   => 10,
 			'offset'           => '',
@@ -343,7 +340,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			foreach($fetchedPosts as $post) {
 				setup_postdata($post); ?>
 				<article class="blog_list">
-					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-post-type="post" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
+					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
 					<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 				</article><?php
 				wp_reset_postdata();
@@ -378,7 +375,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			setup_postdata( $post );
 			?>
 			<article class="blog_list">
-				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-post-id="<?php the_ID(); ?>" data-link-type="postNavigation"><?php the_title(); ?></a></h1>
+				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
 				<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 			</article>
 			<?php
