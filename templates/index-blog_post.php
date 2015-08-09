@@ -28,7 +28,7 @@
 										<?php global $post; setup_postdata($post); the_content(); wp_reset_postdata(); ?>
 									</div>
 <?php 							if(comments_open()): ?>
-										<div id="comments">
+										<div class="comments">
 											<?php comments_template(); ?>
 										</div>
 									<?php endif; ?>

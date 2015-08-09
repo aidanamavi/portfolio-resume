@@ -62,35 +62,31 @@
 		</script>
 	</head>
 	<body>
-		<div id="loading_animation">
+		<div class="loading_animation">
 		  <span class="helper"></span>
 		  <img src="<?php bloginfo('template_url'); ?>/img/loading.gif" alt="" />
 		</div>
-		<div id="wrapper">
-			<div id="header_wrapper">
-				<header>
-					<div id="navigation_wrapper">
-						<nav>
-							<div>
-								<a href="/work" data-link-type="headerNavigation" data-page="archive" data-post-type="work">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
-								</a>
-							</div>
-							<div>
-								<a href="/blog" data-link-type="headerNavigation" data-page="archive" data-post-type="blog">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
-								</a>
-							</div>
-							<div>
-								<a href="/about" data-link-type="headerNavigation" data-page="archive" data-post-type="about">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
-									<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
-								</a>
-							</div>
-						</nav>
+		<div class="wrapper">
+		<header class="header_wrapper">
+				<nav>
+					<div>
+						<a href="/work" data-link-type="headerNavigation" data-page="archive" data-post-type="work">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
+						</a>
 					</div>
-				</header>
-			</div>
-			<div id="content_wrapper" class="toggleFade">
+					<div>
+						<a href="/blog" data-link-type="headerNavigation" data-page="archive" data-post-type="blog">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="/about" data-link-type="headerNavigation" data-page="archive" data-post-type="about">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
+							<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
+						</a>
+					</div>
+				</nav>
+			</header>
+			<div class="content_wrapper toggleFade">
