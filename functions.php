@@ -11,7 +11,7 @@
 	*/
 
 // Saftey first.
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'functions.php' == basename($_SERVER['SCRIPT_FILENAME']))
+if (!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME']))
 die ('Please do not load this page directly.');
 
 /************************************************************
