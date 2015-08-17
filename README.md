@@ -6,25 +6,23 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 
 ## Why is this so awesome?
 
-* :rocket: **Integration with world-class open-source software.** Tested with and built on Linux, Apache, MySQL, PHP, Wordpress, jQuery, Piwik, Wordfence, and WP Cache.
-* :zap: **Incredibly fast with built-in caching.** AJAX with client-side caching plus WP Cache integration.
-* :lock: **Works seemlessly with encrypted content.** Using SSL certificates from your favorite vendor.
+* :rocket: **Integration with world-class open-source software.** Tested with and built on Linux, Apache, MySQL, PHP, Wordpress, jQuery, Piwik, and Wordfence.
+* :zap: **Incredibly fast with built-in caching.** Front-end client-side caching, and optimized scripts.
+* :lock: **Works seamlessly with encrypted content.** Works automagically with SSL certificates from your favorite vendor.
 * :+1: **Standards compliant & validated code.** HTML5, CSS3, and JSLint code analysis and verification.
-* :iphone: **Responsive design.** Support for small mobile screens.
+* :iphone: **Responsive design.** Support for desktops, laptops, tablets, and mobile screens.
 * :bar_chart: **Piwik Analytics integration.** Works automagically without any setup.
 * :mag: **Search Engine Optimized.** Organizes your content behind-the-scenes for optimal indexing.
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
 
 And in the works for [version 0.2](https://github.com/aidanamavi/portfolio-resume/milestones/0.2):
-* :art: **UX/UI** Better post type back-end styling.
 * :warning: **UX/UI** Input validation feedback for Work post type meta boxes.
-* :rocket: **WP Integration** Even better Wordpress integration for work posts.
-* :paperclip: **WP Integration** Better image attachment support.
 * :iphone: **UX/UI** Responsive design for even smaller devices; single column view.
 
 
 And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resume/milestones/0.3):
 * :rocket: **WP Integration** Add an About page page type.
+* :zap: **Speed Optimization** Backend compression, and caching options.
 * :art: **UX/UI** Work navigation sub-menu: keywords, products, roles.
 * :art: **UX/UI** Blog navigation sub-menu: archive, categories, rss.
 * :mag: **SEO** Separate pages for each slide.
@@ -51,7 +49,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 ## Setup
 
-#####Set up your about page.
+#### Set up your about page.
 
 1. Select 'Pages' and then 'Add New'
 2. Set the page title to 'About'
@@ -64,12 +62,11 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 ## Recommended Plug-ins
 
-* WP Super Cache
 * Wordfence Security
 * XML Sitemap & Google News feeds
 
 ### Server-side caching
-Client side caching is done automagically. To enable server side caching, for further speed improvements, we recommend WP Super Cache.
+Front-end caching is done automagically. Back-end caching will be provided for the version 0.3 release.
 
 
 
