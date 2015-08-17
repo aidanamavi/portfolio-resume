@@ -10,7 +10,7 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 * :zap: **Incredibly fast with built-in caching.** Front-end client-side caching, and optimized scripts.
 * :lock: **Works seamlessly with encrypted content.** Works automagically with your SSL certificates.
 * :+1: **Standards compliant & validated code.** HTML5, CSS3, and JSLint code analysis and verification.
-* :iphone: **Responsive design.** Support for desktops, laptops, tablets, and mobile screens.
+* :iphone: **Responsive design.** Support for desktops, laptops, tablets, and smartphone screens.
 * :bar_chart: **Piwik Analytics integration.** Works automagically without any setup.
 * :mag: **Search Engine Optimized.** Organizes your content behind-the-scenes for optimal indexing.
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
