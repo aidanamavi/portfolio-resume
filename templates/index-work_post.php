@@ -32,14 +32,14 @@
 <?php 		endif; ?>
 					<div class="title_wrapper">
 						<div class="titles">
-							<img src="<?php echo esc_url(get_post_meta( get_the_ID(), 'title_image_url', true )); ?>" alt="">
+							<img src="<?php echo remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'title_image_url', true ))); ?>" alt="">
 						</div>
 					</div>
 					<div class="highlight_slides">
 <?php 		while ($slideCount <= $slideTotal) :
 							$slideId = 'slide_'.$slideCount; ?>
 						<div class="slide<?php if ($slideCount > 1) : echo ' hide toggleFade'; endif; ?>" data-slide="<?php echo $slideCount; ?>">
-<?php					$slideImageUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true ));
+<?php					$slideImageUrl = remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true )));
 							$slideYouTubeUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_youtube_url', true ));
 							if ($slideYouTubeUrl) : ?>
 							<iframe width="940" height="492" src="<?php echo $slideYouTubeUrl; ?>" allowfullscreen></iframe>
