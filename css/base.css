@@ -24,6 +24,11 @@ a, a:visited, a:focus {
 	text-decoration: none;
 	text-shadow: none;
 }
+.blog_content p a,
+.blog_content p a:visited,
+.blog_content p a:focus {
+	color: #ffffff;
+}
 a:hover, a:active {
 	color: #30a4fb;
 	text-decoration: none;
@@ -35,7 +40,9 @@ a:hover, a:active {
 strong {
 	font-weight: 400;
 }
-a.new_glow:hover, a.new_glow:active {
+.blog_content p a:hover,
+.blog_content p a:active,
+a.glow:hover, a.glow:active {
 	text-shadow: 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff;
 	color: #ffffff;
 	text-decoration: none;

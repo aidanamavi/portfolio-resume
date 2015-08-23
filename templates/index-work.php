@@ -16,12 +16,12 @@
 					<div class="title_wrapper">
 						<div class="titles">
 							&nbsp;&nbsp;
-							<a href="#" class="new_glow" data-project-type="all" data-link-type="workNavigation">All</a>&nbsp;&rsaquo;
-							<a href="#" class="new_glow" data-project-type="web" data-link-type="workNavigation">Web</a>&nbsp;&rsaquo;
-							<a href="#" class="new_glow" data-project-type="video" data-link-type="workNavigation">Video</a>&nbsp;&rsaquo;
-							<a href="#" class="new_glow" data-project-type="photo" data-link-type="workNavigation">Photo</a>&nbsp;&rsaquo;
-							<a href="#" class="new_glow" data-project-type="graphic" data-link-type="workNavigation">Graphic</a>&nbsp;&rsaquo;
-							<a href="#" class="new_glow" data-project-type="sound" data-link-type="workNavigation">Sound</a>
+							<a href="#" class="glow" data-project-type="all" data-link-type="workNavigation">All</a>&nbsp;&rsaquo;
+							<a href="#" class="glow" data-project-type="web" data-link-type="workNavigation">Web</a>&nbsp;&rsaquo;
+							<a href="#" class="glow" data-project-type="video" data-link-type="workNavigation">Video</a>&nbsp;&rsaquo;
+							<a href="#" class="glow" data-project-type="photo" data-link-type="workNavigation">Photo</a>&nbsp;&rsaquo;
+							<a href="#" class="glow" data-project-type="graphic" data-link-type="workNavigation">Graphic</a>&nbsp;&rsaquo;
+							<a href="#" class="glow" data-project-type="sound" data-link-type="workNavigation">Sound</a>
 						</div>
 					</div>
 					<div class="row">
