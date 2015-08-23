@@ -19,12 +19,6 @@
 		<title><?php custom_page_title();?></title>
 		<meta name="description" content="<?php custom_meta_description(); ?>" />
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
-<?php global $is_IE;
-		if ($is_IE) : ?>
-		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php bloginfo('template_url'); ?>/img/browser_icon.ico" />
-		<?php else: ?>
-		<link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/browser_icon.png" />
-<?php endif; ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css" type="text/css" media="all" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/base.min.js"></script>
@@ -32,7 +26,6 @@
 		<meta name="apple-touch-fullscreen" content="yes">
 	  <meta name="apple-mobile-web-app-capable" content="yes">
 	  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/apple_touch_icon.png">
 		<?php if (ereg('iPad', $_SERVER['HTTP_USER_AGENT'])): ?>
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ipad.css">
 		<?php elseif (ereg('iPhone', $_SERVER['HTTP_USER_AGENT'])) : ?>
