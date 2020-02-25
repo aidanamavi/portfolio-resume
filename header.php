@@ -17,18 +17,38 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><?php custom_page_title();?></title>
-		<meta name="description" content="<?php custom_meta_description(); ?>" />
+<?php if (is_single()) :
+		global $post;
+		setup_postdata($post); ?>
+		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
+<?php wp_reset_postdata();
+		elseif (is_home() || is_page()) : ?>
+		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+<?php
+		elseif (is_category()) : ?>
+		<meta name="description" content="<?php echo trim(strip_tags(category_description())); ?>" />
+<?php
+		elseif (is_archive()) : ?>
+		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
+<?php endif; ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
+<?php global $is_IE;
+		if ($is_IE) : ?>
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php bloginfo('template_url'); ?>/img/browser_icon.ico" />
+		<?php else: ?>
+		<link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/browser_icon.png" />
+<?php endif; ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css" type="text/css" media="all" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/base.min.js"></script>
-<?php if (ereg('iPhone', $_SERVER['HTTP_USER_AGENT']) || ereg('iPod', $_SERVER['HTTP_USER_AGENT']) || ereg('iPad',$_SERVER['HTTP_USER_AGENT']) || ereg('android',$_SERVER['HTTP_USER_AGENT'])): ?>
+<?php if (preg_match('/iPhone/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPod/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT']) || preg_match('/android/',$_SERVER['HTTP_USER_AGENT'])): ?>
 		<meta name="apple-touch-fullscreen" content="yes">
 	  <meta name="apple-mobile-web-app-capable" content="yes">
 	  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<?php if (ereg('iPad', $_SERVER['HTTP_USER_AGENT'])): ?>
+		<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/apple_touch_icon.png">
+		<?php if (preg_match('iPad', $_SERVER['HTTP_USER_AGENT'])): ?>
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ipad.css">
-		<?php elseif (ereg('iPhone', $_SERVER['HTTP_USER_AGENT'])) : ?>
+		<?php elseif (preg_match('iPhone', $_SERVER['HTTP_USER_AGENT'])) : ?>
 		<meta name="viewport" content="width=640">
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/iphone.css">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
@@ -55,31 +75,35 @@
 		</script>
 	</head>
 	<body>
-		<div class="loading_animation">
+		<div id="loading_animation">
 		  <span class="helper"></span>
 		  <img src="<?php bloginfo('template_url'); ?>/img/loading.gif" alt="" />
 		</div>
-		<div class="wrapper">
-		<header class="header_wrapper">
-				<nav>
-					<div>
-						<a href="/work" data-link-type="headerNavigation" data-page="archive" data-post-type="work">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
-						</a>
+		<div id="wrapper">
+			<div id="header_wrapper">
+				<header>
+					<div id="navigation_wrapper">
+						<nav>
+							<div>
+								<a href="/work" data-link-type="headerNavigation">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
+								</a>
+							</div>
+							<div>
+								<a href="/blog" data-link-type="headerNavigation">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
+								</a>
+							</div>
+							<div>
+								<a href="/about" data-link-type="headerNavigation">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
+									<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
+								</a>
+							</div>
+						</nav>
 					</div>
-					<div>
-						<a href="/blog" data-link-type="headerNavigation" data-page="archive" data-post-type="blog">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
-						</a>
-					</div>
-					<div>
-						<a href="/about" data-link-type="headerNavigation" data-page="archive" data-post-type="about">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
-							<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
-						</a>
-					</div>
-				</nav>
-			</header>
-			<div class="content_wrapper toggleFade">
+				</header>
+			</div>
+			<div id="content_wrapper" class="toggleFade">
