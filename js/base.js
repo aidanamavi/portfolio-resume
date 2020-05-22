@@ -1,42 +1,43 @@
 /**
  * @package WordPress
  * @subpackage AidanAmavi
- * @version 0.1
+ * @version 0.2
  *
  * @author Aidan Amavi <mail@aidanamavi.com>
- * @link http://www.aidanamavi.com Author's Web Site
- * @copyright 2012 - 2015, Aidan Amavi
+ * @link https://www.aidanamavi.com Author's Web Site
+ * @copyright 2012 - 2020, Aidan Amavi
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
 /*global _paq, alert, siteName, category, userId, nonce*/
+
 jQuery(document).ready( function() {
 	// Configurable settings.
 	var homepageDiv = 'page_archive_work';
 	// Dynamic settings.
 	var ajaxurl = window.location.protocol+'//'+window.location.host+'/wp-admin/admin-ajax.php';
-	var visiblePage = jQuery('.content_wrapper :visible').attr('id');
+	var visiblePage = jQuery('#content_wrapper :visible').attr('id');
 	var pageReferrerUrl = document.referrer || document.location.href;
 	var isPageLoading = false;
 	var isSlideLoading = false;
 	var isThumbnailLoading = false;
 	var currentProjectType = 'all';
 	var isTrackingOn = (typeof _paq === 'undefined') ? false : true;
-	var state = window.history.state;
-String.prototype.capitalize = function() {
-  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-};
-function updateVisiblePage() {
-		visiblePage = jQuery('.content_wrapper :visible').attr('id');
+
+	String.prototype.capitalize = function() {
+	  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+	};
+	function updateVisiblePage() {
+		visiblePage = jQuery('#content_wrapper :visible').attr('id');
 		// Enables checking for new posts since visiblePage was last viewed.
 		areAllPostsLoaded = false;
 	}
 	function showLoadingAnimation() {
 		isPageLoading = true;
-		jQuery('.loading_animation').stop().show().animate({'opacity': '.85'},750);
+		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},750);
 	}
 	function hideLoadingAnimation() {
-		jQuery('.loading_animation').stop().animate({'opacity': '0'},1000, function(){
-			jQuery('.loading_animation').hide();
+		jQuery('#loading_animation').stop().animate({'opacity': '0'},1000, function(){
+			jQuery('#loading_animation').hide();
 			isPageLoading = false;
 			//updateVisiblePage();
 		});
@@ -51,24 +52,27 @@ function updateVisiblePage() {
 		});
 	}
 	function displayPage(pageDiv, pageUrl, pageContent) {
+		console.log("function displayPage");
+		console.log("pageDiv: " + pageDiv);
+		console.log("pageUrl: " + pageUrl);
+		console.log("pageContent: " + pageContent);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
-					jQuery('.content_wrapper').css('opacity', '0');
-					jQuery('.content_wrapper').append(pageContent);
-					jQuery('.content_wrapper').animate({'opacity':'1'},750);
+					jQuery('#content_wrapper').css('opacity', '0');
+					jQuery('#content_wrapper').append(pageContent);
+					jQuery('#content_wrapper').animate({'opacity':'1'},750);
 					addHighlightSlideCursor();
 				} else {
 					jQuery('#'+pageDiv).show().animate({'opacity':'1'},750);
 				}
 				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 				updateCategory(pageDiv);
-				updateVisiblePage();
 				updateTitle(pageTitle);
 				if (pageUrl) {
 					updateUrl(pageUrl);
 				}
-				history.replaceState({pageDiv: pageDiv, pageUrl: pageUrl}, pageTitle, pageUrl);
+				updateVisiblePage();
 				hideLoadingAnimation();
 			});
 		});
@@ -76,6 +80,7 @@ function updateVisiblePage() {
 	function transitionSlide(pageId, oldSlide, newSlide) {
 		var newSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+newSlide+']');
 		var oldSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+oldSlide+']');
+
 		// Show next slide, and hide visible slide.
 		newSlideElement.stop().css('z-index','10').stop().show().animate({'opacity':'1'},250, function() {
 			oldSlideElement.stop().animate({'opacity':'0'},250, function(){
@@ -85,11 +90,14 @@ function updateVisiblePage() {
 				isSlideLoading = false;
 			});
 		});
+
 		var buttonList = jQuery('#'+pageId+' .numbers_wrapper .numbers');
 		var newButtonImage = buttonList.children('[data-slide='+newSlide+']').children('img.off');
 		var oldButtonImage = buttonList.children('[data-slide='+oldSlide+']').children('img.off');
+
 		// Make the off button visible to turn off highlight.
 		oldButtonImage.stop().show().animate({'opacity':'1'},300);
+
 		// Make the off button invisible to turn on highlight. Then hide.
 		newButtonImage.stop().animate({'opacity':'0'},300, function(){
 			newButtonImage.hide();
@@ -98,23 +106,41 @@ function updateVisiblePage() {
 	function isEmpty( element ){
 		return !$.trim( element.html() );
 	}
-	function loadPage(pageUrl, page, postType, id) {
+	function loadPage(pageUrl, pagePath) {
+		console.log("function loadPage");
+		console.log("pageUrl: " + pageUrl);
+		console.log("pagePath: " + pagePath);
+
+		// pageUrl: https://aidanamavi.com/work/aidan-amavi/ base.min.js:106:11
+		// pagePath: /work/402 base.min.js:107:11
+		// folder: work base.min.js:116:11
+		// page: 402
+
 		if (isPageLoading) { return; }
-		pageDiv = 'page_'+page;
-		if (postType) {	pageDiv += '_'+postType; }
-		if (id) { pageDiv += '_'+id; }
+		pagePath = pagePath || pageUrl;
+		var pageDiv = pathParser(pagePath, 'divId');
+		console.log("pageDiv: " + pageDiv);
 		if (pageDiv === visiblePage) { return; }
+
+		var ajaxArray = pathParser(pagePath, 'array');
+		var postType = ajaxArray[0]; 	// work	// index
+		var postID = ajaxArray[1];		// 402	// work
+		console.log("postType: " + postType);
+		console.log("postID: " + postID);
 		showLoadingAnimation();
+		console.log("here");
 		if (isEmpty(jQuery('#'+pageDiv))) {
 			// Fetch new page.
 			jQuery.ajax({
 				type: 'POST',
 				url: ajaxurl,
-				data: {action: 'getAjaxData', page: page, postType: postType, id: id, token: window.nonce },
+				data: {action: 'getAjaxData', postType: postType, postID: postID, token: window.nonce },
 				success: function(pageContent) {
+					console.log("sent request");
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
+					console.log("error ajax");
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
@@ -124,6 +150,7 @@ function updateVisiblePage() {
 			});
 		} else {
 			// Show cached page.
+			console.log("show cached page");
 			displayPage(pageDiv, pageUrl);
 		}
 	}
@@ -149,14 +176,17 @@ function updateVisiblePage() {
 			window.categoryId = categoryInfo[2];
 			window.categoryName = categoryInfo[1];
 		} else {
-			window.categoryName = categoryInfo[2];
+			window.categoryName = categoryInfo[1];
 		}
 	}
 	function updateTitle(pageTitle) {
 		var pageSeperator = ' › ';
 		title = siteName;
 		if (window.categoryName.length > 0) {
-			if (pageTitle.toLowerCase() !== window.categoryName.toLowerCase()) {
+			if (window.categoryName === 'post') {
+				window.categoryName = 'blog';
+			}
+			if(pageTitle.toLowerCase() !== window.categoryName.toLowerCase()){
 				title += pageSeperator+window.categoryName.capitalize();
 			}
 		}
@@ -165,10 +195,11 @@ function updateVisiblePage() {
 	}
 	function updateUrl(pageUrl) {
 		pageReferrerUrl = document.location.href;
-		pageUrl = urlParser(pageUrl, 'path');
+		pageUrl = pathParser(pageUrl, 'path');
+		history.pushState(null, null, pageUrl);
 		trackPage();
 	}
-	function urlParser(url, returnBack) {
+	function pathParser(url, returnBack) {
 		// The element allows us to access the location object.
 		var element = document.createElement('a');
 		element.href = url;
@@ -178,26 +209,36 @@ function updateVisiblePage() {
 		url = url.split(/[\\/]/);
 		// Remove empty array elements.
 		url = jQuery.grep(url, function(element) { return(element); });
+
 		if (returnBack === 'divId') {
-			var divId = 'page_';
+			var divId = '';
 			var index = 0;
 			var seperator = '';
+
+			// Add a seperator between words, i.e, work_402
 			url.forEach(function(entry) {
+				if (index === 0) { firstIndex = entry; }
 				if (index > 0) { seperator = '_'; }
 				divId += seperator+entry;
 				++index;
 			});
-			// If there is no pathname.
-			if (divId === 'page_') {
-				// Show this div for homepage.
-				divId = homepageDiv;
+
+			// If there are two indexs, the 2nd is the post ID
+			if ( index > 1 ) {
+				if (firstIndex === 'category'){
+					divId = 'page_'+divId;
+				} else {
+					divId = 'page_single_'+divId;
+				}
+			} else {
+				divId = 'page_archive_'+divId;
 			}
 			return divId;
 		} else if (returnBack === 'array') {
 			// If there is no folder detected.
 			if (typeof url[1] === 'undefined') {
 				// Add index as the folder for AJAX to process.
-				url.unshift('archive');
+				//url.unshift('index'); // might not need this now that we define indexes by name/type
 			}
 			return url;
 		} else if (returnBack === 'path') {
@@ -205,32 +246,23 @@ function updateVisiblePage() {
 			return url;
 		}
 	}
+
 	// First page load.
 	jQuery('html').animate({'opacity':'1'},500, function() {
-		jQuery('.content_wrapper').delay(750).animate({'opacity':'1'},1000);
+		jQuery('#content_wrapper').delay(750).animate({'opacity':'1'},1000);
 	});
 	window.onload = function() {
-		jQuery('nav').animate({'opacity':'1'},1000);
+		jQuery('#navigation_wrapper').animate({'opacity':'1'},1000);
 		hideLoadingAnimation();
 	};
 	addHighlightSlideCursor();
+
 	// Back and forward navigation event handlers.
-	jQuery(window).bind('popstate', function(event) {
-		var pageUrl; state = window.history.state;
-		if (!state) {
-			var pageTitle = window.document.title;
-			pageUrl = document.location.pathname;
-			history.replaceState({pageDiv: visiblePage, pageUrl: pageUrl}, pageTitle, pageUrl);
-			state = window.history.state;
-		} else if (state) {
-			pageUrl = state.pageUrl;
-			var pageDiv = state.pageDiv.split('_');
-			var page = pageDiv[1];
-			var postType = pageDiv[2];
-			var id = pageDiv[3];
-			loadPage(pageUrl, page, postType, id);
-		}
+	window.addEventListener('popstate', function() {
+		var pageUrl = document.location.pathname;
+		loadPage(pageUrl);
 	});
+
 	// Mouse over effects for the navigation.
 	jQuery('nav img.off').hover(
 		function() {
@@ -238,29 +270,25 @@ function updateVisiblePage() {
 		function() {
 			jQuery(this).stop().animate({'opacity': '1'},250);
 	});
+
 	// Link click event handlers for pages, posts, categories, and outlinks.
 	jQuery(document).on('click', 'a', function(event){
 		function internalLink() {
 			event.preventDefault();
 			event.stopPropagation();
 		}
-		// Safari triggers popstate automatically.
-		// This is a fallback for other browsers.
-		if (!state) {
-			jQuery(window).trigger('popstate');
-		}
 		var pagePath; var link = jQuery(this);
 		var linkType = link.data('linkType');
-		var pageUrl = urlParser(link.attr('href'), 'path');
-		var page = link.data('page');
-		var postType = link.data('postType');
+		var pageUrl = link.attr('href');
+
 		if (linkType === 'headerNavigation') {
 			internalLink();
-			history.pushState(null, null, pageUrl);
-			loadPage(pageUrl, page, postType);
+			var postType = link.data('postType');
+			pagePath = '/'+postType+'/';
+			loadPage(pageUrl, pagePath);
+
 		} else if (linkType === 'workNavigation') {
 			internalLink();
-			history.pushState(null, null, pageUrl);
 			var projectType = link.data('projectType');
 			if (!isThumbnailLoading && projectType !== currentProjectType) {
 				isThumbnailLoading = true;
@@ -276,15 +304,16 @@ function updateVisiblePage() {
 		} else if (linkType === 'postNavigation') {
 			var postId = link.data('postId');
 			var categoryId = link.data('categoryId');
+			var postType = link.data('postType');
 			internalLink();
-			history.pushState(null, null, pageUrl);
-			var id = postId || categoryId;
-			pagePath = '/'+postType+'/'+id;
-			loadPage(pageUrl, page, postType, id);
+			var theId = postId || categoryId;
+			pagePath = '/'+postType+'/'+theId;
+			loadPage(pageUrl, pagePath);
 		}
 	});
+
 	// Link click event handlers for slide navigation.
-	jQuery(document).on('click', '.content_wrapper div .numbers_wrapper .numbers div', function(){
+	jQuery(document).on('click', '#content_wrapper div .numbers_wrapper .numbers div', function(){
 		var button = jQuery(this);
 		var pageId = button.parent().parent().parent().attr('id');
 		var newSlide = button.data('slide');
@@ -294,7 +323,7 @@ function updateVisiblePage() {
 			transitionSlide(pageId, oldSlide, newSlide);
 		}
 	});
-	jQuery(document).on('click', '.content_wrapper div .highlight_slides div img.highlight', function(){
+	jQuery(document).on('click', '#content_wrapper div .highlight_slides div img.highlight', function(){
 		var slide = jQuery(this).parent();
 		var pageId = slide.parent().parent().attr('id');
 		var oldSlide = slide.data('slide');
@@ -312,6 +341,7 @@ function updateVisiblePage() {
 			transitionSlide(pageId, oldSlide, newSlide);
 		}
 	});
+
 	/**
 	 * Infinite scrolling.
 	 *
@@ -320,9 +350,11 @@ function updateVisiblePage() {
 	 */
 	var categoryId, offsetPosts, areAllPostsLoaded, windowHeight, scrollPosition;
 	categoryId = window.categoryId;
+
 	jQuery(window).scroll(function() {
 		windowHeight = jQuery(document).height() - jQuery(window).height();
 		scrollPosition = jQuery(window).scrollTop() + 200;
+
 		if (scrollPosition >= windowHeight && !areAllPostsLoaded && !isPageLoading) {
 			if (jQuery('#page_category_'+categoryId).is(':visible')) {
 				showLoadingAnimation();
@@ -347,9 +379,10 @@ function updateVisiblePage() {
 						hideLoadingAnimation();
 					}
 				});
-			} else if (jQuery('#page_archive_blog').is(':visible')) {
+
+			} else if (jQuery('#page_blog').is(':visible')) {
 				showLoadingAnimation();
-				offsetPosts = jQuery('#page_archive_blog > article').length;
+				offsetPosts = jQuery('#page_blog > article').length;
 				jQuery.ajax({
 					type: 'POST',
 					url: ajaxurl,
@@ -358,7 +391,7 @@ function updateVisiblePage() {
 						if (response === '') {
 							areAllPostsLoaded = true;
 						} else {
-							jQuery('#page_archive_blog:last-child').append(response);
+							jQuery('#page_blog:last-child').append(response);
 						}
 					},
 					error: function(xhr){

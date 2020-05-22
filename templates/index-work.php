@@ -52,7 +52,7 @@
 						endif;
 					?>
 						<div class="column" data-project-type="<?php echo $keywordList; ?>">
-							<a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="work" data-post-id="<?php the_ID(); ?>">
+							<a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-post-type="work" data-post-id="<?php the_ID(); ?>">
 								<?php the_post_thumbnail(); echo PHP_EOL; ?>
 							</a>
 						</div>

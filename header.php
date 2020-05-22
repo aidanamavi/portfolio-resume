@@ -38,9 +38,9 @@
 		<?php else: ?>
 		<link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/browser_icon.png" />
 <?php endif; ?>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css?<?php echo rand(); ?>" type="text/css" media="all" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.min.js"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/base.min.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/base.min.js?<?php echo rand(); ?>"></script>
 <?php if (preg_match('/iPhone/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPod/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT']) || preg_match('/android/',$_SERVER['HTTP_USER_AGENT'])): ?>
 		<meta name="apple-touch-fullscreen" content="yes">
 	  <meta name="apple-mobile-web-app-capable" content="yes">
@@ -58,7 +58,7 @@
 	<?php else : ?>
 		<meta name="viewport" content="width=960">
 <?php endif; ?>
-<?php wp_head(); ?>
+		<?php wp_head(); ?>
 <?php
 		global $cat;
 		global $current_user;
@@ -85,19 +85,19 @@
 					<div id="navigation_wrapper">
 						<nav>
 							<div>
-								<a href="/work" data-link-type="headerNavigation">
+								<a href="/work" data-link-type="headerNavigation" data-post-type="work">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_work@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_work_on@2x.png" class="on" alt="">
 								</a>
 							</div>
 							<div>
-								<a href="/blog" data-link-type="headerNavigation">
+								<a href="/blog" data-link-type="headerNavigation" data-post-type="blog">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_blog@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_blog_on@2x.png" class="on" alt="">
 								</a>
 							</div>
 							<div>
-								<a href="/about" data-link-type="headerNavigation">
+								<a href="/about" data-link-type="headerNavigation" data-post-type="about">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_about@2x.png" class="off" alt="">
 									<img src="<?php bloginfo('template_url'); ?>/img/link_about_on@2x.png" class="on" alt="">
 								</a>
