@@ -32,8 +32,8 @@ And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resum
 
 ## Requirements
 
-* PHP >= 5.3
-* Wordpress >= 4.2.3
+* PHP >= 7
+* Wordpress >= 5
 
 
 
@@ -64,6 +64,8 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 * Wordfence Security
 * XML Sitemap & Google News feeds
+
+
 
 ### Server-side caching
 Front-end caching is done automagically. Back-end caching will be provided for the version 0.3 release.
