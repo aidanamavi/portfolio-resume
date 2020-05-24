@@ -17,6 +17,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><?php custom_page_title();?></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php if (is_single()) :
 		global $post;
 		setup_postdata($post); ?>
@@ -49,14 +50,12 @@
 		<?php if (preg_match('iPad', $_SERVER['HTTP_USER_AGENT'])): ?>
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ipad.css">
 		<?php elseif (preg_match('iPhone', $_SERVER['HTTP_USER_AGENT'])) : ?>
-		<meta name="viewport" content="width=640">
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/iphone.css">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone_4@2x.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone_5@2x.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
 		<?php endif; ?>
 	<?php else : ?>
-		<meta name="viewport" content="width=960">
 <?php endif; ?>
 		<?php wp_head(); ?>
 <?php

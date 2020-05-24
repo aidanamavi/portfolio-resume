@@ -180,7 +180,7 @@ function remove_menus() {
 global $menu;
 	$restricted = array(
 		//__('Dashboard'),
-		__('Posts')
+		//__('Posts')
 		/*
 		__('Media'),
 		__('Links'),
