@@ -51,32 +51,6 @@ jQuery(document).ready( function() {
 			}
 		});
 	}
-	function displayPage(pageDiv, pageUrl, pageContent) {
-		console.log("function displayPage");
-		console.log("pageDiv: " + pageDiv);
-		console.log("pageUrl: " + pageUrl);
-		console.log("pageContent: " + pageContent);
-		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
-			jQuery('#'+visiblePage).hide( function() {
-				if (pageContent) {
-					jQuery('#content_wrapper').css('opacity', '0');
-					jQuery('#content_wrapper').append(pageContent);
-					jQuery('#content_wrapper').animate({'opacity':'1'},750);
-					addHighlightSlideCursor();
-				} else {
-					jQuery('#'+pageDiv).show().animate({'opacity':'1'},750);
-				}
-				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-				updateCategory(pageDiv);
-				updateTitle(pageTitle);
-				if (pageUrl) {
-					updateUrl(pageUrl);
-				}
-				updateVisiblePage();
-				hideLoadingAnimation();
-			});
-		});
-	}
 	function transitionSlide(pageId, oldSlide, newSlide) {
 		var newSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+newSlide+']');
 		var oldSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+oldSlide+']');
@@ -107,7 +81,7 @@ jQuery(document).ready( function() {
 		return !$.trim( element.html() );
 	}
 	function loadPage(pageUrl, pagePath) {
-		console.log("function loadPage");
+		console.log("function loadPage(pageUrl, pagePath)");
 		console.log("pageUrl: " + pageUrl);
 		console.log("pagePath: " + pagePath);
 
@@ -117,9 +91,12 @@ jQuery(document).ready( function() {
 		// page: 402
 
 		if (isPageLoading) { return; }
+
+		console.log("function AJAXorCache(pageDiv, postType, postID)");
 		pagePath = pagePath || pageUrl;
 		var pageDiv = pathParser(pagePath, 'divId');
 		console.log("pageDiv: " + pageDiv);
+
 		if (pageDiv === visiblePage) { return; }
 
 		var ajaxArray = pathParser(pagePath, 'array');
@@ -127,8 +104,8 @@ jQuery(document).ready( function() {
 		var postID = ajaxArray[1];		// 402	// work
 		console.log("postType: " + postType);
 		console.log("postID: " + postID);
+
 		showLoadingAnimation();
-		console.log("here");
 		if (isEmpty(jQuery('#'+pageDiv))) {
 			// Fetch new page.
 			jQuery.ajax({
@@ -136,11 +113,11 @@ jQuery(document).ready( function() {
 				url: ajaxurl,
 				data: {action: 'getAjaxData', postType: postType, postID: postID, token: window.nonce },
 				success: function(pageContent) {
-					console.log("sent request");
+					console.log("AJAX success");
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
-					console.log("error ajax");
+					console.log("AJAX error");
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
@@ -150,9 +127,45 @@ jQuery(document).ready( function() {
 			});
 		} else {
 			// Show cached page.
-			console.log("show cached page");
+			console.log("CACHED success");
 			displayPage(pageDiv, pageUrl);
 		}
+
+		console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+		console.log("pageDiv: " + pageDiv);
+		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
+		//console.log("pagePath: " + pagePath);
+		console.log("pageTitle: " + pageTitle);
+		console.log("pageUrl: " + pageUrl);
+		history.pushState(pageDiv, pageTitle, pageUrl);
+
+	}
+	function displayPage(pageDiv, pageUrl, pageContent) {
+		console.log("function displayPage(pageDiv, pageUrl, pageContent)");
+		console.log("pageDiv: " + pageDiv);
+		console.log("pageUrl: " + pageUrl);
+		console.log("pageContent: ... " );
+		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
+			jQuery('#'+visiblePage).hide( function() {
+				if (pageContent) {
+					jQuery('#content_wrapper').css('opacity', '0');
+					jQuery('#content_wrapper').append(pageContent);
+					jQuery('#content_wrapper').animate({'opacity':'1'},750);
+					addHighlightSlideCursor();
+				} else {
+					jQuery('#'+pageDiv).show().animate({'opacity':'1'},750);
+				}
+				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
+				updateCategory(pageDiv);
+				updateTitle(pageTitle);
+				if (pageUrl) {
+					pageReferrerUrl = document.location.href;
+					trackPage();
+				}
+				updateVisiblePage();
+				hideLoadingAnimation();
+			});
+		});
 	}
 	function trackPage(pageUrl, pageTitle) {
 		if (!isTrackingOn) { return; }
@@ -253,14 +266,29 @@ jQuery(document).ready( function() {
 	});
 	window.onload = function() {
 		jQuery('#navigation_wrapper').animate({'opacity':'1'},1000);
+		pageDiv = visiblePage;
+		var pageTitle = jQuery('#'+visiblePage).data('pageTitle');
+		pageUrl = document.location.pathname;
+		console.log("Added first history for: " + pageDiv);
+		console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+		console.log("pageDiv: " + pageDiv);
+		console.log("pageTitle: " + pageTitle);
+		console.log("pageUrl: " + pageUrl);
+		history.pushState(pageDiv, pageTitle, pageUrl);
+		updateTitle(pageTitle);
 		hideLoadingAnimation();
 	};
 	addHighlightSlideCursor();
 
 	// Back and forward navigation event handlers.
-	window.addEventListener('popstate', function() {
+	window.addEventListener('popstate', function(event) {
+		// https://developer.mozilla.org/en-US/docs/Web/API/Window/popstate_event
+		console.log("listener popstate")
 		var pageUrl = document.location.pathname;
-		loadPage(pageUrl);
+		var pageDiv = event.state;
+		console.log("pageUrl: " + pageUrl);
+		console.log("pageDiv: " + pageDiv);
+		displayPage(pageDiv, pageUrl);
 	});
 
 	// Mouse over effects for the navigation.
