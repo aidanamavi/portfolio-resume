@@ -81,10 +81,10 @@ jQuery(document).ready( function() {
 		return !$.trim( element.html() );
 	}
 	function loadPage(pageUrl, postType, postId) {
-		console.log("function loadPage(pageUrl, postType, postId)");
-		console.log("pageUrl: " + pageUrl);
-		console.log("postType: " + postType);
-		console.log("postId: " + postId);
+		//console.log("function loadPage(pageUrl, postType, postId)");
+		//console.log("pageUrl: " + pageUrl);
+		//console.log("postType: " + postType);
+		//console.log("postId: " + postId);
 		//console.log("pagePath: " + pagePath);
 
 		// pageUrl: https://aidanamavi.com/work/aidan-amavi/ base.min.js:106:11
@@ -94,18 +94,18 @@ jQuery(document).ready( function() {
 
 		if (isPageLoading) { return; }
 
-		console.log("function AJAXorCache(pageDiv, postType, postId)");
+		//console.log("function AJAXorCache(pageDiv, postType, postId)");
 		// pagePath = pagePath || pageUrl;
 		var pageDiv = getPageDiv(postType, postId, 'divId');
-		console.log("pageDiv: " + pageDiv);
+		//console.log("pageDiv: " + pageDiv);
 
 		if (pageDiv === visiblePage) { return; }
 
 		// var ajaxArray = pathParser(pagePath, 'array');
 		// var postType = ajaxArray[0]; 	// work	// index
 		// var postID = ajaxArray[1];		// 402	// work
-		console.log("postType: " + postType);
-		console.log("postId: " + postId);
+		//console.log("postType: " + postType);
+		//console.log("postId: " + postId);
 
 		showLoadingAnimation();
 		if (isEmpty(jQuery('#'+pageDiv))) {
@@ -115,11 +115,11 @@ jQuery(document).ready( function() {
 				url: ajaxurl,
 				data: {action: 'getAjaxData', postType: postType, postId: postId, token: window.nonce },
 				success: function(pageContent) {
-					console.log("AJAX success");
+					//console.log("AJAX success");
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
-					console.log("AJAX error");
+					//console.log("AJAX error");
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
@@ -129,30 +129,30 @@ jQuery(document).ready( function() {
 			});
 		} else {
 			// Show cached page.
-			console.log("CACHED success");
+			//console.log("CACHED success");
 			displayPage(pageDiv, pageUrl);
-			console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
-			console.log("pageDiv: " + pageDiv);
+			//console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+			//console.log("pageDiv: " + pageDiv);
 			var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-			console.log("pageTitle: " + pageTitle);
-			console.log("pageUrl: " + pageUrl);
+			//console.log("pageTitle: " + pageTitle);
+			//console.log("pageUrl: " + pageUrl);
 			history.pushState(pageDiv, pageTitle, pageUrl);
 		}
 
 
 	}
 	function displayPage(pageDiv, pageUrl, pageContent, pageHistory) {
-		console.log("function displayPage(pageDiv, pageUrl, pageContent, pageHistory)");
-		console.log("pageDiv: " + pageDiv);
-		console.log("pageUrl: " + pageUrl);
-		console.log("pageContent: ... " );
+		//console.log("function displayPage(pageDiv, pageUrl, pageContent, pageHistory)");
+		//console.log("pageDiv: " + pageDiv);
+		//console.log("pageUrl: " + pageUrl);
+		//console.log("pageContent: ... " );
 		if (pageHistory === undefined) {
-			console.log("pageHistory: undefined / true");
+			//console.log("pageHistory: undefined / true");
 			pageHistory = true;
 		} else {
-			console.log("pageHistory: " + pageHistory);
+			//console.log("pageHistory: " + pageHistory);
 		}
-		console.log("pageHistory: " + pageHistory);
+		//console.log("pageHistory: " + pageHistory);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
@@ -171,11 +171,11 @@ jQuery(document).ready( function() {
 					trackPage();
 				}
 				if(pageHistory) {
-					console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
-					console.log("pageDiv: " + pageDiv);
+					//console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+					//console.log("pageDiv: " + pageDiv);
 					var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-					console.log("pageTitle: " + pageTitle);
-					console.log("pageUrl: " + pageUrl);
+					//console.log("pageTitle: " + pageTitle);
+					//console.log("pageUrl: " + pageUrl);
 					history.pushState(pageDiv, pageTitle, pageUrl);
 				}
 				updateVisiblePage();
@@ -311,33 +311,28 @@ jQuery(document).ready( function() {
 		pageDiv = visiblePage;
 		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 		pageUrl = document.location.pathname;
-		console.log("Added first history for: " + pageDiv);
-		console.log("function history.replaceState(pageDiv, pageTitle, pageUrl)");
-		console.log("pageDiv: " + pageDiv);
-		console.log("pageTitle: " + pageTitle);
-		console.log("pageUrl: " + pageUrl);
+		//console.log("Added first history for: " + pageDiv);
+		//console.log("function history.replaceState(pageDiv, pageTitle, pageUrl)");
+		//console.log("pageDiv: " + pageDiv);
+		//console.log("pageTitle: " + pageTitle);
+		//console.log("pageUrl: " + pageUrl);
 		history.replaceState(pageDiv, pageTitle, pageUrl);
-		//updateTitle(pageTitle);
 		hideLoadingAnimation();
 	};
 	addHighlightSlideCursor();
 
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
-		// https://developer.mozilla.org/en-US/docs/Web/API/Window/popstate_event
-		console.log("listener popstate")
+		//console.log("listener popstate")
 		var pageUrl = document.location.pathname;
 		var pageDiv = event.state;
 		var pageContent = null;
 		var pageHistory = false;
-		console.log("pageUrl: " + pageUrl);
-		console.log("pageDiv: " + pageDiv);
-		if(pageDiv === null) {
-
-		} else {
+		//console.log("pageUrl: " + pageUrl);
+		//console.log("pageDiv: " + pageDiv);
+		if(pageDiv != null) {
 			displayPage(pageDiv, pageUrl, pageContent, pageHistory);
 		}
-
 	});
 
 	// Mouse over effects for the navigation.
@@ -358,7 +353,7 @@ jQuery(document).ready( function() {
 		var linkType = link.data('linkType');
 		var pageUrl = link.attr('href');
 
-		console.log("link detected: " + pageUrl);
+		//console.log("link detected: " + pageUrl);
 
 		if (linkType === 'headerNavigation') {
 			internalLink();
