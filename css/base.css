@@ -66,7 +66,6 @@ iframe {
 	max-height: 529px;
 	width: 100%;
 	height: 56.25vw;
-	max-width: calc(100% - 10px);
 }
 #loading_animation {
     position: fixed;
@@ -318,14 +317,14 @@ input[type=submit]:active {
 	-o-transition: 500ms linear 0s;
 	transition: 500ms linear 0s;
 }
+.highlight_slides {
+	position: relative;
+}
 .highlight_slides>div {
 	height: 100%;
 	background-color: #000;
 }
 .highlight_slides div img {
-	/* Fixes the absolute positioned div overflow */
-	max-width: calc(100% - 10px);
-
 	width: 100%;
 	height: auto;
 }
