@@ -281,7 +281,7 @@ add_action( 'wp_ajax_nopriv_getAjaxData', 'getAjaxData' );
 // Uses AJAX data object {action: fetch-data $_POST[ 'key' ]: value}
 function getAjaxData( $category='', $offset='10' ) {
  	$postType = $_POST[ 'postType' ];
-	$postID = $_POST[ 'postID' ];
+	$postID = $_POST[ 'postId' ];
 
 	$id = $_POST[ 'id' ];
 
