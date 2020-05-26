@@ -42,7 +42,7 @@
 <?php					$slideImageUrl = remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true )));
 							$slideYouTubeUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_youtube_url', true ));
 							if ($slideYouTubeUrl) : ?>
-							<iframe width="940" height="492" src="<?php echo $slideYouTubeUrl; ?>" allowfullscreen></iframe>
+							<iframe src="<?php echo $slideYouTubeUrl; ?>" allowfullscreen></iframe>
 <?php 				else: ?>
 							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="">
 <?php 				endif; ?>

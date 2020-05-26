@@ -63,6 +63,10 @@ article h1 {
 }
 iframe {
 	border: 0px;
+	max-height: 529px;
+	width: 100%;
+	height: 56.25vw;
+	max-width: calc(100% - 10px);
 }
 #loading_animation {
     position: fixed;
@@ -327,6 +331,7 @@ input[type=submit]:active {
 .row {
 	width: 100%;
 	overflow: auto;
+	text-align: center;
 }
 .column {
 	padding: 10px;
@@ -355,7 +360,7 @@ input[type=submit]:active {
 .column,
 .numbers div {
 	position: relative;
-	float: left;
+	display: inline-block;
 }
 .column_2 img {
 	display: block;
@@ -373,13 +378,13 @@ div.highlight_slides .slide {
 	z-index: 5;
 }
 .column {
-	width: calc(100% - 20px);
+	width: calc(100% - 23px);
 }
 
 /* Tablet browsers styles */
 @media only screen and (min-device-width: 768px) {
 	.column {
-		max-width: calc(50% - 20px);
+		max-width: calc(50% - 23px);
 	}
 }
 
