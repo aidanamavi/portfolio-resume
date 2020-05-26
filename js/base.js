@@ -8,7 +8,7 @@
  * @copyright 2012 - 2020, Aidan Amavi
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
-/*global _paq, alert, siteName, category, userId, nonce*/
+/*global _paq, alert, siteTitle, category, userId, nonce*/
 
 jQuery(document).ready( function() {
 	// Configurable settings.
@@ -81,11 +81,10 @@ jQuery(document).ready( function() {
 		return !$.trim( element.html() );
 	}
 	function loadPage(pageUrl, postType, postId) {
-		//console.log("function loadPage(pageUrl, postType, postId)");
-		//console.log("pageUrl: " + pageUrl);
-		//console.log("postType: " + postType);
-		//console.log("postId: " + postId);
-		//console.log("pagePath: " + pagePath);
+		console.log("function loadPage(pageUrl, postType, postId)");
+		console.log("pageUrl: " + pageUrl);
+		console.log("postType: " + postType);
+		console.log("postId: " + postId);
 
 		// pageUrl: https://aidanamavi.com/work/aidan-amavi/ base.min.js:106:11
 		// pagePath: /work/402 base.min.js:107:11
@@ -94,18 +93,18 @@ jQuery(document).ready( function() {
 
 		if (isPageLoading) { return; }
 
-		//console.log("function AJAXorCache(pageDiv, postType, postId)");
+		console.log("function AJAXorCache(pageDiv, postType, postId)");
 		// pagePath = pagePath || pageUrl;
 		var pageDiv = getPageDiv(postType, postId, 'divId');
-		//console.log("pageDiv: " + pageDiv);
+		console.log("pageDiv: " + pageDiv);
 
 		if (pageDiv === visiblePage) { return; }
 
 		// var ajaxArray = pathParser(pagePath, 'array');
 		// var postType = ajaxArray[0]; 	// work	// index
 		// var postID = ajaxArray[1];		// 402	// work
-		//console.log("postType: " + postType);
-		//console.log("postId: " + postId);
+		console.log("postType: " + postType);
+		console.log("postId: " + postId);
 
 		showLoadingAnimation();
 		if (isEmpty(jQuery('#'+pageDiv))) {
@@ -115,11 +114,11 @@ jQuery(document).ready( function() {
 				url: ajaxurl,
 				data: {action: 'getAjaxData', postType: postType, postId: postId, token: window.nonce },
 				success: function(pageContent) {
-					//console.log("AJAX success");
+					console.log("AJAX success");
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
-					//console.log("AJAX error");
+					console.log("AJAX error");
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
@@ -129,30 +128,30 @@ jQuery(document).ready( function() {
 			});
 		} else {
 			// Show cached page.
-			//console.log("CACHED success");
+			console.log("CACHED success");
 			displayPage(pageDiv, pageUrl);
-			//console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
-			//console.log("pageDiv: " + pageDiv);
+			console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+			console.log("pageDiv: " + pageDiv);
 			var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-			//console.log("pageTitle: " + pageTitle);
-			//console.log("pageUrl: " + pageUrl);
+			console.log("pageTitle: " + pageTitle);
+			console.log("pageUrl: " + pageUrl);
 			history.pushState(pageDiv, pageTitle, pageUrl);
 		}
 
 
 	}
 	function displayPage(pageDiv, pageUrl, pageContent, pageHistory) {
-		//console.log("function displayPage(pageDiv, pageUrl, pageContent, pageHistory)");
-		//console.log("pageDiv: " + pageDiv);
-		//console.log("pageUrl: " + pageUrl);
-		//console.log("pageContent: ... " );
+		console.log("function displayPage(pageDiv, pageUrl, pageContent, pageHistory)");
+		console.log("pageDiv: " + pageDiv);
+		console.log("pageUrl: " + pageUrl);
+		console.log("pageContent: ... " );
 		if (pageHistory === undefined) {
-			//console.log("pageHistory: undefined / true");
+			console.log("pageHistory: undefined / true");
 			pageHistory = true;
 		} else {
-			//console.log("pageHistory: " + pageHistory);
+			console.log("pageHistory: " + pageHistory);
 		}
-		//console.log("pageHistory: " + pageHistory);
+		console.log("pageHistory: " + pageHistory);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
@@ -165,17 +164,18 @@ jQuery(document).ready( function() {
 				}
 				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 				updateCategory(pageDiv);
+				console.log("pageTitle: " + pageTitle);
 				updateTitle(pageTitle);
 				if (pageUrl) {
 					pageReferrerUrl = document.location.href;
 					trackPage();
 				}
 				if(pageHistory) {
-					//console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
-					//console.log("pageDiv: " + pageDiv);
+					console.log("function history.pushState(pageDiv, pageTitle, pageUrl)");
+					console.log("pageDiv: " + pageDiv);
 					var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-					//console.log("pageTitle: " + pageTitle);
-					//console.log("pageUrl: " + pageUrl);
+					console.log("pageTitle: " + pageTitle);
+					console.log("pageUrl: " + pageUrl);
 					history.pushState(pageDiv, pageTitle, pageUrl);
 				}
 				updateVisiblePage();
@@ -210,17 +210,17 @@ jQuery(document).ready( function() {
 	}
 	function updateTitle(pageTitle) {
 		var pageSeperator = ' › ';
-		title = siteName;
+		var newSiteTitle = siteTitle;
 		if (window.categoryName.length > 0) {
 			if (window.categoryName === 'post') {
 				window.categoryName = 'blog';
 			}
 			if(pageTitle.toLowerCase() !== window.categoryName.toLowerCase()){
-				title += pageSeperator+window.categoryName.capitalize();
+				newSiteTitle += pageSeperator+window.categoryName.capitalize();
 			}
 		}
-		title += pageSeperator+pageTitle;
-		window.document.title = title;
+		newSiteTitle += pageSeperator+pageTitle;
+		window.document.title = newSiteTitle;
 	}
 	function updateUrl(pageUrl) {
 		pageReferrerUrl = document.location.href;
@@ -311,11 +311,11 @@ jQuery(document).ready( function() {
 		pageDiv = visiblePage;
 		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 		pageUrl = document.location.pathname;
-		//console.log("Added first history for: " + pageDiv);
-		//console.log("function history.replaceState(pageDiv, pageTitle, pageUrl)");
-		//console.log("pageDiv: " + pageDiv);
-		//console.log("pageTitle: " + pageTitle);
-		//console.log("pageUrl: " + pageUrl);
+		console.log("Added first history for: " + pageDiv);
+		console.log("function history.replaceState(pageDiv, pageTitle, pageUrl)");
+		console.log("pageDiv: " + pageDiv);
+		console.log("pageTitle: " + pageTitle);
+		console.log("pageUrl: " + pageUrl);
 		history.replaceState(pageDiv, pageTitle, pageUrl);
 		hideLoadingAnimation();
 	};
@@ -323,13 +323,13 @@ jQuery(document).ready( function() {
 
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
-		//console.log("listener popstate")
+		console.log("listener popstate");
 		var pageUrl = document.location.pathname;
 		var pageDiv = event.state;
 		var pageContent = null;
 		var pageHistory = false;
-		//console.log("pageUrl: " + pageUrl);
-		//console.log("pageDiv: " + pageDiv);
+		console.log("pageUrl: " + pageUrl);
+		console.log("pageDiv: " + pageDiv);
 		if(pageDiv != null) {
 			displayPage(pageDiv, pageUrl, pageContent, pageHistory);
 		}
@@ -349,11 +349,11 @@ jQuery(document).ready( function() {
 			event.preventDefault();
 			event.stopPropagation();
 		}
-		var pagePath; var link = jQuery(this);
+		var link = jQuery(this);
 		var linkType = link.data('linkType');
 		var pageUrl = link.attr('href');
 
-		//console.log("link detected: " + pageUrl);
+		console.log("link detected: " + pageUrl);
 
 		if (linkType === 'headerNavigation') {
 			internalLink();
