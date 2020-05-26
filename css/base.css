@@ -179,10 +179,11 @@ nav div:hover {
 .title_wrapper .titles {
 	position: relative;
 	text-align: left;
+	overflow: hidden;
 }
 .titles img {
-	width: 400px;
-	height: 30px;
+	max-width: 400px;
+	max-height: 30px;
 }
 .numbers_wrapper {
 	position: absolute !important;
