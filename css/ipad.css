@@ -1,5 +1,5 @@
 @media only screen and (orientation:portrait) {
-   /* iPad in Portrait orientation */
+  /* iPad in Portrait orientation */
 
 }
 
@@ -11,4 +11,9 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /*  iPhone apps on iPad with Web Views */
 
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }

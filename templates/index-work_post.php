@@ -30,11 +30,6 @@
 						</div>
 					</div>
 <?php 		endif; ?>
-					<div class="title_wrapper">
-						<div class="titles">
-							<img src="<?php echo remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'title_image_url', true ))); ?>" alt="">
-						</div>
-					</div>
 					<div class="highlight_slides">
 <?php 		while ($slideCount <= $slideTotal) :
 							$slideId = 'slide_'.$slideCount; ?>
@@ -47,12 +42,21 @@
 							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="">
 <?php 				endif; ?>
 							<div class="highlights_text">
+								<div class="title_wrapper">
+									<div class="titles">
+										<h1>
+											<?php the_title_attribute(); ?>
+										</h1>
+									</div>
+								</div>
 <?php
 							$roles = get_post_meta( get_the_ID(), $slideId.'_roles', true );
 							if ($roles) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>occupations</strong>
+										<h2>
+											roles
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -75,7 +79,9 @@ echo '											'.displayMetaLabel('roles', $role).'<br />'.PHP_EOL;
 							if ($disciplines) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>disciplines</strong>
+										<h2>
+											disciplines
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -98,7 +104,9 @@ echo '											'.displayMetaLabel('disciplines', $discipline).'<br />'.PHP_EOL
 							if ($tools) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>tools</strong>
+										<h2>
+											tools
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -121,7 +129,9 @@ echo '											'.displayMetaLabel('tools', $tool).'<br />'.PHP_EOL;
 							if ($products) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>products</strong>
+										<h2>
+											products
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -144,7 +154,9 @@ echo '											'.displayMetaLabel('products', $product).'<br />'.PHP_EOL;
 							if ($presentations) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>presentations</strong>
+										<h2>
+											presentations
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -167,13 +179,14 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 							if ($description) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<strong>description</strong>
+										<h2>
+											description
+										</h2>
 									</div>
 									<div>
 <?php
-echo '										'.do_shortcode(nl2br($description)).'<br />'.PHP_EOL;
+echo '										'.do_shortcode(nl2br($description)).PHP_EOL;
 										unset($description); ?>
-										<br />
 									</div>
 								</div>
 <?php 				endif; ?>
