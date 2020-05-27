@@ -14,28 +14,28 @@
 ?>
 			</div>
 			<footer>
-<?php		$trackerUrl = get_theme_mod('piwik_tracker_url_textbox');
-				$trackerId = get_theme_mod('piwik_site_id_textbox');
+<?php		$trackerUrl = get_theme_mod('matomo_tracker_url_textbox');
+				$trackerId = get_theme_mod('matomo_site_id_textbox');
 				if ($trackerUrl && $trackerId) : ?>
-				<!-- Piwik -->
+				<!-- Matomo -->
 				<script type="text/javascript">
 				var _paq = _paq || [];
 				_paq.push(['trackPageView']);
 				_paq.push(['enableLinkTracking']);
 					(function() {
 				    var u="<?php echo $trackerUrl; ?>";
-				    _paq.push(['setTrackerUrl', u+'piwik.php']);
+				    _paq.push(['setTrackerUrl', u+'matomo.php']);
 				    _paq.push(['setSiteId', <?php echo $trackerId; ?>]);
 				    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-				    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+				    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 				  })();
 				</script>
 				<noscript>
 					<p>
-						<img src="<?php echo $trackerUrl; ?>piwik.php?idsite=<?php echo $trackerId; ?>" style="border:0;" alt="" />
+						<img src="<?php echo $trackerUrl; ?>matomo.php?idsite=<?php echo $trackerId; ?>" style="border:0;" alt="" />
 					</p>
 				</noscript>
-				<!-- End Piwik Code -->
+				<!-- End Matomo Code -->
 <?php 	endif; ?>
 			</footer>
 		</div>

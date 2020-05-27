@@ -228,46 +228,46 @@ function customize_seo_keywords( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'customize_seo_keywords' );
-function customize_piwik_tracking( $wp_customize ) {
+function customize__tracking( $wp_customize ) {
   $wp_customize->add_section(
-      'piwik_section',
+      'matomo_section',
       array(
-        'title' => 'Piwik Settings',
+        'title' => 'Matomo Settings',
         'priority' => 35,
       )
   );
 	$wp_customize->add_setting(
-    'piwik_site_id_textbox',
+    'matomo_site_id_textbox',
     array(
       'default' => '',
 			'transport'   => 'postMessage',
     )
 	);
 	$wp_customize->add_control(
-    'piwik_site_id_textbox',
+    'matomo_site_id_textbox',
     array(
       'label' => 'Site ID',
-      'section' => 'piwik_section',
+      'section' => 'matomo_section',
       'type' => 'text',
     )
 	);
 	$wp_customize->add_setting(
-    'piwik_tracker_url_textbox',
+    'matomo_tracker_url_textbox',
     array(
       'default' => '',
 			'transport'   => 'postMessage',
     )
 	);
 	$wp_customize->add_control(
-    'piwik_tracker_url_textbox',
+    'matomo_tracker_url_textbox',
     array(
       'label' => 'Tracker URL',
-      'section' => 'piwik_section',
+      'section' => 'matomo_section',
       'type' => 'text',
     )
 	);
 }
-add_action( 'customize_register', 'customize_piwik_tracking' );
+add_action( 'customize_register', 'customize_matomo_tracking' );
 
 /**
  * Must use global $post to use setup_postdata().

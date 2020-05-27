@@ -161,7 +161,7 @@
 											Icecast<br />
 											Shoutcast<br /><br />
 											Wordpress<br />
-											Piwik<br /><br />
+											Matomo<br /><br />
 											PHP<br />
 											MySQL<br />
 											Javascript<br />
@@ -333,39 +333,39 @@
 									</div>
 									<div class="skills_column_half">
 										<?php if ($_GET['b'] == 'b') : ?>
-										<a href="https://maps.google.com/maps?q=Orlando,+FL,+United+States" class="glow piwik_link" target="_blank">
+										<a href="https://maps.google.com/maps?q=Orlando,+FL,+United+States" class="glow matomo_link" target="_blank">
 											Address: Orlando, FL, United States
 										</a><br />
 										<?php else: ?>
-										<a href="https://maps.google.com/maps?q=New+York,+NY,+United+States" class="glow piwik_link" target="_blank">
+										<a href="https://maps.google.com/maps?q=New+York,+NY,+United+States" class="glow matomo_link" target="_blank">
 											Address: New York, NY, United States
 										</a><br />
 										<?php endif; ?>
-										<a href="mailto:mail@aidanamavi.com" class="glow piwik_link" target="_blank">
+										<a href="mailto:mail@aidanamavi.com" class="glow matomo_link" target="_blank">
 											Email: mail@aidanamavi.com
 										</a><br />
 										<br />
-										<a href="tel:16465358321" class="glow piwik_link" target="_blank">
+										<a href="tel:16465358321" class="glow matomo_link" target="_blank">
 											Phone: +1 646.535.8321
 										</a><br />
-										<a href="skype:aidan.amavi.?add" class="glow piwik_link" target="_blank">
+										<a href="skype:aidan.amavi.?add" class="glow matomo_link" target="_blank">
 											Skype: Aidan.Amavi.
 										</a>
 									</div>
 									<div class="skills_column_half">
-										<a href="http://aidanamavi.com" class="glow piwik_link" target="_blank">
+										<a href="http://aidanamavi.com" class="glow matomo_link" target="_blank">
 											Website
 										</a><br />
-										<a href="http://aidanamavi.com/work" class="glow piwik_link" target="_blank">
+										<a href="http://aidanamavi.com/work" class="glow matomo_link" target="_blank">
 											Portfolio
 										</a><br />
-										<a href="https://www.linkedin.com/in/aidanamavi" class="glow piwik_link" target="_blank">
+										<a href="https://www.linkedin.com/in/aidanamavi" class="glow matomo_link" target="_blank">
 											LinkedIn
 										</a><br />
-										<a href="http://www.imdb.com/name/nm6377483/" class="glow piwik_link" target="_blank">
+										<a href="http://www.imdb.com/name/nm6377483/" class="glow matomo_link" target="_blank">
 											IMDb
 										</a><br />
-										<a href="https://github.com/aidanamavi" class="glow piwik_link" target="_blank">
+										<a href="https://github.com/aidanamavi" class="glow matomo_link" target="_blank">
 											GitHub
 										</a><br />
 									</div>

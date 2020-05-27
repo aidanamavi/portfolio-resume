@@ -210,7 +210,7 @@ $toolGroups = array(
 	),
 	array(
 		'wordpress'					=> __('Wordpress', 'changeMe'),
-		'piwik'							=> __('Piwik', 'changeMe'),
+		'matomo'							=> __('Matomo', 'changeMe'),
 	),
 	array(
 		'php'								=> __('PHP', 'changeMe'),
