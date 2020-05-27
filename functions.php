@@ -228,7 +228,7 @@ function customize_seo_keywords( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'customize_seo_keywords' );
-function customize__tracking( $wp_customize ) {
+function customize_matomo_tracking( $wp_customize ) {
   $wp_customize->add_section(
       'matomo_section',
       array(

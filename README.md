@@ -7,7 +7,7 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 ## Why is this so awesome?
 
 * :rocket: **Integration with world-class open-source software.** Tested with and built on Linux, Apache, MySQL, PHP, Wordpress, jQuery, Matomo, and Wordfence.
-* :zap: **Incredibly fast with built-in caching.** Front-end client-side caching, and optimized scripts.
+* :zap: **Incredibly fast with built-in caching.** Front-end client-side caching with AJAX built-in.
 * :lock: **Works seamlessly with encrypted content.** Works automagically with your SSL certificates.
 * :+1: **Standards compliant & validated code.** HTML5, CSS3, and JSLint code analysis and verification.
 * :iphone: **Responsive design.** Support for desktops, laptops, tablets, and smartphone screens.
