@@ -8,7 +8,7 @@
 	*
 	* @author Aidan Amavi <mail@aidanamavi.com>
 	* @link http://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2015, Aidan Amavi
+	* @copyright 2012 - 2020, Aidan Amavi
 	* @license http://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
 	*/
 ?>
