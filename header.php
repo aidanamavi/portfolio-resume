@@ -47,16 +47,16 @@
 	  <meta name="apple-mobile-web-app-capable" content="yes">
 	  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/apple_touch_icon.png">
-		<?php if (preg_match('iPad', $_SERVER['HTTP_USER_AGENT'])): ?>
+		<?php if (preg_match('/iPad/', $_SERVER['HTTP_USER_AGENT'])): ?>
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ipad.css">
-		<?php elseif (preg_match('iPhone', $_SERVER['HTTP_USER_AGENT'])) : ?>
+		<?php elseif (preg_match('/iPhone/', $_SERVER['HTTP_USER_AGENT'])) : ?>
 		<link type="text/css" rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/iphone.css">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone_4@2x.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
 		<link rel="apple-touch-startup-image" href="<?php bloginfo('template_url'); ?>/img/apple_touch_startup_iphone_5@2x.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
 		<?php endif; ?>
 	<?php else : ?>
-<?php endif; ?>
+<?php 	endif; ?>
 		<?php wp_head(); ?>
 <?php
 		global $cat;
