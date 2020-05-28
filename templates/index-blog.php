@@ -15,7 +15,9 @@
 				<div id="page_archive_blog" data-page-title="Blog">
 					<div class="title_wrapper">
 						<div class="titles">
-							<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
+							<h1>
+								blog
+							</h2>
 						</div>
 					</div>
 <?php
