@@ -23,7 +23,7 @@ a, a:visited {
 	text-decoration: none;
 	text-shadow: none;
 }
-a:hover, a:active {
+a:hover, a:active, a:focus {
 	color: #30a4fb;
 	/* color: black;
 	background-color: white;
