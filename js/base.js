@@ -338,10 +338,23 @@ jQuery(document).ready( function() {
 	// Mouse over effects for the navigation.
 	jQuery('nav img.off').hover(
 		function() {
+			console.log("hover");
 			jQuery(this).stop().animate({'opacity': '0'},250); },
 		function() {
 			jQuery(this).stop().animate({'opacity': '1'},250);
 	});
+
+	// Focus effects for the navigation.
+	jQuery("nav a").focusin(
+		function() {
+			jQuery(this).children("img.off").stop().animate({'opacity': '0'},250);
+		}
+	);
+	jQuery("nav a").focusout(
+		function() {
+			jQuery(this).children("img.off").stop().animate({'opacity': '1'},250);
+		}
+	);
 
 	// Link click event handlers for pages, posts, categories, and outlinks.
 	jQuery(document).on('click', 'a', function(event){

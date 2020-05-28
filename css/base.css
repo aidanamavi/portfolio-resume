@@ -5,10 +5,10 @@
 	opacity: 0;
 }
 a {
-	-webkit-transition: 500ms linear 0s;
-	-moz-transition: 500ms linear 0s;
-	-o-transition: 500ms linear 0s;
-	transition: 500ms linear 0s;
+	-webkit-transition: 250ms linear 0s;
+	-moz-transition: 250ms linear 0s;
+	-o-transition: 250ms linear 0s;
+	transition: 250ms linear 0s;
 	-webkit-touch-callout: none; /* iOS */
 	-webkit-user-select: none; /* Chrome all / Safari all */
 	-khtml-user-select: none; /* Konqueror */
@@ -31,7 +31,7 @@ a:hover, a:active {
 	-o-transition: 250ms linear 0s;
 	transition: 250ms linear 0s;
 }
-a.new_glow:hover, a.new_glow:active {
+a.glow:hover, a.glow:active, a.glow:focus {
 	text-shadow: 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff;
 	color: #ffffff;
 	text-decoration: none;
