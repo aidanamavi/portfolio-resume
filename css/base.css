@@ -25,10 +25,6 @@ a, a:visited {
 }
 a:hover, a:active, a:focus {
 	color: #30a4fb;
-	/* color: black;
-	background-color: white;
-	border-radius: 4px;
-	padding: 5px; */
 	text-decoration: none;
 	-webkit-transition: 250ms linear 0s;
 	-moz-transition: 250ms linear 0s;
@@ -67,7 +63,7 @@ iframe {
 	height: 56.25vw;
 }
 #loading_animation {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -192,6 +188,7 @@ nav div:hover {
 .titles img {
 	max-width: 400px;
 	max-height: 30px;
+	width: 100%;
 }
 .numbers_wrapper {
 	letter-spacing: -5px;
@@ -333,6 +330,10 @@ input[type=submit]:active {
 	width: 100%;
 	height: auto;
 }
+.highlight_slides .slide {
+	position: absolute !important;
+	z-index: 5;
+}
 .row {
 	width: 100%;
 	overflow: auto;
@@ -340,6 +341,7 @@ input[type=submit]:active {
 }
 .column {
 	padding: 10px;
+	width: calc(100% - 23px);
 }
 .column:hover {
 	cursor: pointer;
@@ -367,23 +369,12 @@ input[type=submit]:active {
 	position: relative;
 	display: inline-block;
 }
-.column_2 img {
-	display: block;
-	text-align: right;
-}
 footer {
 	color: #333;
 	padding-bottom: 5px;
 }
 img#matomo {
 	border: 0;
-}
-div.highlight_slides .slide {
-	position: absolute !important;
-	z-index: 5;
-}
-.column {
-	width: calc(100% - 23px);
 }
 
 /* Tablet browsers styles */
