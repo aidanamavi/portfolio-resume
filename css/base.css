@@ -47,11 +47,9 @@ a.glow:hover, a.glow:active, a.glow:focus {
 article.blog_list {
 	width: 100%;
 	border-bottom: 1px solid #333;
-	line-height: 26px;
 }
 article h1 {
 	font-weight: 300;
-	font-size: 34px;
 }
 .blog_date_categories_tags {
 	font-weight: 300;
@@ -69,7 +67,7 @@ iframe {
 	height: 56.25vw;
 }
 #loading_animation {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
