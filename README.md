@@ -14,13 +14,13 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 * :bar_chart: **Matomo Analytics integration.** Works automagically without any setup.
 * :mag: **Search Engine Optimized.** Organizes your content behind-the-scenes for optimal indexing.
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
+* :wheelchair: **UX/UI** Accessible friendly design with support across all devices.
 
 And in the works for [version 0.2](https://github.com/aidanamavi/portfolio-resume/milestones/0.2):
 * :warning: **UX/UI** Input validation feedback for Work post type meta boxes.
-* :warning: **UX/UI** Improved font legibility across devices.
 
 And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resume/milestones/0.3):
-* :rocket: **WP Integration** Add an About page page type.
+* :rocket: **WP Integration** Add an About page post type.
 * :zap: **Speed Optimization** Backend compression, and caching options.
 * :art: **UX/UI** Work navigation sub-menu: keywords, products, roles.
 * :art: **UX/UI** Blog navigation sub-menu: archive, categories, rss.
@@ -48,7 +48,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 ## Setup
 
-#### Set up your about page.
+#### Set up your About page.
 
 1. Select 'Pages' and then 'Add New'
 2. Set the page title to 'About'
@@ -75,4 +75,4 @@ Front-end caching is done automagically. Back-end caching will be provided for t
 
 Active: [Aidan Amavi](https://github.com/AidanAmavi)
 
-If you’d like to join, just go through the [issue list](https://github.com/aidanamavi/portfolio-resume/issues) and fix some. :)
+If you’d like to help, just go through the [issue list](https://github.com/aidanamavi/portfolio-resume/issues) and fix some. :)
