@@ -18,7 +18,7 @@
 				$trackerId = get_theme_mod('matomo_site_id_textbox');
 				if ($trackerUrl && $trackerId) : ?>
 				<!-- Matomo -->
-				<script type="text/javascript">
+				<script>
 				var _paq = _paq || [];
 				_paq.push(['trackPageView']);
 				_paq.push(['enableLinkTracking']);

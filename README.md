@@ -14,7 +14,7 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 * :bar_chart: **Matomo Analytics integration.** Works automagically without any setup.
 * :mag: **Search Engine Optimized.** Organizes your content behind-the-scenes for optimal indexing.
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
-* :wheelchair: **UX/UI** Accessible friendly design with support across all devices.
+* :wheelchair: **Accessible friendly.** W3C Accessible Initiative support across all devices.
 
 And in the works for [version 0.2](https://github.com/aidanamavi/portfolio-resume/milestones/0.2):
 * :warning: **UX/UI** Input validation feedback for Work post type meta boxes.
