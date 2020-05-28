@@ -16,9 +16,6 @@ A portfolio and resume [Wordpress](http://www.wordpress.org) theme with minimali
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
 * :wheelchair: **Accessible friendly.** W3C Web Accessibility Initiative (WAI) support across all devices.
 
-And in the works for [version 0.2](https://github.com/aidanamavi/portfolio-resume/milestones/0.2):
-* :warning: **UX/UI** Input validation feedback for Work post type meta boxes.
-
 And in the works for [version 0.3](https://github.com/aidanamavi/portfolio-resume/milestones/0.3):
 * :rocket: **WP Integration** Add an About page post type.
 * :zap: **Speed Optimization** Backend compression, and caching options.
