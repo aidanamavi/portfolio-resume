@@ -332,15 +332,10 @@
 										<strong>contact info</strong><br />
 									</div>
 									<div class="skills_column_half">
-										<?php if ($_GET['b'] == 'b') : ?>
-										<a href="https://maps.google.com/maps?q=Orlando,+FL,+United+States" class="glow matomo_link" target="_blank">
-											Address: Orlando, FL, United States
-										</a><br />
-										<?php else: ?>
+
 										<a href="https://maps.google.com/maps?q=New+York,+NY,+United+States" class="glow matomo_link" target="_blank">
 											Address: New York, NY, United States
 										</a><br />
-										<?php endif; ?>
 										<a href="mailto:mail@aidanamavi.com" class="glow matomo_link" target="_blank">
 											Email: mail@aidanamavi.com
 										</a><br />
