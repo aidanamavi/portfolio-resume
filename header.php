@@ -33,12 +33,6 @@
 		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
 <?php endif; ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
-<?php global $is_IE;
-		if ($is_IE) : ?>
-		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php bloginfo('template_url'); ?>/img/browser_icon.ico" />
-		<?php else: ?>
-		<link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/browser_icon.png" />
-<?php endif; ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css?<?php echo rand(); ?>" type="text/css" media="all" />
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.min.js?<?php echo rand(); ?>"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/base.min.js?<?php echo rand(); ?>"></script>
