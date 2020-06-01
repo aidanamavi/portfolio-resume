@@ -418,8 +418,7 @@ img#matomo {
 	#wrapper {
 		margin: 0 auto !important;
 	}
-	.numbers_wrapper,
-	.title_wrapper {
+	.numbers_wrapper {
 		display: none;
 	}
 	#content_wrapper>* {
