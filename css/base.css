@@ -91,7 +91,6 @@ html, body {
 html {
 	height: 100% !important;
 	background-color: #000;
-	opacity: 0;
 	color: #ccc;
 	font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif !important;
 	overflow-y: scroll;
@@ -106,7 +105,7 @@ body {
 	-moz-user-select: -moz-none; /* Firefox all */
 	-ms-user-select: none; /* IE 10+ / Opera */
 }
-div#wrapper {
+#wrapper {
 	height: 100%;
 	max-width: 960px;
 	min-width: 330px;
@@ -122,7 +121,6 @@ div#wrapper {
 header {
 }
 #navigation_wrapper {
-	opacity: 0;
 	z-index: 10;
 }
 nav {
@@ -153,9 +151,6 @@ nav div:hover {
 	cursor: pointer;
 }
 #content_wrapper {
-	opacity: 0;
-	z-index: 10;
-	height: 100%;
 }
 #content_wrapper>* {
 	position: relative;
@@ -167,6 +162,10 @@ nav div:hover {
 }
 .numbers {
 	/* float: right; */
+}
+#page_archive_work {
+	display: table;
+	margin-bottom: 10px;
 }
 #page_archive_work .title_wrapper {
 	padding: 10px;
@@ -180,6 +179,7 @@ nav div:hover {
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
+	line-height: 2em;
 }
 .title_wrapper .titles h1 {
 	/* margin: 0; */
@@ -209,6 +209,7 @@ div.highlights_text {
 	line-height: 2em;
 	clear: both;
 	cursor: default;
+	margin-bottom: 50px; /* Space below the content*/
 }
 div.highlights_text div.masonry_wrapper {
 	width: 100%;
