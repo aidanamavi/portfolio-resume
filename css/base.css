@@ -84,29 +84,29 @@ a, a:visited {
 	text-shadow: none;
 }
 a:hover, a:active, a:focus {
-	color: #30a4fb;
+	color: red;
 	text-decoration: none;
-	-webkit-transition: 200ms linear 0s;
-	-moz-transition: 200ms linear 0s;
-	-o-transition: 200ms linear 0s;
-	transition: 200ms linear 0s;
+	-webkit-transition: 20ms linear 0s;
+	-moz-transition: 20ms linear 0s;
+	-o-transition: 20ms linear 0s;
+	transition: 20ms linear 0s;
 }
 a.glow:hover, a.glow:active, a.glow:focus {
 	text-shadow: 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff, 0 0 2px #c4dcff;
 	color: #ffffff;
 	text-decoration: none;
-	-webkit-transition: 200ms linear 0s;
-	-moz-transition: 200ms linear 0s;
-	-o-transition: 200ms linear 0s;
-	transition: 200ms linear 0s;
+	-webkit-transition: 20ms linear 0s;
+	-moz-transition: 20ms linear 0s;
+	-o-transition: 20ms linear 0s;
+	transition: 20ms linear 0s;
 }
 a.underline:hover, a.underline:active, a.underline:focus {
 	color: #ffffff;
 	text-decoration: none;
-	-webkit-transition: 100ms linear 0s;
-	-moz-transition: 100ms linear 0s;
-	-o-transition: 100ms linear 0s;
-	transition: 100ms linear 0s;
+	-webkit-transition: 20ms linear 0s;
+	-moz-transition: 20ms linear 0s;
+	-o-transition: 20ms linear 0s;
+	transition: 20ms linear 0s;
 	border-bottom: 2px solid red;
 }
 article.blog_list {
@@ -124,6 +124,12 @@ article h1 {
 .blog_content p {
 	line-height: 26px;
 	padding-bottom: 25px;
+}
+.blog_content a {
+	border-bottom: 2px solid maroon;
+}
+.blog_content a:hover, a:active {
+	color: white;
 }
 iframe {
 	border: 0px;
@@ -200,13 +206,13 @@ header nav {
 }
 header nav div {
 	display: inline-block;
-	padding: 0 10px;
+	padding: 10px;
 }
 header nav div:hover {
 	cursor: pointer;
 }
 header nav a {
-	font-size: 2em;
+	font-size: xx-large;
 	text-transform: uppercase;
 	font-family: 'Metropolis Black', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif !important;
 }
@@ -437,6 +443,9 @@ img#matomo {
 
 /* Tablet browsers styles */
 @media only screen and (min-device-width: 768px) {
+	header nav a {
+		font-size: xxx-large;
+	}
 	.column {
 		max-width: calc(50% - 23px);
 	}
@@ -448,7 +457,7 @@ img#matomo {
 		margin: 0;
 	}
 	.title_wrapper .titles {
-		font-size: larger;
+		font-size: large;
 		line-height: normal;;
 	}
 }
