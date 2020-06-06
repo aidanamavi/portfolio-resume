@@ -13,16 +13,14 @@
 	*/
 ?>
 				<div id="page_archive_work" data-page-title="Work">
-					<div class="title_wrapper">
-						<div class="titles">
-							<a href="#" class="glow" data-project-type="all" data-link-type="workNavigation">All</a>&nbsp;&rsaquo;
-							<a href="#" class="glow" data-project-type="web" data-link-type="workNavigation">Web</a>&nbsp;&rsaquo;
-							<a href="#" class="glow" data-project-type="video" data-link-type="workNavigation">Video</a>&nbsp;&rsaquo;
-							<a href="#" class="glow" data-project-type="photo" data-link-type="workNavigation">Photo</a>&nbsp;&rsaquo;
-							<a href="#" class="glow" data-project-type="graphic" data-link-type="workNavigation">Graphic</a>&nbsp;&rsaquo;
-							<a href="#" class="glow" data-project-type="sound" data-link-type="workNavigation">Sound</a>
-						</div>
-					</div>
+					<nav>
+						<a href="#" class="underline" data-project-type="all" data-link-type="workNavigation">All</a>&nbsp;&rsaquo;
+						<a href="#" class="underline" data-project-type="web" data-link-type="workNavigation">Web</a>&nbsp;&rsaquo;
+						<a href="#" class="underline" data-project-type="video" data-link-type="workNavigation">Video</a>&nbsp;&rsaquo;
+						<a href="#" class="underline" data-project-type="photo" data-link-type="workNavigation">Photo</a>&nbsp;&rsaquo;
+						<a href="#" class="underline" data-project-type="graphic" data-link-type="workNavigation">Graphic</a>&nbsp;&rsaquo;
+						<a href="#" class="underline" data-project-type="sound" data-link-type="workNavigation">Sound</a>
+					</nav>
 					<div class="row">
 <?php
 					$args = array(

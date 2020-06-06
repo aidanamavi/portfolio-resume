@@ -15,7 +15,9 @@
 				<div id="page_category_<?php echo $cat; ?>" data-page-title="<?php strip_tags(esc_attr(single_cat_title())); ?>">
 					<div class="title_wrapper">
 						<div class="titles">
-							<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
+							<h1>
+								blog
+							</h1>
 						</div>
 					</div>
 <?php 		if (have_posts()): while (have_posts()): the_post(); ?>

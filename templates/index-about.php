@@ -13,15 +13,17 @@
 	*/
 ?>
 				<div id="page_archive_about" data-page-title="About">
-					<div class="title_wrapper">
-						<div class="titles">
-							<img src="<?php bloginfo('template_url'); ?>/img/title_aidanamavi@2x.png" alt="">
-						</div>
-					</div>
 					<div class="highlight_slides">
 						<div class="hightlight_number_1" id="about_1">
 							<img src="<?php bloginfo('template_url'); ?>/img/highlight_about_1.jpg" class="highlight" alt="">
 							<div class="highlights_text">
+								<div class="title_wrapper">
+									<div class="titles">
+										<h1>
+											Aidan Amavi
+										</h1>
+									</div>
+								</div>
 								<p>
 									Aidan Amavi is a creative professional who specializes in web, video, photo, graphic, and sound productions. He has over a decade of experience as a leader and facilitator for a variety of creative projects. His previous clients have included celebrities, models and artists as well as small, medium, and Fortune 500 companies.
 								</p>

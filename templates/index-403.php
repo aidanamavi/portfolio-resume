@@ -15,6 +15,9 @@
 			<div id="page_error_403" data-page-title="Forbidden Access">
 				<div class="title_wrapper">
 					<div class="titles">
+						<h1>
+							403
+						</h1>
 					</div>
 				</div>
 				<div class="highlight_post">

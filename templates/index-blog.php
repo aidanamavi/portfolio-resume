@@ -17,7 +17,7 @@
 						<div class="titles">
 							<h1>
 								blog
-							</h2>
+							</h1>
 						</div>
 					</div>
 <?php

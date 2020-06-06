@@ -15,6 +15,9 @@
 			<div id="page_error_404" data-page-title="File Not Found">
 				<div class="title_wrapper">
 					<div class="titles">
+						<h1>
+							404
+						</h1>
 					</div>
 				</div>
 				<div class="highlight_post">
