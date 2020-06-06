@@ -24,10 +24,12 @@
 					<div class="hightlight_number_1">
 						<div class="highlights_text">
 							<article>
-								<h1 class="blog_title">403&#8212; Forbidden Access</h1>
+								<h1 class="blog_title">403 &#8212; Forbidden Access</h1>
 								<h4 class="blog_date_categories_tags"></h4>
 								<div class="blog_content">
-									<p>Sorry, we were unable to supply the page you were looking for. Please check that you have entered the correct URL in your web browser's address bar, and refresh the page to verify your access.</p>
+									<p>
+										Sorry, we were unable to supply the page you were looking for. Please check that you have entered the correct URL in your web browser's address bar, and refresh the page to verify your access.
+									</p>
 								</div>
 							</article>
 						</div>

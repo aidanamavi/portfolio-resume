@@ -24,10 +24,12 @@
 					<div class="hightlight_number_1">
 						<div class="highlights_text">
 							<article>
-								<h1 class="blog_title">404&#8212; File Not Found</h1>
+								<h1 class="blog_title">404 &#8212; File Not Found</h1>
 								<h4 class="blog_date_categories_tags"></h4>
 								<div class="blog_content">
-									<p>Sorry, we were unable to find the page you were looking for. Please check that you have entered the correct URL in your web browser's address bar.</p>
+									<p>
+										Sorry, we were unable to find the page you were looking for. Please check that you have entered the correct URL in your web browser's address bar.
+									</p>
 								</div>
 							</article>
 						</div>
