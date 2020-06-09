@@ -8,8 +8,10 @@
  * @copyright 2012 - 2020, Aidan Amavi
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
-/*global _paq, alert, siteTitle, category, userId, nonce*/
-
+/**
+ * To debug, find all "// console.log" and replace with it uncommented
+ */
+ /*global _paq, alert, siteTitle, category, userId, nonce*/
 jQuery(document).ready( function() {
 	// Configurable settings.
 	var homepageDiv = 'page_archive_work';
