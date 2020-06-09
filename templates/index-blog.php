@@ -12,7 +12,7 @@
 	* @license http://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
 	*/
 ?>
-				<div id="page_archive_blog" data-page-title="Blog">
+				<div id="page_archive_blog" data-page-title="Blog" data-post-type="blog">
 					<div class="title_wrapper">
 						<div class="titles">
 							<h1>

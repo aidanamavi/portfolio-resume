@@ -22,11 +22,34 @@ jQuery(document).ready( function() {
 	var isThumbnailLoading = false;
 	var currentProjectType = 'all';
 	var isTrackingOn = (typeof _paq === 'undefined') ? false : true;
+	var state = window.history.state;
+
+	function initiateState() {
+		// console.log('initiateState()');
+		// If missing a window history state
+		if (!state) {
+			var pageUrl = document.location.href;
+			var pageTitle = window.document.title;
+			var postType = jQuery('#'+visiblePage).data('postType');
+			var postId = jQuery('#'+visiblePage).data('postId');
+			var pageState = {'pageUrl': pageUrl, 'postType': postType, 'postId': postId};
+			// console.log('Missing state');
+			// console.log(pageState);
+			// console.log('replaceState({pageUrl: ' + pageUrl + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
+			history.replaceState(pageState, pageTitle, pageUrl);
+			// console.log('New state');
+			// console.log(state);
+		} else {
+			// console.log('State detected');
+			// console.log(state);
+		}
+	}
 
 	String.prototype.capitalize = function() {
 	  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	};
 	function updateVisiblePage() {
+		// console.log('updateVisiblePage()');
 		visiblePage = jQuery('#content_wrapper :visible').attr('id');
 		// Enables checking for new posts since visiblePage was last viewed.
 		areAllPostsLoaded = false;
@@ -36,11 +59,11 @@ jQuery(document).ready( function() {
 		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},750);
 	}
 	function hideLoadingAnimation() {
+		// console.log('hideLoadingAnimation()');
 		jQuery('html, body').animate({ scrollTop: 0 }, 'slow', function(){
 			jQuery('#loading_animation').stop().animate({'opacity': '0'},1000, function(){
 				jQuery('#loading_animation').hide();
 				isPageLoading = false;
-				//updateVisiblePage();
 			});
 		});
 	}
@@ -82,45 +105,24 @@ jQuery(document).ready( function() {
 	function isEmpty( element ){
 		return !$.trim( element.html() );
 	}
-	function loadPage(pageUrl, postType, postId) {
-		console.log('function loadPage(pageUrl, postType, postId)');
-		console.log('pageUrl: ' + pageUrl);
-		console.log('postType: ' + postType);
-		console.log('postId: ' + postId);
-
-		// pageUrl: https://aidanamavi.com/work/aidan-amavi/ base.min.js:106:11
-		// pagePath: /work/402 base.min.js:107:11
-		// folder: work base.min.js:116:11
-		// page: 402
-
+	function loadPage(pageUrl, postType, postId, updateHistory) {
+		if (updateHistory === undefined) { updateHistory = true; }
+		// console.log('function loadPage(' + pageUrl + ',' + postType + ',' + postId + ',' + updateHistory + ')');
 		if (isPageLoading) { return; }
-
-		console.log('function AJAXorCache(pageDiv, postType, postId)');
-		// pagePath = pagePath || pageUrl;
-		var pageDiv = getPageDiv(postType, postId, 'divId');
-		console.log('pageDiv: ' + pageDiv);
-
+		var pageDiv = getPageDiv(postType, postId);
 		if (pageDiv === visiblePage) { return; }
-
-		// var ajaxArray = pathParser(pagePath, 'array');
-		// var postType = ajaxArray[0]; 	// work	// index
-		// var postID = ajaxArray[1];		// 402	// work
-		console.log('postType: ' + postType);
-		console.log('postId: ' + postId);
-
+		// console.log('function ajax({action: getAjaxData, postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
 		showLoadingAnimation();
 		if (isEmpty(jQuery('#'+pageDiv))) {
-			// Fetch new page.
 			jQuery.ajax({
 				type: 'POST',
 				url: ajaxurl,
 				data: {action: 'getAjaxData', postType: postType, postId: postId, token: window.nonce },
 				success: function(pageContent) {
-					console.log('AJAX success');
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
-					console.log('AJAX error');
+					// console.log('AJAX error');
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
@@ -129,64 +131,57 @@ jQuery(document).ready( function() {
 				}
 			});
 		} else {
-			// Show cached page.
-			console.log('CACHED success');
+			// console.log('Detected cached content');
 			displayPage(pageDiv, pageUrl);
-			console.log('function history.pushState(pageDiv, pageTitle, pageUrl)');
-			console.log('pageDiv: ' + pageDiv);
+		}
+		// If not going back in history, add new history entry
+		if (updateHistory) {
 			var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-			console.log('pageTitle: ' + pageTitle);
-			console.log('pageUrl: ' + pageUrl);
-			history.pushState(pageDiv, pageTitle, pageUrl);
+			updateBrowserHistory({pageUrl: pageUrl, postType: postType, postId: postId}, pageTitle, pageUrl);
 		}
+	} // loadpage()
 
-
-	}
-	function displayPage(pageDiv, pageUrl, pageContent, pageHistory) {
-		console.log('function displayPage(pageDiv, pageUrl, pageContent, pageHistory)');
-		console.log('pageDiv: ' + pageDiv);
-		console.log('pageUrl: ' + pageUrl);
-		console.log('pageContent: ... ' );
-		if (pageHistory === undefined) {
-			console.log('pageHistory: undefined / true');
-			pageHistory = true;
-		} else {
-			console.log('pageHistory: ' + pageHistory);
-		}
-		console.log('pageHistory: ' + pageHistory);
+	function displayPage(pageDiv, pageUrl, pageContent) {
+		// console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
 					jQuery('#content_wrapper').css('opacity', '0');
-					jQuery('#content_wrapper').append(pageContent);
-					jQuery('#content_wrapper').animate({'opacity':'1'},750);
+					jQuery('#content_wrapper').append(pageContent).imagesLoaded().then(function(){
+            // After images are loaded
+						// console.log('------ IMAGES LOADED ------');
+						jQuery('#content_wrapper').animate({'opacity':'1'},750);
+						hideLoadingAnimation();
+        	});
+					// jQuery('#content_wrapper').animate({'opacity':'1'},750);
 					addHighlightSlideCursor();
 				} else {
+					// scenario: restart browser with forward history, no div/content
+					// TODO: if there is no content & no pagediv loaded
+					// if div exists, then..
 					jQuery('#'+pageDiv).show().animate({'opacity':'1'},750);
+					hideLoadingAnimation();
+
+					// if div doesnt exist, load. (needed for back history)
 				}
-				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 				updateCategory(pageDiv);
-				console.log('pageTitle: ' + pageTitle);
+				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 				updateTitle(pageTitle);
-				if (pageUrl) {
-					pageReferrerUrl = document.location.href;
-					trackPage();
-				}
-				if(pageHistory) {
-					console.log('function history.pushState(pageDiv, pageTitle, pageUrl)');
-					console.log('pageDiv: ' + pageDiv);
-					var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-					console.log('pageTitle: ' + pageTitle);
-					console.log('pageUrl: ' + pageUrl);
-					history.pushState(pageDiv, pageTitle, pageUrl);
-				}
+				// Track the page
+				pageTitle = window.document.title;
+				trackPage(pageUrl, pageTitle);
 				updateVisiblePage();
-				hideLoadingAnimation();
+				// hideLoadingAnimation();
 			});
 		});
 	}
 	function trackPage(pageUrl, pageTitle) {
-		if (!isTrackingOn) { return; }
+		// console.log('trackPage(' + pageUrl + ',' + pageTitle + ')');
+		if (!isTrackingOn) {
+			// console.log('Tracking Disabled');
+			return;
+		}
+		// console.log('Tracking Enabled');
 		pageUrl = pageUrl || document.location.href;
 		pageTitle = pageTitle || window.document.title;
 		_paq.push(['setCustomUrl', pageUrl]);
@@ -196,21 +191,29 @@ jQuery(document).ready( function() {
 	}
 	function trackAction(pageName, slideNumber) {
 		// trackEvent(category, action, [name], [value])
-		if (!isTrackingOn) { return; }
+		// console.log('trackAction(' + pageName + ',' + slideNumber + ')');
+		if (!isTrackingOn) {
+			// console.log('Tracking Disabled');
+			return;
+		}
 		pageName = jQuery('#'+pageName).data('pageTitle');
 		slideNumber = 'Slide '+slideNumber;
 		_paq.push(['trackEvent', 'Slides', pageName, slideNumber]);
 	}
 	function updateCategory(pageDiv) {
+		// console.log('updateCategory(' + pageDiv + ')');
 		var categoryInfo = pageDiv.split('_');
 		if (categoryInfo[1] === 'category') {
-			window.categoryId = categoryInfo[2];
 			window.categoryName = categoryInfo[1];
+			window.categoryId = categoryInfo[2];
+			// console.log('New categoryName: '+window.categoryName);
 		} else {
 			window.categoryName = categoryInfo[1];
+			// console.log('New categoryName: '+window.categoryName);
 		}
 	}
 	function updateTitle(pageTitle) {
+		// console.log('updateTitle(' + pageTitle + ')');
 		var pageSeperator = ' › ';
 		var newSiteTitle = siteTitle;
 		if (window.categoryName.length > 0) {
@@ -224,123 +227,106 @@ jQuery(document).ready( function() {
 		newSiteTitle += pageSeperator+pageTitle;
 		window.document.title = newSiteTitle;
 	}
-	function updateUrl(pageUrl) {
+	function updateBrowserHistory(pageState, pageTitle, pageUrl) {
+		// console.log('updateBrowserHistory(' + pageState + ',' + pageTitle + ',' + pageUrl + ')');
+		pageStateConsole = JSON.stringify(pageState, null, 4);
+		// console.log(pageStateConsole);
+		// Update the pageReferrerUrl for tracking functionality
 		pageReferrerUrl = document.location.href;
-		pageUrl = pathParser(pageUrl, 'path');
-		history.pushState(null, null, pageUrl);
-		trackPage();
+		// pageUrl = pathParser(pageUrl, 'path');
+		history.pushState(pageState, pageTitle, pageUrl);
 	}
-	function getPageDiv(postType, postId, returnBack) {
-
-		if (returnBack === 'divId') {
-			var divId = postType;
-			var index = 0;
-			var seperator = '';
-
-			// If there is an Id
-			if (postId) {
-				// Add a seperator between words, i.e, work_402
-				divId = divId + '_' + postId;
-				if (postType === 'category'){
-					divId = 'page_'+divId;
-				} else {
-					divId = 'page_single_'+divId;
-				}
-			} else {
-				divId = 'page_archive_'+divId;
-			}
-			return divId;
-		}
-	}
-	function pathParser(url, returnBack) {
-		// Accepts:
-		// /work/402
-		//  bvcxz
-
-		// The element allows us to access the location object.
-		var element = document.createElement('a');
-		element.href = url;
-		// Now we can use the location object to parse the pathname.
-		url = element.pathname;
-		// Split the pathname.
-		url = url.split(/[\\/]/);
-		// Remove empty array elements.
-		url = jQuery.grep(url, function(element) { return(element); });
-
-		if (returnBack === 'divId') {
-			var divId = '';
-			var index = 0;
-			var seperator = '';
-
+	function getPageDiv(postType, postId) {
+		var divId = postType;
+		var index = 0;
+		var seperator = '';
+		if (postId) {
 			// Add a seperator between words, i.e, work_402
-			url.forEach(function(entry) {
-				if (index === 0) { firstIndex = entry; }
-				if (index > 0) { seperator = '_'; }
-				divId += seperator+entry;
-				++index;
-			});
-
-			// If there are two indexs, the 2nd is the post ID
-			if ( index > 1 ) {
-				if (firstIndex === 'category'){
-					divId = 'page_'+divId;
-				} else {
-					divId = 'page_single_'+divId;
-				}
+			divId = divId + '_' + postId;
+			if (postType === 'category'){
+				divId = 'page_'+divId;
 			} else {
-				divId = 'page_archive_'+divId;
+				divId = 'page_single_'+divId;
 			}
-			return divId;
-		} else if (returnBack === 'array') {
-			// If there is no folder detected.
-			if (typeof url[1] === 'undefined') {
-				// Add index as the folder for AJAX to process.
-				//url.unshift('index'); // might not need this now that we define indexes by name/type
-			}
-			return url;
-		} else if (returnBack === 'path') {
-			url = element.pathname;
-			return url;
+		} else {
+			divId = 'page_archive_'+divId;
 		}
+		return divId;
+	}
+
+
+	// Fn to allow an event to fire after all images are loaded
+	$.fn.imagesLoaded = function () {
+		// console.log('------ IMAGES LOADING ------');
+    // get all the images (excluding those with no src attribute)
+    var $imgs = this.find('img[src!=""]');
+    // if there's no images, just return an already resolved promise
+    if (!$imgs.length) {return $.Deferred().resolve().promise();}
+    // for each image, add a deferred object to the array which resolves when the image is loaded (or if loading fails)
+    var dfds = [];
+    $imgs.each(function(){
+        var dfd = $.Deferred();
+        dfds.push(dfd);
+        var img = new Image();
+        img.onload = function(){dfd.resolve();}
+        img.onerror = function(){dfd.resolve();}
+        img.src = this.src;
+    });
+    // return a master promise object which will resolve when all the deferred objects have resolved
+    // IE - when all the images are loaded
+    return $.when.apply($,dfds);
 	}
 
 	// First page load.
-	jQuery('html').animate({'opacity':'1'},500, function() {
-		jQuery('#content_wrapper').delay(750).animate({'opacity':'1'},1000);
-	});
 	window.onload = function() {
-		jQuery('#navigation_wrapper').animate({'opacity':'1'},1000);
-		pageDiv = visiblePage;
-		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-		pageUrl = document.location.pathname;
-		console.log('Added first history for: ' + pageDiv);
-		console.log('function history.replaceState(pageDiv, pageTitle, pageUrl)');
-		console.log('pageDiv: ' + pageDiv);
-		console.log('pageTitle: ' + pageTitle);
-		console.log('pageUrl: ' + pageUrl);
-		history.replaceState(pageDiv, pageTitle, pageUrl);
-		hideLoadingAnimation();
+		jQuery('html').animate({'opacity':'1'},1000, function(){
+			jQuery('#navigation_wrapper').animate({'opacity':'1'},1000);
+			jQuery('#content_wrapper').imagesLoaded().then(function(){
+				// After images are loaded
+				// console.log('------ IMAGES LOADED ------');
+				jQuery('#content_wrapper').animate({'opacity':'1'},750);
+				hideLoadingAnimation();
+			});
+		});
+
+		initiateState();
+		// List all images for debugging
+		jQuery("img").each(function() {
+      imgsrc = this.src;
+    	// console.log('Source: '+imgsrc);
+		});
+
 	};
 	addHighlightSlideCursor();
 
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
-		console.log('listener popstate');
-		var pageUrl = document.location.pathname;
-		var pageDiv = event.state;
-		var pageContent = null;
-		var pageHistory = false;
-		console.log('pageUrl: ' + pageUrl);
-		console.log('pageDiv: ' + pageDiv);
-		if(pageDiv != null) {
-			displayPage(pageDiv, pageUrl, pageContent, pageHistory);
+		var state = window.history.state;
+		event.preventDefault();
+		event.stopPropagation();
+		if (!state) {
+			// console.log('No history state..');
+			// console.log(state);
+			// TODO: report issue via ajax
+
+		} else if (state) {
+			// console.log('Detected history state..');
+			// console.log(state); // page_archive_blog
+			// console.log('Event:');
+			// console.log(event);
+			var pageUrl = state.pageUrl;
+			var postType = state.postType;
+			var postId = state.postId;
+			var updateHistory = false;
+			loadPage(pageUrl, postType, postId, updateHistory);
+
 		}
 	});
 
 	// Mouse over effects for the navigation.
 	jQuery('nav img.off').hover(
 		function() {
-			console.log('hover');
+			// console.log('hover');
 			jQuery(this).stop().animate({'opacity': '0'},250); },
 		function() {
 			jQuery(this).stop().animate({'opacity': '1'},250);
@@ -367,14 +353,11 @@ jQuery(document).ready( function() {
 		var link = jQuery(this);
 		var linkType = link.data('linkType');
 		var pageUrl = link.attr('href');
-
-		console.log('link detected: ' + pageUrl);
-
+		// console.log('Anchor clicked: ' + pageUrl);
 		if (linkType === 'headerNavigation') {
 			internalLink();
 			var postType = link.data('postType');
 			loadPage(pageUrl, postType);
-
 		} else if (linkType === 'workNavigation') {
 			internalLink();
 			var projectType = link.data('projectType');

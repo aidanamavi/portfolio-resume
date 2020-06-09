@@ -35,7 +35,7 @@
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css?<?php echo rand(); ?>" type="text/css" media="all" />
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js?<?php echo rand(); ?>"></script>
-		<script src="<?php bloginfo('template_url'); ?>/js/base.min.js?<?php echo rand(); ?>"></script>
+		<script src="<?php bloginfo('template_url'); ?>/js/base.js?<?php echo rand(); ?>"></script>
 <?php if (preg_match('/iPhone/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPod/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT']) || preg_match('/android/',$_SERVER['HTTP_USER_AGENT'])): ?>
 		<meta name="apple-touch-fullscreen" content="yes">
 	  <meta name="apple-mobile-web-app-capable" content="yes">
