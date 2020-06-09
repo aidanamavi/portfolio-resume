@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-			<div id="page_error_404" data-page-title="File Not Found">
+			<div id="page_error_404" data-page-title="file not found">
 				<div class="title_wrapper">
 					<div class="titles">
 						<h1>

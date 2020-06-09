@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_archive_work" data-page-title="Work" data-post-type="work">
+				<div id="page_archive_work" data-page-title="work" data-post-type="work">
 					<nav>
 						<a href="#" class="underline" data-project-type="all" data-link-type="workNavigation">All</a>&nbsp;&rsaquo;
 						<a href="#" class="underline" data-project-type="web" data-link-type="workNavigation">Web</a>&nbsp;&rsaquo;

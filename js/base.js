@@ -223,7 +223,8 @@ jQuery(document).ready( function() {
 			if (window.categoryName === 'post') {
 				window.categoryName = 'blog';
 			}
-			if(pageTitle.toLowerCase() !== window.categoryName.toLowerCase()){
+			if(pageTitle !== window.categoryName) {
+				pageTitle = pageTitle.capitalize();
 				newSiteTitle += pageSeperator+window.categoryName.capitalize();
 			}
 		}

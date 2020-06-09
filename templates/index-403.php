@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-			<div id="page_error_403" data-page-title="Forbidden Access">
+			<div id="page_error_403" data-page-title="forbidden access">
 				<div class="title_wrapper">
 					<div class="titles">
 						<h1>

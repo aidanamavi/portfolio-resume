@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_archive_about" data-page-title="About">
+				<div id="page_archive_about" data-page-title="about">
 					<div class="highlight_slides">
 						<div class="hightlight_number_1" id="about_1">
 							<img src="<?php bloginfo('template_url'); ?>/img/highlight_about_1.jpg" class="highlight" alt="">
