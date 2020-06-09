@@ -26,6 +26,7 @@ jQuery(document).ready( function() {
 	var isTrackingOn = (typeof _paq === 'undefined') ? false : true;
 	var state = window.history.state;
 
+// TODO: Why does state still return null after replacing?
 	function initiateState() {
 		// console.log('initiateState()');
 		// If missing a window history state
@@ -58,12 +59,12 @@ jQuery(document).ready( function() {
 	}
 	function showLoadingAnimation() {
 		isPageLoading = true;
-		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},750);
+		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},500);
 	}
 	function hideLoadingAnimation() {
 		// console.log('hideLoadingAnimation()');
 		jQuery('html, body').animate({ scrollTop: 0 }, 'slow', function(){
-			jQuery('#loading_animation').stop().animate({'opacity': '0'},1000, function(){
+			jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
 				jQuery('#loading_animation').hide();
 				isPageLoading = false;
 			});
@@ -152,7 +153,7 @@ jQuery(document).ready( function() {
 					jQuery('#content_wrapper').append(pageContent).imagesLoaded().then(function(){
             // After images are loaded
 						// console.log('------ IMAGES LOADED ------');
-						jQuery('#content_wrapper').animate({'opacity':'1'},750);
+						jQuery('#content_wrapper').animate({'opacity':'1'},1000);
 						hideLoadingAnimation();
         	});
 					// jQuery('#content_wrapper').animate({'opacity':'1'},750);
@@ -161,7 +162,7 @@ jQuery(document).ready( function() {
 					// scenario: restart browser with forward history, no div/content
 					// TODO: if there is no content & no pagediv loaded
 					// if div exists, then..
-					jQuery('#'+pageDiv).show().animate({'opacity':'1'},750);
+					jQuery('#'+pageDiv).show().animate({'opacity':'1'},1000);
 					hideLoadingAnimation();
 
 					// if div doesnt exist, load. (needed for back history)
@@ -281,8 +282,7 @@ jQuery(document).ready( function() {
 
 	// First page load.
 	window.onload = function() {
-		jQuery('html').animate({'opacity':'1'},1000, function(){
-			jQuery('#navigation_wrapper').animate({'opacity':'1'},1000);
+		jQuery('html').animate({'opacity':'1'},1, function(){
 			jQuery('#content_wrapper').imagesLoaded().then(function(){
 				// After images are loaded
 				// console.log('------ IMAGES LOADED ------');

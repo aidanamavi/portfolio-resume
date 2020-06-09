@@ -75,7 +75,7 @@
 		<div id="wrapper">
 			<div id="header_wrapper">
 				<header>
-					<div id="navigation_wrapper" class="toggleFade">
+					<div id="navigation_wrapper">
 						<nav>
 							<div>
 								<a href="/work" data-link-type="headerNavigation" data-post-type="work" class="underline">
