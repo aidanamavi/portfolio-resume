@@ -15,9 +15,9 @@
 				<div id="page_archive_blog" data-page-title="Blog" data-post-type="blog">
 					<div class="title_wrapper">
 						<div class="titles">
-							<h1>
-								blog
-							</h1>
+							<h2>
+								Archive
+							</h2>
 						</div>
 					</div>
 <?php
