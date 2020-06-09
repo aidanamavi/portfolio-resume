@@ -191,10 +191,7 @@ body {
 	outline: none;
 }
 #header_wrapper {
-	/* height: 27px; */
-	/* margin-top: 25px;
-	margin-bottom: 20px; */
-	margin: 30px;
+	padding-top: 40px;
 }
 header {
 }
@@ -203,9 +200,10 @@ header {
 }
 header nav {
 	text-align: center;
+	display: flex;
+	justify-content: space-evenly;
 }
 header nav div {
-	display: inline-block;
 	padding: 10px;
 }
 header nav div:hover {
