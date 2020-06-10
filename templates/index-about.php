@@ -15,7 +15,7 @@
 				<div id="page_archive_about" data-page-title="about">
 					<div class="highlight_slides">
 						<div class="slide" data-slide="1">
-							<img src="<?php bloginfo('template_url'); ?>/img/highlight_about_1.jpg" class="highlight" alt="">
+							<img src="https://aidanamavi.com/wp-content/uploads/2020/05/highlight_about_1.jpg" class="highlight" alt="">
 							<div class="highlights_text">
 								<div class="title_wrapper">
 									<div class="titles">
