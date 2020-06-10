@@ -15,9 +15,9 @@
 				<div id="page_single_blog_<?php the_ID(); ?>"  data-page-title="<?php the_title_attribute(); ?>" data-post-type="blog" data-post-id="<?php the_ID(); ?>">
 					<div class="title_wrapper">
 						<div class="titles">
-							<h1>
-								blog
-							</h1>
+							<h2>
+								article
+							</h2>
 						</div>
 					</div>
 					<div class="highlight_post">
