@@ -197,7 +197,6 @@ body {
 header {
 }
 #navigation_wrapper {
-	/* z-index: 10; */
 }
 header nav {
 	display: flex;
@@ -222,7 +221,6 @@ header nav a {
 	padding: 10px;
 }
 .numbers {
-	/* float: right; */
 }
 #page_archive_work {
 	display: table;
@@ -241,18 +239,14 @@ header nav a {
 	display: inline-block;
 }
 .title_wrapper {
-	/* position: relative; */
 }
 .titles {
-	/* position: relative; */
-	/* text-align: left; */
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	line-height: 2em;
 }
 .titles h1 {
-	/* margin: 0; */
 	line-height: initial;
 }
 .numbers_wrapper {
