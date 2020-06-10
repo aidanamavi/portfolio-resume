@@ -53,6 +53,11 @@ If you experience any issues or have enhancement suggestions, you can report the
 5. Ensure your permalink points to yourdomain.com/about/
 6. To edit your new page, manually edit the code in the index-about.php template file.
 
+#### Tips
+
+1. 16:9 images work best for several reasons.
+2. Avoid using external hosting services like YouTube.
+3. If you struggle with these tips, ask for help through the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues).
 
 
 ## Recommended Plug-ins
