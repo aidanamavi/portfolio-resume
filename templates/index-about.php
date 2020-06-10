@@ -349,16 +349,16 @@
 										</a>
 									</div>
 									<div class="skills_column_half">
-										<a href="http://aidanamavi.com" class="glow matomo_link" target="_blank">
+										<a href="https://aidanamavi.com" class="glow matomo_link" target="_blank">
 											Website
 										</a><br />
-										<a href="http://aidanamavi.com/work" class="glow matomo_link" target="_blank">
+										<a href="https://aidanamavi.com/work" class="glow matomo_link" target="_blank">
 											Portfolio
 										</a><br />
 										<a href="https://www.linkedin.com/in/aidanamavi" class="glow matomo_link" target="_blank">
 											LinkedIn
 										</a><br />
-										<a href="http://www.imdb.com/name/nm6377483/" class="glow matomo_link" target="_blank">
+										<a href="https://www.imdb.com/name/nm6377483/" class="glow matomo_link" target="_blank">
 											IMDb
 										</a><br />
 										<a href="https://github.com/aidanamavi" class="glow matomo_link" target="_blank">

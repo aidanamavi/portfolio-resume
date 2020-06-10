@@ -9,7 +9,7 @@
 	* @author Aidan Amavi <mail@aidanamavi.com>
 	* @link https://www.aidanamavi.com Author's Web Site
 	* @copyright 2012 - 2020, Aidan Amavi
-	* @license http://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
+	* @license https://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
 	*/
 ?>
 				<div id="page_archive_blog" data-page-title="blog" data-post-type="blog">
