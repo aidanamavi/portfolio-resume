@@ -103,9 +103,9 @@ jQuery(document).ready( function() {
 	function isEmpty( element ){
 		return !$.trim( element.html() );
 	}
-	function loadPage(pageUrl, postType, postId, updateHistory) {
-		if (updateHistory === undefined) { updateHistory = true; }
-		// console.log('function loadPage(' + pageUrl + ',' + postType + ',' + postId + ',' + updateHistory + ')');
+	function loadPage(pageUrl, postType, postId, isPushHistory) {
+		if (isPushHistory === undefined) { isPushHistory = true; }
+		// console.log('function loadPage(' + pageUrl + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
 		if (isPageLoading) { return; }
 		var pageDiv = getPageDiv(postType, postId);
 		if (pageDiv === visiblePage) { return; }
@@ -133,7 +133,7 @@ jQuery(document).ready( function() {
 			displayPage(pageDiv, pageUrl);
 		}
 		// If not going back in history, add new history entry
-		if (updateHistory) {
+		if (isPushHistory) {
 			var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 			updateBrowserHistory({pageUrl: pageUrl, postType: postType, postId: postId}, pageTitle, pageUrl);
 		}
@@ -304,8 +304,8 @@ jQuery(document).ready( function() {
 			var pageUrl = state.pageUrl;
 			var postType = state.postType;
 			var postId = state.postId;
-			var updateHistory = false;
-			loadPage(pageUrl, postType, postId, updateHistory);
+			var isPushHistory = false;
+			loadPage(pageUrl, postType, postId, isPushHistory);
 		}
 	});
 	// Mouse over effects for the navigation.
