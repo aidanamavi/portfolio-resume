@@ -47,7 +47,6 @@ jQuery(document).ready( function() {
 			// console.log(state);
 		}
 	}
-
 	String.prototype.capitalize = function() {
 	  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	};
@@ -82,7 +81,6 @@ jQuery(document).ready( function() {
 	function transitionSlide(pageId, oldSlide, newSlide) {
 		var newSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+newSlide+']');
 		var oldSlideElement = jQuery('div#'+pageId+' .highlight_slides div[data-slide='+oldSlide+']');
-
 		// Show next slide, and hide visible slide.
 		newSlideElement.stop().css('z-index','10').stop().show().animate({'opacity':'1'},250, function() {
 			oldSlideElement.stop().animate({'opacity':'0'},250, function(){
@@ -92,14 +90,11 @@ jQuery(document).ready( function() {
 				isSlideLoading = false;
 			});
 		});
-
 		var buttonList = jQuery('#'+pageId+' .numbers_wrapper .numbers');
 		var newButtonImage = buttonList.children('[data-slide='+newSlide+']').children('img.off');
 		var oldButtonImage = buttonList.children('[data-slide='+oldSlide+']').children('img.off');
-
 		// Make the off button visible to turn off highlight.
 		oldButtonImage.stop().show().animate({'opacity':'1'},300);
-
 		// Make the off button invisible to turn on highlight. Then hide.
 		newButtonImage.stop().animate({'opacity':'0'},300, function(){
 			newButtonImage.hide();
@@ -151,12 +146,10 @@ jQuery(document).ready( function() {
 				if (pageContent) {
 					jQuery('#content_wrapper').css('opacity', '0');
 					jQuery('#content_wrapper').append(pageContent).imagesLoaded().then(function(){
-            // After images are loaded
 						// console.log('------ IMAGES LOADED ------');
 						jQuery('#content_wrapper').animate({'opacity':'1'},1000);
 						hideLoadingAnimation();
         	});
-					// jQuery('#content_wrapper').animate({'opacity':'1'},750);
 					addHighlightSlideCursor();
 				} else {
 					// scenario: restart browser with forward history, no div/content
@@ -164,13 +157,11 @@ jQuery(document).ready( function() {
 					// if div exists, then..
 					jQuery('#'+pageDiv).show().animate({'opacity':'1'},1000);
 					hideLoadingAnimation();
-
 					// if div doesnt exist, load. (needed for back history)
 				}
 				updateCategory(pageDiv);
 				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 				updateTitle(pageTitle);
-				// Track the page
 				pageTitle = window.document.title;
 				trackPage(pageUrl, pageTitle);
 				updateVisiblePage();
@@ -237,7 +228,6 @@ jQuery(document).ready( function() {
 		// console.log(pageStateConsole);
 		// Update the pageReferrerUrl for tracking functionality
 		pageReferrerUrl = document.location.href;
-		// pageUrl = pathParser(pageUrl, 'path');
 		history.pushState(pageState, pageTitle, pageUrl);
 	}
 	function getPageDiv(postType, postId) {
@@ -257,30 +247,27 @@ jQuery(document).ready( function() {
 		}
 		return divId;
 	}
-
-
 	// Fn to allow an event to fire after all images are loaded
 	$.fn.imagesLoaded = function () {
 		// console.log('------ IMAGES LOADING ------');
-    // get all the images (excluding those with no src attribute)
+    // Get all the images (excluding those with no src attribute)
     var $imgs = this.find('img[src!=""]');
-    // if there's no images, just return an already resolved promise
+    // If there's no images, just return an already resolved promise
     if (!$imgs.length) {return $.Deferred().resolve().promise();}
-    // for each image, add a deferred object to the array which resolves when the image is loaded (or if loading fails)
+    // For each image, add a deferred object to the array, which resolves when the image is loaded (or if loading fails)
     var dfds = [];
     $imgs.each(function(){
-        var dfd = $.Deferred();
-        dfds.push(dfd);
-        var img = new Image();
-        img.onload = function(){dfd.resolve();}
-        img.onerror = function(){dfd.resolve();}
-        img.src = this.src;
+      var dfd = $.Deferred();
+      dfds.push(dfd);
+      var img = new Image();
+      img.onload = function(){dfd.resolve();}
+      img.onerror = function(){dfd.resolve();}
+      img.src = this.src;
     });
-    // return a master promise object which will resolve when all the deferred objects have resolved
+    // Return a master promise object, which will resolve when all the deferred objects have resolved
     // IE - when all the images are loaded
     return $.when.apply($,dfds);
 	}
-
 	// First page load.
 	window.onload = function() {
 		jQuery('html').animate({'opacity':'1'},1, function(){
@@ -291,17 +278,15 @@ jQuery(document).ready( function() {
 				hideLoadingAnimation();
 			});
 		});
-
 		initiateState();
 		// List all images for debugging
-		jQuery("img").each(function() {
-      imgsrc = this.src;
-    	// console.log('Source: '+imgsrc);
-		});
+		// jQuery("img").each(function() {
+    //   imgsrc = this.src;
+    // 	console.log('Source: '+imgsrc);
+		// });
 
 	};
 	addHighlightSlideCursor();
-
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
 		var state = window.history.state;
@@ -311,7 +296,6 @@ jQuery(document).ready( function() {
 			// console.log('No history state..');
 			// console.log(state);
 			// TODO: report issue via ajax
-
 		} else if (state) {
 			// console.log('Detected history state..');
 			// console.log(state); // page_archive_blog
@@ -322,10 +306,8 @@ jQuery(document).ready( function() {
 			var postId = state.postId;
 			var updateHistory = false;
 			loadPage(pageUrl, postType, postId, updateHistory);
-
 		}
 	});
-
 	// Mouse over effects for the navigation.
 	jQuery('nav img.off').hover(
 		function() {
@@ -334,7 +316,6 @@ jQuery(document).ready( function() {
 		function() {
 			jQuery(this).stop().animate({'opacity': '1'},250);
 	});
-
 	// Focus effects for the navigation.
 	jQuery('nav a').focusin(
 		function() {
@@ -346,7 +327,6 @@ jQuery(document).ready( function() {
 			jQuery(this).children('img.off').stop().animate({'opacity': '1'},250);
 		}
 	);
-
 	// Link click event handlers for pages, posts, categories, and outlinks.
 	jQuery(document).on('click', 'a', function(event){
 		function internalLink() {
@@ -384,7 +364,6 @@ jQuery(document).ready( function() {
 			loadPage(pageUrl, postType, theId);
 		}
 	});
-
 	// Link click event handlers for slide navigation.
 	jQuery(document).on('click', '#content_wrapper div .numbers_wrapper .numbers div', function(){
 		var button = jQuery(this);
@@ -414,7 +393,6 @@ jQuery(document).ready( function() {
 			transitionSlide(pageId, oldSlide, newSlide);
 		}
 	});
-
 	/**
 	 * Infinite scrolling.
 	 *
@@ -423,11 +401,9 @@ jQuery(document).ready( function() {
 	 */
 	var categoryId, offsetPosts, areAllPostsLoaded, windowHeight, scrollPosition;
 	categoryId = window.categoryId;
-
 	jQuery(window).scroll(function() {
 		windowHeight = jQuery(document).height() - jQuery(window).height();
 		scrollPosition = jQuery(window).scrollTop() + 200;
-
 		if (scrollPosition >= windowHeight && !areAllPostsLoaded && !isPageLoading) {
 			if (jQuery('#page_category_'+categoryId).is(':visible')) {
 				showLoadingAnimation();
@@ -452,7 +428,6 @@ jQuery(document).ready( function() {
 						hideLoadingAnimation();
 					}
 				});
-
 			} else if (jQuery('#page_blog').is(':visible')) {
 				showLoadingAnimation();
 				offsetPosts = jQuery('#page_blog > article').length;
