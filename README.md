@@ -27,8 +27,8 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-resume
 
 ## Requirements
 
-* PHP >= 7
-* Wordpress >= 5
+* [PHP](https://www.php.net/) >= 7
+* [Wordpress](https://www.wordpress.org) >= 5
 
 
 
@@ -44,7 +44,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 ## Setup
 
-#### Set up your About page.
+### Set up your About page.
 
 1. Select 'Pages' and then 'Add New'
 2. Set the page title to 'About'
@@ -53,7 +53,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 5. Ensure your permalink points to yourdomain.com/about/
 6. To edit your new page, manually edit the code in the index-about.php template file.
 
-#### Tips
+### Tips
 
 1. 16:9 images work best for several reasons.
 2. Avoid using external hosting services like YouTube.
