@@ -1,4 +1,4 @@
-A portfolio and resume [Wordpress](https://www.wordpress.org) theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+A [Wordpress](https://www.wordpress.org) portfolio theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 
 ![](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/img/markdown_screenshot.jpg)
 
@@ -15,14 +15,13 @@ A portfolio and resume [Wordpress](https://www.wordpress.org) theme with minimal
 * :mag: **Search Engine Optimized.** Organizes your content behind-the-scenes for optimal indexing.
 * :page_facing_up: **Printer friendly.** Print your About page to use as your in person resume.
 * :wheelchair: **Accessible friendly.** W3C Web Accessibility Initiative (WAI) support across all devices.
+* :computer: **Flows like a modern web app.** Intelligent loading screens ensure your first impression is amazing.
 
 And in the works for [the future](https://github.com/aidanamavi/portfolio-resume/milestones/0.3):
-* :rocket: **WP Integration** Add an About page post type.
+* :rocket: **WP Integration** A post type for About content.
 * :zap: **Speed Optimization** Backend compression, and caching options.
 * :art: **UX/UI** Work navigation sub-menu: keywords, products, roles.
 * :art: **UX/UI** Blog navigation sub-menu: archive, categories, rss.
-* :mag: **SEO** Separate pages for each slide.
-* :mag: **SEO** Separate pages for work types.
 
 
 
@@ -35,11 +34,11 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-resume
 
 ## Installation
 
-1. Place the theme directory into the wp-content/themes/ folder.
-2. Navigate to appearance > themes and activate the theme.
-3. Click the Customize button to adjust your settings.
+1. Place the theme directory into the `wp-content/themes/` folder.
+2. Navigate to `Appearance > Themes` and activate the theme.
+3. Click the `Customize` button to adjust your settings.
 
-If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). Please follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md), so all the info necessary to debug and fix the problem is available. Thanks!
+If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
 
 
 
@@ -64,7 +63,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 
 ### Server-side caching
-Front-end caching is done automagically. Back-end caching will be provided for the version 0.3 release.
+Front-end caching is done automagically. Back-end caching will be provided in a future release.
 
 
 
