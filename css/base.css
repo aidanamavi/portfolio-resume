@@ -107,7 +107,7 @@ a.underline:hover, a.underline:active, a.underline:focus {
 	-moz-transition: 20ms linear 0s;
 	-o-transition: 20ms linear 0s;
 	transition: 20ms linear 0s;
-	border-bottom: 2px solid red;
+	border-bottom: 2px solid red !important;
 }
 article.blog_list {
 	width: 100%;
@@ -192,6 +192,7 @@ body {
 }
 #header_wrapper {
 	padding-top: 40px;
+	padding-bottom: 20px;
 }
 header {
 }
@@ -199,12 +200,8 @@ header {
 	/* z-index: 10; */
 }
 header nav {
-	text-align: center;
 	display: flex;
 	justify-content: space-evenly;
-}
-header nav div {
-	padding: 10px;
 }
 header nav div:hover {
 	cursor: pointer;
@@ -232,9 +229,16 @@ header nav a {
 	margin-bottom: 10px;
 }
 #page_archive_work nav {
-	margin: 15px;
-	text-align: center;
+	display: inherit;
+	margin: 10px;
 	font-size: x-large;
+	text-align: center;
+}
+#page_archive_work nav a {
+	/* This fixes the flex box movement on :hover */
+	border-bottom: 2px solid black;
+	margin: 15px 20px 15px 0;
+	display: inline-block;
 }
 .title_wrapper {
 	/* position: relative; */
@@ -443,6 +447,10 @@ img#matomo {
 @media only screen and (min-device-width: 768px) {
 	header nav a {
 		font-size: xxx-large;
+	}
+	#page_archive_work nav {
+		display: flex;
+		justify-content: space-evenly;
 	}
 	.column {
 		max-width: calc(50% - 23px);
