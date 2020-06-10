@@ -9,7 +9,7 @@
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
 /**
- * To debug, find all "// console.log" and replace with it uncommented
+ * To debug, find all "// console.log" and replace with "console.log"
  */
  /*global _paq, alert, siteTitle, category, userId, nonce*/
 jQuery(document).ready( function() {
