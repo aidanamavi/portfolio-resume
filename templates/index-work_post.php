@@ -44,9 +44,9 @@
 							<div class="highlights_text">
 								<div class="title_wrapper">
 									<div class="titles">
-										<h1>
+										<h2>
 											<?php the_title_attribute(); ?>
-										</h1>
+										</h2>
 									</div>
 								</div>
 <?php
@@ -54,9 +54,9 @@
 							if ($roles) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											roles
-										</h2>
+										</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -79,9 +79,9 @@ echo '											'.displayMetaLabel('roles', $role).'<br />'.PHP_EOL;
 							if ($disciplines) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											disciplines
-										</h2>
+										</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -104,9 +104,9 @@ echo '											'.displayMetaLabel('disciplines', $discipline).'<br />'.PHP_EOL
 							if ($tools) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											tools
-										</h2>
+										</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -129,9 +129,9 @@ echo '											'.displayMetaLabel('tools', $tool).'<br />'.PHP_EOL;
 							if ($products) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											products
-										</h2>
+										</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -154,9 +154,9 @@ echo '											'.displayMetaLabel('products', $product).'<br />'.PHP_EOL;
 							if ($presentations) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											presentations
-										</h2>
+										</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -179,9 +179,9 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 							if ($description) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h2>
+										<h3>
 											description
-										</h2>
+										</h3>
 									</div>
 									<div>
 <?php

@@ -292,11 +292,12 @@ div.highlights_text div.skills {
 	margin-bottom: 20px;
 }
 div.highlights_text div.skills div.skills_title {
-	width: 30%;
+	width: 100%;
 	height: 100%;
 	text-transform: uppercase;
 }
-div.highlights_text div.skills div.skills_title h2:first-of-type {
+div.highlights_text div.skills div.skills_title h2:first-of-type,
+div.highlights_text div.skills div.skills_title h3:first-of-type {
 	margin-top: 0;
 }
 div.highlights_text div.skills div.skills_column {
@@ -305,17 +306,17 @@ div.highlights_text div.skills div.skills_column {
 	vertical-align: top;
 }
 div.highlights_text div.skills div.skills_column_half {
-	width: 39%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
 }
 div.highlights_text div.skills div.skills_column_wide {
-	width: 80%;
-	display: inline-block;
-	vertical-align: top;
+	/* width: 100%; */
+	/* display: inline-block;
+	vertical-align: top; */
 }
 div.highlights_text div.skills div.skills_column_wide ul {
-	padding: 0;
+	padding-left: 15px;
 	margin: 0;
 }
 div.highlights_text div.skills div.skills_column_wide ul:not(:first-child) {
@@ -452,6 +453,7 @@ img#matomo {
 	div.highlights_text div.skills div.skills_title {
 		display: table-cell;
 		vertical-align: top;
+		width: 30%;
 	}
 	div.highlights_text div.skills div.skills_title h2 {
 		margin: 0;

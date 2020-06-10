@@ -14,14 +14,14 @@
 ?>
 				<div id="page_archive_about" data-page-title="about">
 					<div class="highlight_slides">
-						<div class="hightlight_number_1" id="about_1">
+						<div class="slide" data-slide="1">
 							<img src="<?php bloginfo('template_url'); ?>/img/highlight_about_1.jpg" class="highlight" alt="">
 							<div class="highlights_text">
 								<div class="title_wrapper">
 									<div class="titles">
-										<h1>
+										<h2>
 											Aidan Amavi
-										</h1>
+										</h2>
 									</div>
 								</div>
 								<p>
@@ -38,7 +38,7 @@
 								</p>
 								<div class="skills pagebreakhere">
 									<div class="skills_title">
-										<strong>leadership</strong><br />
+										<h3>leadership</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -59,7 +59,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>disciplines</strong><br />
+										<h3>disciplines</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -98,7 +98,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>tools</strong><br />
+										<h3>tools</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -175,7 +175,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>mediums</strong><br />
+										<h3>mediums</h3>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -205,9 +205,9 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>highlights</strong><br />
+										<h3>highlights</h3>
 									</div>
-									<div>
+									<div class="skills_column_wide">
 										<ul class="first">
 											<li>15 years experience working in the creative industry.</li>
 											<li>Creative and technical skills, e.g., cinematography, photography, graphic design, sound mixing, sound design, composition, web development, information architecture, systems administration, etc.</li>
@@ -228,9 +228,9 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>responsibilities</strong><br />
+										<h3>responsibilities</h3>
 									</div>
-									<div>
+									<div class="skills_column_wide">
 										<ul>
 											<li>Creates, and presents pitches for clients, vendors, partners and personnel.</li>
 											<li>Excels in leading pre-production, production, and post-production processes.</li>
@@ -250,7 +250,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>professional org.</strong><br />
+										<h3>professional org.</h3>
 									</div>
 									<div class="skills_column_half">
 										American Institute of Graphic Arts<br />
@@ -267,7 +267,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>charity org.</strong><br />
+										<h3>charity org.</h3>
 									</div>
 									<div class="skills_column_half">
 										ASPCA<br />
@@ -284,7 +284,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>languages</strong><br />
+										<h3>languages</h3>
 									</div>
 									<div class="skills_column_half">
 										English<br />
@@ -297,7 +297,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>psychology</strong><br />
+										<h3>psychology</h3>
 									</div>
 									<div class="skills_column_half">
 										ENTJ<br />
@@ -310,7 +310,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>hobbies</strong><br />
+										<h3>hobbies</h3>
 									</div>
 									<div class="skills_column_half">
 										Traveling<br />
@@ -331,10 +331,9 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<strong>contact info</strong><br />
+										<h3>contact info</h3>
 									</div>
 									<div class="skills_column_half">
-
 										<a href="https://maps.google.com/maps?q=New+York,+NY,+United+States" class="glow matomo_link" target="_blank">
 											Address: New York, NY, United States
 										</a><br />
