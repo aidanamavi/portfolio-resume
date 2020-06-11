@@ -1,7 +1,7 @@
 /**
  * @package WordPress
  * @subpackage AidanAmavi
- * @version 0.2
+ * @version 0.3
  *
  * @author Aidan Amavi <mail@aidanamavi.com>
  * @link https://www.aidanamavi.com Author's Web Site
@@ -352,6 +352,9 @@ jQuery(document).ready( function() {
 					$('#page_archive_work .row').fadeIn(1000, function() {
 						currentProjectType = projectType;
 						isThumbnailLoading = false;
+						// trackAction
+						projectType = projectType.capitalize();
+						_paq.push(['trackEvent', 'Types', 'Work', projectType]);
 					});
 				});
 			}

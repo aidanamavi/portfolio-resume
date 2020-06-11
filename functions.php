@@ -2,7 +2,7 @@
 /**
 	* @package WordPress
 	* @subpackage AidanAmavi
-	* @version 0.2
+	* @version 0.3
 	*
 	* @author Aidan Amavi <mail@aidanamavi.com>
 	* @link https://www.aidanamavi.com Author's Web Site
