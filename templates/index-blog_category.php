@@ -15,9 +15,9 @@
 				<div id="page_category_<?php echo $cat; ?>" data-page-title="<?php strip_tags(esc_attr(single_cat_title())); ?>">
 					<div class="title_wrapper">
 						<div class="titles">
-							<h1>
-								blog
-							</h1>
+							<h2>
+								category
+							</h2>
 						</div>
 					</div>
 <?php 		if (have_posts()): while (have_posts()): the_post(); ?>
