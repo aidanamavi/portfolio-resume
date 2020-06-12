@@ -210,15 +210,16 @@ jQuery(document).ready( function() {
 		// console.log('updateTitle(' + pageTitle + ')');
 		var pageSeperator = ' › ';
 		var newSiteTitle = siteTitle;
-		if (window.categoryName.length > 0) {
-			if (window.categoryName === 'post') {
-				window.categoryName = 'blog';
-			}
-			if(pageTitle !== window.categoryName) {
-				pageTitle = pageTitle.capitalize();
-				newSiteTitle += pageSeperator+window.categoryName.capitalize();
-			}
-		}
+		// if (window.categoryName.length > 0) {
+		// 	if (window.categoryName === 'post') {
+		// 		window.categoryName = 'blog';
+		// 	}
+		// 	if(pageTitle !== window.categoryName) {
+		// 		pageTitle = pageTitle.capitalize();
+		// 		newSiteTitle += pageSeperator+window.categoryName.capitalize();
+		// 	}
+		// }
+		pageTitle = pageTitle.capitalize();
 		newSiteTitle += pageSeperator+pageTitle;
 		window.document.title = newSiteTitle;
 	}
