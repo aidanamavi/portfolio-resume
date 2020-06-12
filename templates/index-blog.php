@@ -16,7 +16,7 @@
 					<div class="title_wrapper">
 						<div class="titles">
 							<h2>
-								Archive
+								archive
 							</h2>
 						</div>
 					</div>
