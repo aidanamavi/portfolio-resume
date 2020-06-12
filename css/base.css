@@ -213,9 +213,9 @@ header nav a {
 #content_wrapper {
 }
 #content_wrapper>* {
-	position: relative;
+	/* position: relative;
 	margin: 0 auto;
-	height: 100%;
+	height: 100%; */
 }
 #content_wrapper>*:not(#page_archive_work) {
 	padding: 10px;
