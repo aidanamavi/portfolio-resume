@@ -391,26 +391,6 @@ function work_post_type_styles() {
 function project_info_meta_boxes_html($post, $arguments) {
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Title Image URL', 'changeMe')
-	);
-	$saved = get_post_meta( $post->ID, 'title_image_url', true );
-	$label = __('Enter a URL or upload an image', 'changeMe');
-	if ($saved) {
-		$imageUrl = $saved;
-	} else {
-		$imageUrl = '';
-	}
-  printf(
-    '<input type="text" name="title_image_url" value="%1$s" id="title_image_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
-		'<input type="button" value="Upload Image" class="button button-small upload_button" id="title_image_button" />'.
-    '<label for="title_image_url"> %2$s </label>',
-    esc_attr($imageUrl),
-		esc_html($label)
-  );
-	echo '</p><hr>';
-
-	printf(
-		'<p><strong>%1$s</strong></p>',
 		__('Shortcut Keywords', 'changeMe')
 	);
 	$saved = get_post_meta( $post->ID, 'shortcut_keywords', true );
