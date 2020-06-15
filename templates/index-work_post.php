@@ -50,6 +50,22 @@
 									</div>
 								</div>
 <?php
+							$description = get_post_meta( get_the_ID(), $slideId.'_description', true );
+							if ($description) : ?>
+								<div class="skills">
+									<div class="skills_title">
+										<h3>
+											description
+										</h3>
+									</div>
+									<div>
+<?php
+echo '										'.do_shortcode(nl2br($description)).PHP_EOL;
+										unset($description); ?>
+									</div>
+								</div>
+<?php 				endif;
+
 							$roles = get_post_meta( get_the_ID(), $slideId.'_roles', true );
 							if ($roles) : ?>
 								<div class="skills">
@@ -171,22 +187,6 @@ echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP
 										endforeach; unset($prevPresentation); ?>
 											<br />
 										</div>
-									</div>
-								</div>
-<?php 				endif;
-
-							$description = get_post_meta( get_the_ID(), $slideId.'_description', true );
-							if ($description) : ?>
-								<div class="skills">
-									<div class="skills_title">
-										<h3>
-											description
-										</h3>
-									</div>
-									<div>
-<?php
-echo '										'.do_shortcode(nl2br($description)).PHP_EOL;
-										unset($description); ?>
 									</div>
 								</div>
 <?php 				endif; ?>
