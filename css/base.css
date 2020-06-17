@@ -372,29 +372,21 @@ input[type=submit] {
 	background-color: #bbb;
 	border: 1px solid #ccc;
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, .5);
-	-webkit-transition: 500ms linear 0s;
-	-moz-transition: 500ms linear 0s;
-	-o-transition: 500ms linear 0s;
-	transition: 500ms linear 0s;
+	-webkit-transition: 200ms linear 0s;
+	-moz-transition: 200ms linear 0s;
+	-o-transition: 200ms linear 0s;
+	transition: 200ms linear 0s;
 }
 .button:hover,
 input[type=submit]:hover {
 	background-color: #ddd;
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, 1), 0px 0px 10px rgba(224, 240, 245, .75);
 	cursor: pointer;
-	-webkit-transition: 200ms linear 0s;
-	-moz-transition: 200ms linear 0s;
-	-o-transition: 200ms linear 0s;
-	transition: 200ms linear 0s;
 }
 .button:active,
 input[type=submit]:active {
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, 1), 0px 0px 10px rgba(224, 240, 245, 1);
 	background-color: #fff;
-	-webkit-transition: 500ms linear 0s;
-	-moz-transition: 500ms linear 0s;
-	-o-transition: 500ms linear 0s;
-	transition: 500ms linear 0s;
 }
 .highlight_slides {
 	position: relative;
