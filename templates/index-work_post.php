@@ -39,7 +39,7 @@
 							if ($slideYouTubeUrl) : ?>
 							<iframe src="<?php echo $slideYouTubeUrl; ?>" allowfullscreen></iframe>
 <?php 				else: ?>
-							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="">
+							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="portfolio slide">
 <?php 				endif; ?>
 							<div class="highlights_text">
 								<div class="title_wrapper">
@@ -48,6 +48,14 @@
 											<?php the_title_attribute(); ?>
 										</h2>
 									</div>
+<?php 						$slideDemoUrl = esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_demo_url', true ));
+									if ($slideDemoUrl) : ?>
+									<div>
+										<a href="<?php echo $slideDemoUrl; ?>" class="button">
+											click for a demo
+										</a>
+									</div>
+<?php 				endif; ?>
 								</div>
 <?php
 							$description = get_post_meta( get_the_ID(), $slideId.'_description', true );
