@@ -238,13 +238,16 @@ header nav a {
 	margin: 15px 20px 15px 0;
 	display: inline-block;
 }
-.title_wrapper {
+.title_wrapper div {
+	display: block;
+	min-width: 200px;
 }
 .titles {
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	line-height: 2em;
+	width: 100%;
 }
 .titles h1 {
 	line-height: initial;
@@ -352,9 +355,20 @@ input {
 	-webkit-box-shadow: 0 0 1px #e0f0f5;
 	box-shadow: 0 0 1px #e0f0f5;
 }
+
+.button,
 input[type=submit] {
-	padding: 10px;
+	color: black !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 4px;
+	margin: 0 0 35px 0;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	padding: 5px 0;
 	text-shadow: 0px 1px 0px #ffffff;
+
 	background-color: #bbb;
 	border: 1px solid #ccc;
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, .5);
@@ -363,6 +377,7 @@ input[type=submit] {
 	-o-transition: 500ms linear 0s;
 	transition: 500ms linear 0s;
 }
+.button:hover,
 input[type=submit]:hover {
 	background-color: #ddd;
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, 1), 0px 0px 10px rgba(224, 240, 245, .75);
@@ -372,6 +387,7 @@ input[type=submit]:hover {
 	-o-transition: 200ms linear 0s;
 	transition: 200ms linear 0s;
 }
+.button:active,
 input[type=submit]:active {
 	box-shadow: inset 0px 20px 15px rgba(255, 255, 255, 1), 0px 0px 10px rgba(224, 240, 245, 1);
 	background-color: #fff;
@@ -458,9 +474,15 @@ img#matomo {
 	div.highlights_text div.skills div.skills_title h2 {
 		margin: 0;
 	}
+	.title_wrapper {
+		display: table;
+	}
 	.title_wrapper .titles {
 		font-size: large;
 		line-height: normal;;
+	}
+	.title_wrapper div {
+		display: table-cell;
 	}
 }
 
