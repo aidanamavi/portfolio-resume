@@ -242,14 +242,14 @@ header nav a {
 	display: block;
 	min-width: 200px;
 }
-.titles {
+.title {
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	line-height: 2em;
 	width: 100%;
 }
-.titles h1 {
+.title h1 {
 	line-height: initial;
 }
 .numbers_wrapper {
@@ -267,13 +267,13 @@ header nav a {
 	display: none;
 	opacity: 0;
 }
-div.highlights_text {
+div.highlight_text {
 	line-height: 2em;
 	clear: both;
 	cursor: default;
 	margin-bottom: 50px; /* Space below the content*/
 }
-div.highlights_text div.masonry_wrapper {
+div.highlight_text div.masonry_wrapper {
 	width: 100%;
 	height: 100%;
 	-moz-column-count: 3; /* maximum width */
@@ -286,43 +286,43 @@ div.highlights_text div.masonry_wrapper {
 	column-width: 166px; /* minimum width */
 	column-gap: 5px;
 }
-div.highlights_text div.masonry_wrapper div.masonry_column {
+div.highlight_text div.masonry_wrapper div.masonry_column {
 	width: 100%;
 }
-div.highlights_text div.skills {
+div.highlight_text div.skills {
 	display: table;
 	width: 100%;
 	margin-bottom: 20px;
 }
-div.highlights_text div.skills div.skills_title {
+div.highlight_text div.skills div.skills_title {
 	width: 100%;
 	height: 100%;
 	text-transform: uppercase;
 }
-div.highlights_text div.skills div.skills_title h2:first-of-type,
-div.highlights_text div.skills div.skills_title h3:first-of-type {
+div.highlight_text div.skills div.skills_title h2:first-of-type,
+div.highlight_text div.skills div.skills_title h3:first-of-type {
 	margin-top: 0;
 }
-div.highlights_text div.skills div.skills_column {
+div.highlight_text div.skills div.skills_column {
 	width: 19%;
 	display: inline-block;
 	vertical-align: top;
 }
-div.highlights_text div.skills div.skills_column_half {
+div.highlight_text div.skills div.skills_column_half {
 	width: 49%;
 	display: inline-block;
 	vertical-align: top;
 }
-div.highlights_text div.skills div.skills_column_wide {
+div.highlight_text div.skills div.skills_column_wide {
 	/* width: 100%; */
 	/* display: inline-block;
 	vertical-align: top; */
 }
-div.highlights_text div.skills div.skills_column_wide ul {
+div.highlight_text div.skills div.skills_column_wide ul {
 	padding-left: 15px;
 	margin: 0;
 }
-div.highlights_text div.skills div.skills_column_wide ul:not(:first-child) {
+div.highlight_text div.skills div.skills_column_wide ul:not(:first-child) {
 	margin-top: 26px;
 }
 div#page_about {
@@ -458,18 +458,18 @@ img#matomo {
 	.column {
 		max-width: calc(50% - 23px);
 	}
-	div.highlights_text div.skills div.skills_title {
+	div.highlight_text div.skills div.skills_title {
 		display: table-cell;
 		vertical-align: top;
 		width: 30%;
 	}
-	div.highlights_text div.skills div.skills_title h2 {
+	div.highlight_text div.skills div.skills_title h2 {
 		margin: 0;
 	}
 	.title_wrapper {
 		display: table;
 	}
-	.title_wrapper .titles {
+	.title_wrapper .title {
 		font-size: large;
 		line-height: normal;;
 	}
@@ -483,7 +483,7 @@ img#matomo {
 	.column {
 		max-width: calc(33% - 20px);
 	}
-	.title_wrapper .titles {
+	.title_wrapper .title {
 		font-size: x-large;
 	}
 }

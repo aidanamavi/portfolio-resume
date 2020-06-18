@@ -76,7 +76,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			?>
 			<div id="page_category_<?php echo $postID; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($postID))); ?>">
 				<div class="title_wrapper">
-					<div class="titles">
+					<div class="title">
 						<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
 					</div>
 				</div>
@@ -206,7 +206,7 @@ function getAjaxData( $category='', $offset='10' ) {
 		?>
 		<div id="page_category_<?php echo $category; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($category))); ?>">
 			<div class="title_wrapper">
-				<div class="titles">
+				<div class="title">
 					<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
 				</div>
 			</div>

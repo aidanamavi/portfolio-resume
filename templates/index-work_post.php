@@ -41,9 +41,9 @@
 <?php 				else: ?>
 							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="portfolio slide">
 <?php 				endif; ?>
-							<div class="highlights_text">
+							<div class="highlight_text">
 								<div class="title_wrapper">
-									<div class="titles">
+									<div class="title">
 										<h2>
 											<?php the_title_attribute(); ?>
 										</h2>

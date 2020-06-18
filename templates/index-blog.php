@@ -14,7 +14,7 @@
 ?>
 				<div id="page_archive_blog" data-page-title="blog" data-post-type="blog">
 					<div class="title_wrapper">
-						<div class="titles">
+						<div class="title">
 							<h2>
 								archive
 							</h2>

@@ -16,9 +16,9 @@
 					<div class="highlight_slides">
 						<div class="slide" data-slide="1">
 							<img src="https://aidanamavi.com/wp-content/uploads/2020/05/highlight_about_1.jpg" class="highlight" alt="">
-							<div class="highlights_text">
+							<div class="highlight_text">
 								<div class="title_wrapper">
-									<div class="titles">
+									<div class="title">
 										<h2>
 											Aidan Amavi
 										</h2>
