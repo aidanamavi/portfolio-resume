@@ -28,7 +28,7 @@
 						'offset'           => 0,
 						'category'         => '',
 						'orderby'          => 'post_date',
-						'order'            => 'ASC',
+						'order'            => 'DESC',
 						'include'          => '',
 						'exclude'          => '',
 						'meta_key'         => '',
