@@ -14,6 +14,9 @@
 ?>
 			</div>
 			<footer>
+				<div class="copyright">
+					All third party trademarks are the property of their respective owners. Copyright <?php echo date("Y"); ?>. All rights reserved.
+				</div>
 <?php		$trackerUrl = get_theme_mod('matomo_tracker_url_textbox');
 				$trackerId = get_theme_mod('matomo_site_id_textbox');
 				if ($trackerUrl && $trackerId) : ?>

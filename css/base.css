@@ -442,6 +442,9 @@ footer {
 	color: #333;
 	padding-bottom: 5px;
 }
+footer .copyright {
+	text-align: center;
+}
 img#matomo {
 	border: 0;
 }
