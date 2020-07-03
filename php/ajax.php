@@ -20,15 +20,8 @@
 add_action( 'wp_ajax_getAjaxData', 'getAjaxData' );
 add_action( 'wp_ajax_nopriv_getAjaxData', 'getAjaxData' );
 // Uses AJAX data object {action: fetch-data $_POST[ 'key' ]: value}
-function getAjaxData( $category='', $offset='10' ) {
- 	$postType = $_POST[ 'postType' ];
-	$postID = $_POST[ 'postId' ];
+function getAjaxData( ) {
 
-	$id = $_POST[ 'id' ];
-
-	// Used for infinite scroll
-	$offset = $_POST[ 'offsetPosts' ];
-	$category = $_POST[ 'category' ];
 
 	function validateIntegerInput($input) {
 		$input = abs(intval($input));
@@ -40,6 +33,8 @@ function getAjaxData( $category='', $offset='10' ) {
 		}
 	}
 
+
+	// TODO: change to update key
 	// Validate cross-site request forgery security token.
 	if (!check_ajax_referer( 'ajax_fetch_nonce', 'token', false )) {
 		header($_SERVER['SERVER_PROTOCOL'].' 403 Forbidden');
@@ -48,148 +43,39 @@ function getAjaxData( $category='', $offset='10' ) {
 		wp_die();
 	}
 
-	// If the $postID is blank, show the archive
-	if(!empty($postType)){
-		// Setup the template name
-		if ($postType === 'index') {
-			// code...
-		} elseif ($postType === 'category') {
-			//validateIntegerInput($postID);
-			global $post;
-			$args = array(
-				'posts_per_page'   => 10,
-				'offset'           => '',
-				'category'         => $postID,
-				'orderby'          => 'post_date',
-				'order'            => 'DESC',
-				'include'          => '',
-				'exclude'          => '',
-				'meta_key'         => '',
-				'meta_value'       => '',
-				'post_type'        => 'blog',
-				'post_mime_type'   => '',
-				'post_parent'      => '',
-				'post_status'      => 'publish',
-				'suppress_filters' => true
-			);
-			$fetchedPosts = get_posts( $args );
-			?>
-			<div id="page_category_<?php echo $postID; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($postID))); ?>">
-				<div class="title_wrapper">
-					<div class="title">
-						<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
-					</div>
-				</div>
-				<?php
-				foreach($fetchedPosts as $post) {
-					setup_postdata($post); ?>
-					<article class="blog_list">
-						<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
-						<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
-					</article><?php
-					wp_reset_postdata();
-				} ?>
-			</div>
-			<?php
-		} elseif ($postType === 'work') {
 
-			$templateName = 'work_post';
-
-			// If postID is set, show single post
-			if(!empty($postID)){
-
-				// if there is a $postID, show the post
-				validateIntegerInput($postID);
-				global $post;
-				$post = get_post($postID);
-				setup_postdata($post);
-				get_template_part( 'templates/index', $templateName );
-				wp_reset_postdata();
-
-			// If postID is unset, show index
-			} else {
-				get_template_part( 'templates/index', $postType );
-			}
-
-		} elseif ($postType === 'blog') {
-
-			$templateName = 'blog_post';
-
-			// If postID is set, show single post
-			if(!empty($postID)){
-
-				// if there is a $postID, show the post
-				validateIntegerInput($postID);
-				global $post;
-				$post = get_post($postID);
-				setup_postdata($post);
-				get_template_part( 'templates/index', $templateName );
-				wp_reset_postdata();
-
-			// If postID is unset, show index
-			} else {
-				get_template_part( 'templates/index', $postType );
-			}
-
-		} elseif ($postType === 'about') {
-
-			$templateName = 'blog_post';
-
-			// If postID is set, show single post
-			if(!empty($postID)){
-
-				// if there is a $postID, show the post
-				validateIntegerInput($postID);
-				global $post;
-				$post = get_post($postID);
-				setup_postdata($post);
-				get_template_part( 'templates/index', $templateName );
-				wp_reset_postdata();
-
-			// If postID is unset, show index
-			} else {
-				get_template_part( 'templates/index', $postType );
-			}
-
-		}
-
-
-	}
-
-	// OLD
 	/*
-	if ($page === 'archive') {
-		if ($postType === 'about' || $postType === 'work' || $postType === 'blog') {
-			get_template_part( 'templates/index', $postType );
-		} else {
-			echo 'Invalid page input.';
-		}
-		exit(0);
+	*
+	*	Begin methods
+	*
+	* Views: category, archive, single
+	*/
+
+	// input
+	$viewType = 		$_POST[ 'viewType' ];
+	$postType = $_POST[ 'postType' ];
+	$postId = 	$_POST[ 'postId' ]; // post or category id
+
+	$category=''; $offset='10';
+
+	// Used for infinite scroll
+	$offset = $_POST[ 'offsetPosts' ];
+	$category = $_POST[ 'category' ];
+
+	if(!empty($viewType) && !empty($postType)){
+		$pageContent = "missing view or post type.";
 	}
 
-	// page, postId & postType;				categoryId & offset
-	elseif ($postType === 'work') {
-		if ($postType === 'work') {
-			$name = 'work_post';
-		} elseif ($postType === 'blog') {
-			$name = 'blog_post';
-		}
-		validateIntegerInput($id);
-		global $post;
-		$post = get_post($id);
-		setup_postdata($post);
-		get_template_part( 'templates/index', $name );
-		wp_reset_postdata();
-		exit(0);
-	}*/
+	if($viewType === 'archive'){
+		get_template_part( 'templates/index', $postType );
 
-	elseif (!empty($category)) {
-		validateIntegerInput($category);
-		global $post;
+	} elseif ($viewType === 'category') {
+		$categoryId = $postId;
+		validateIntegerInput($categoryId);
 		$args = array(
 			'posts_per_page'   => 10,
 			'offset'           => '',
-			'category'         => $category,
+			'category'         => $categoryId,
 			'orderby'          => 'post_date',
 			'order'            => 'DESC',
 			'include'          => '',
@@ -202,30 +88,58 @@ function getAjaxData( $category='', $offset='10' ) {
 			'post_status'      => 'publish',
 			'suppress_filters' => true
 		);
-		$fetchedPosts = get_posts( $args );
+		$posts = get_posts( $args );
 		?>
-		<div id="page_category_<?php echo $category; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($category))); ?>">
+		<div id="page_category_<?php echo $categoryId; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($categoryId))); ?>">
 			<div class="title_wrapper">
 				<div class="title">
-					<img src="<?php bloginfo('template_url'); ?>/img/title_blog@2x.png" alt="">
+					<h2>
+						category
+					</h2>
 				</div>
 			</div>
 			<?php
-			foreach($fetchedPosts as $post) {
+			global $post;
+			foreach($posts as $post) {
 				setup_postdata($post); ?>
 				<article class="blog_list">
-					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
+					<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-view-type="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
 					<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 				</article><?php
 				wp_reset_postdata();
 			} ?>
 		</div>
 		<?php
-	// Add if check here, so our final else can output a 404 error.
+
+
+	} elseif ($viewType === 'single') {
+		if(empty($postId)){
+			echo "viewType is single, and postId is missing.";
+		} else {
+			validateIntegerInput($postId);
+
+			if ($postType === 'work') {
+				$templateName = 'work_post';
+			} elseif ($postType === 'blog') {
+				$templateName = 'blog_post';
+			} elseif ($postType === 'about') {
+				$templateName = 'blog_post';
+			}
+
+			global $post;
+			$post = get_post($postId);
+			setup_postdata($post);
+			get_template_part( 'templates/index', $templateName );
+			wp_reset_postdata();
+		}
 	}
 
+	/*
+	*
+	*						Infinite scroll
+	*
+	*/
 	elseif (isset($offset) && isset($category)) {
-		// Infinite scroll.
 		global $post;
 		validateIntegerInput($offset);
 		validateIntegerInput($category);
@@ -239,7 +153,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			'exclude'          => '',
 			'meta_key'         => '',
 			'meta_value'       => '',
-			'post_type'        => 'blog',
+			'post_type'        => $postType,
 			'post_mime_type'   => '',
 			'post_parent'      => '',
 			'post_status'      => 'publish',
@@ -250,7 +164,7 @@ function getAjaxData( $category='', $offset='10' ) {
 			setup_postdata( $post );
 			?>
 			<article class="blog_list">
-				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-page="single" data-post-type="blog" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
+				<h1 class="blog_title"><a href="<?php the_permalink(); ?>" data-link-type="postNavigation" data-view-type="single" data-post-type="<?php echo $postType; ?>" data-post-id="<?php the_ID(); ?>"><?php the_title(); ?></a></h1>
 				<h4 class="blog_date_categories_tags"><?php the_time('F j, Y'); ?> • <?php custom_the_category(', ',''); ?><?php the_tags(' • '); ?></h4>
 			</article>
 			<?php
@@ -259,9 +173,15 @@ function getAjaxData( $category='', $offset='10' ) {
 	}
 
 
+	/*
+	*
+	*						404, if not found
+	*
+	*/
 	else {
 		get_template_part( 'templates/index', '404' );
 	}
+
 	wp_die();
 
 }

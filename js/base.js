@@ -9,7 +9,7 @@
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
 /**
- * To debug, find all "// console.log" and replace with "console.log"
+ * To debug, find all "// console.log" and replace with "// console.log"
  */
  /*global _paq, alert, siteTitle, category, userId, nonce*/
 jQuery(document).ready( function() {
@@ -33,12 +33,13 @@ jQuery(document).ready( function() {
 		if (!state) {
 			var pageUrl = document.location.href;
 			var pageTitle = window.document.title;
+			var viewType = jQuery('#'+visiblePage).data('viewType');
 			var postType = jQuery('#'+visiblePage).data('postType');
 			var postId = jQuery('#'+visiblePage).data('postId');
-			var pageState = {'pageUrl': pageUrl, 'postType': postType, 'postId': postId};
+			var pageState = {'pageUrl': pageUrl, 'viewType': viewType, 'postType': postType, 'postId': postId};
 			// console.log('Missing state');
 			// console.log(pageState);
-			// console.log('replaceState({pageUrl: ' + pageUrl + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
+			// console.log('replaceState({pageUrl: ' + pageUrl + ', viewType: ' + viewType + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
 			history.replaceState(pageState, pageTitle, pageUrl);
 			// console.log('New state');
 			// console.log(state);
@@ -51,12 +52,13 @@ jQuery(document).ready( function() {
 	  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	};
 	function updateVisiblePage() {
-		// console.log('updateVisiblePage()');
 		visiblePage = jQuery('#content_wrapper :visible').attr('id');
+		// console.log('updateVisiblePage('+visiblePage+')');
 		// Enables checking for new posts since visiblePage was last viewed.
 		areAllPostsLoaded = false;
 	}
 	function showLoadingAnimation() {
+		// console.log('showLoadingAnimation()');
 		isPageLoading = true;
 		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},500);
 	}
@@ -66,6 +68,7 @@ jQuery(document).ready( function() {
 			jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
 				jQuery('#loading_animation').hide();
 				isPageLoading = false;
+				updateVisiblePage();
 			});
 		});
 	}
@@ -103,19 +106,19 @@ jQuery(document).ready( function() {
 	function isEmpty( element ){
 		return !$.trim( element.html() );
 	}
-	function loadPage(pageUrl, postType, postId, isPushHistory) {
+	function loadPage(pageUrl, viewType, postType, postId, isPushHistory) {
 		if (isPushHistory === undefined) { isPushHistory = true; }
-		// console.log('function loadPage(' + pageUrl + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
+		// console.log('function loadPage(' + pageUrl + ',' + viewType + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
 		if (isPageLoading) { return; }
 		var pageDiv = getPageDiv(postType, postId);
 		if (pageDiv === visiblePage) { return; }
-		// console.log('function ajax({action: getAjaxData, postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
+		// console.log('function ajax({action: getAjaxData, viewType: '+viewType+', postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
 		showLoadingAnimation();
 		if (isEmpty(jQuery('#'+pageDiv))) {
 			jQuery.ajax({
 				type: 'POST',
 				url: ajaxurl,
-				data: {action: 'getAjaxData', postType: postType, postId: postId, token: window.nonce },
+				data: {action: 'getAjaxData', viewType: viewType, postType: postType, postId: postId, token: window.nonce },
 				success: function(pageContent) {
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
@@ -124,6 +127,8 @@ jQuery(document).ready( function() {
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
+						// console.log(xhr.responseText);
+						// console.log(xhr.status);
 						hideLoadingAnimation();
 					}
 				}
@@ -135,12 +140,21 @@ jQuery(document).ready( function() {
 		// If not going back in history, add new history entry
 		if (isPushHistory) {
 			var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-			updateBrowserHistory({pageUrl: pageUrl, postType: postType, postId: postId}, pageTitle, pageUrl);
+			updateBrowserHistory({pageUrl: pageUrl, viewType: viewType, postType: postType, postId: postId}, pageTitle, pageUrl);
 		}
 	} // loadpage()
 
+
+
+
+
+
+
+
+	// TODO: update visible page to fix category workflow
 	function displayPage(pageDiv, pageUrl, pageContent) {
 		// console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
+		// console.log('visiblePage: ' + visiblePage);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
@@ -164,7 +178,6 @@ jQuery(document).ready( function() {
 				updateTitle(pageTitle);
 				pageTitle = window.document.title;
 				trackPage(pageUrl, pageTitle);
-				updateVisiblePage();
 				// hideLoadingAnimation();
 			});
 		});
@@ -196,29 +209,35 @@ jQuery(document).ready( function() {
 	}
 	function updateCategory(pageDiv) {
 		// console.log('updateCategory(' + pageDiv + ')');
-		var categoryInfo = pageDiv.split('_');
-		if (categoryInfo[1] === 'category') {
-			window.categoryName = categoryInfo[1];
-			window.categoryId = categoryInfo[2];
+		var postType = jQuery('#'+pageDiv).data('postType');
+		var categoryId = jQuery('#'+pageDiv).data('categoryId');
+		// console.log('postType(' + postType + ')');
+		// console.log('categoryId(' + categoryId + ')');
+
+		if (postType === 'category') {
+			window.categoryName = postType;
+			window.categoryId = categoryId;
 			// console.log('New categoryName: '+window.categoryName);
 		} else {
-			window.categoryName = categoryInfo[1];
+			window.categoryName = postType;
 			// console.log('New categoryName: '+window.categoryName);
 		}
+
+
 	}
 	function updateTitle(pageTitle) {
 		// console.log('updateTitle(' + pageTitle + ')');
 		var pageSeperator = ' › ';
 		var newSiteTitle = siteTitle;
-		// if (window.categoryName.length > 0) {
-		// 	if (window.categoryName === 'post') {
-		// 		window.categoryName = 'blog';
-		// 	}
-		// 	if(pageTitle !== window.categoryName) {
-		// 		pageTitle = pageTitle.capitalize();
-		// 		newSiteTitle += pageSeperator+window.categoryName.capitalize();
-		// 	}
-		// }
+		if (window.categoryName.length > 0) {
+			if (window.categoryName === 'post') {
+				window.categoryName = 'blog';
+			}
+			if(pageTitle !== window.categoryName) {
+				pageTitle = pageTitle.capitalize();
+				newSiteTitle += pageSeperator+window.categoryName.capitalize();
+			}
+		}
 		pageTitle = pageTitle.capitalize();
 		newSiteTitle += pageSeperator+pageTitle;
 		window.document.title = newSiteTitle;
@@ -283,7 +302,7 @@ jQuery(document).ready( function() {
 		// List all images for debugging
 		// jQuery("img").each(function() {
     //   imgsrc = this.src;
-    // 	console.log('Source: '+imgsrc);
+    // 	// console.log('Source: '+imgsrc);
 		// });
 
 	};
@@ -303,10 +322,11 @@ jQuery(document).ready( function() {
 			// console.log('Event:');
 			// console.log(event);
 			var pageUrl = state.pageUrl;
+			var viewType = state.viewType;
 			var postType = state.postType;
 			var postId = state.postId;
 			var isPushHistory = false;
-			loadPage(pageUrl, postType, postId, isPushHistory);
+			loadPage(pageUrl, viewType, postType, postId, isPushHistory);
 		}
 	});
 	// Mouse over effects for the navigation.
@@ -341,7 +361,8 @@ jQuery(document).ready( function() {
 		if (linkType === 'headerNavigation') {
 			internalLink();
 			var postType = link.data('postType');
-			loadPage(pageUrl, postType);
+			var viewType = link.data('viewType');
+			loadPage(pageUrl, viewType, postType);
 		} else if (linkType === 'workNavigation') {
 			internalLink();
 			var projectType = link.data('projectType');
@@ -360,12 +381,13 @@ jQuery(document).ready( function() {
 				});
 			}
 		} else if (linkType === 'postNavigation') {
+			internalLink();
+			var viewType = link.data('viewType');
+			var postType = link.data('postType');
 			var postId = link.data('postId');
 			var categoryId = link.data('categoryId');
-			var postType = link.data('postType');
-			internalLink();
 			var theId = postId || categoryId;
-			loadPage(pageUrl, postType, theId);
+			loadPage(pageUrl, viewType, postType, theId);
 		}
 	});
 	// Link click event handlers for slide navigation.

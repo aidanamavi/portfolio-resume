@@ -78,17 +78,17 @@
 					<div id="navigation_wrapper">
 						<nav>
 							<div>
-								<a href="/work" data-link-type="headerNavigation" data-post-type="work" class="underline">
+								<a href="/work" data-link-type="headerNavigation" data-view-type="archive" data-post-type="work" class="underline">
 									work
 								</a>
 							</div>
 							<div>
-								<a href="/blog" data-link-type="headerNavigation" data-post-type="blog" class="underline">
+								<a href="/blog" data-link-type="headerNavigation" data-view-type="archive" data-post-type="blog" class="underline">
 									blog
 								</a>
 							</div>
 							<div>
-								<a href="/about" data-link-type="headerNavigation" data-post-type="about" class="underline">
+								<a href="/about" data-link-type="headerNavigation" data-view-type="archive" data-post-type="about" class="underline">
 									about
 								</a>
 							</div>
