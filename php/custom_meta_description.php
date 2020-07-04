@@ -30,16 +30,7 @@ function custom_meta_description() {
 		return $content;
 	}
 	if (is_single()) {
-		if ($post->post_type === 'work') {
-			$description = prepare_content(get_post_meta( get_the_ID(), 'slide_1_description', true ));
-		} elseif ($post->post_type === 'blog') {
-			if (have_posts()) {
-				while(have_posts()) {
-					the_post();
-					$description = prepare_content(get_the_content());
-				}
-			}
-		}
+		$description = strip_tags(get_the_excerpt());
 	} elseif (is_home() || is_page()) {
 		$description =  get_bloginfo( 'description' );
 	} elseif (is_category()) {
@@ -52,7 +43,9 @@ function custom_meta_description() {
 	if (empty($description)) {
 		$description =  get_bloginfo( 'description' );
 	}
-	echo $description;
+	// Display element.
+	?><meta name="description" content="<?php echo $description; ?>" />
+<?php
 }
 
 ?>

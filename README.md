@@ -64,7 +64,7 @@ If you experience any issues or have enhancement suggestions, you can report the
 ## Recommended Plug-ins
 
 * Wordfence Security
-* XML Sitemap & Google News feeds
+* Rank Math SEO
 
 
 

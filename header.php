@@ -18,19 +18,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><?php custom_page_title();?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php if (is_single()) :
-		global $post;
-		setup_postdata($post); ?>
-		<meta name="description" content="<?php echo strip_tags(get_the_excerpt()); ?>" />
-<?php wp_reset_postdata();
-		elseif (is_home() || is_page()) : ?>
-		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-<?php
-		elseif (is_category()) : ?>
-		<meta name="description" content="<?php echo trim(strip_tags(category_description())); ?>" />
-<?php
-		elseif (is_archive()) : ?>
-		<meta name="description" content="<?php echo 'Archive of all '.$post->post_type.' posts.'; ?>" />
+<?php if(!in_array('seo-by-rank-math/rank-math.php', apply_filters('active_plugins', get_option('active_plugins')))): ?>
+		<?php custom_meta_description(); ?>
 <?php endif; ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css?<?php echo rand(); ?>" type="text/css" media="all" />
