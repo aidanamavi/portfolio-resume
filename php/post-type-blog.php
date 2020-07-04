@@ -40,7 +40,7 @@ function add_post_type_blog() {
 		'hierarchical' => true,
 		'menu_position' => 5,
 		'map_meta_cap' => true,
-		'supports' => array('author','title','editor','thumbnail','page-attributes','revisions'),
+		'supports' => array('author','title','thumbnail','editor','page-attributes','excerpt','revisions'),
 		'taxonomies' => array('category')
 	);
 	register_post_type('blog',$args);

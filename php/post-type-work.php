@@ -40,7 +40,7 @@ function add_post_type_work() {
 		'hierarchical' => true,
 		'menu_position' => 5,
 		'map_meta_cap' => true,
-		'supports' => array('author','title','thumbnail')
+		'supports' => array('author','title','thumbnail','excerpt')
 	);
 	register_post_type('work',$args);
 }
