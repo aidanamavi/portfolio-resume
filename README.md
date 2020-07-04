@@ -36,10 +36,9 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-resume
 
 1. Place the theme directory into the `wp-content/themes/` folder.
 2. Navigate to `Appearance > Themes` and activate the theme.
-3. Click the `Customize` button to adjust your settings.
-4. Create page with the title of your front page, `Pages > Add New`.
-5. Then visit `Settings > Reading` and select the radio button for "A static homepage" and select your new Homepage
-6. Repeat steps 4 and 5 to create your posts page for your "Blog".
+3. Create a new page with the title of your Homepage, `Pages > Add New`.
+4. Then visit `Customize > Homepage Settings` and select the radio button for "A static page" and select the page to use as your Homepage.
+5. Repeat steps 3 and 4 to create your posts page for your "Blog".
 
 If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
 
