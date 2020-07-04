@@ -215,7 +215,7 @@ $toolGroups = array(
 	array(
 		'php'								=> __('PHP', 'changeMe'),
 		'mySql'							=> __('MySQL', 'changeMe'),
-		'javascript'				=> __('Javascript', 'changeMe'),
+		'javascript'				=> __('JavaScript', 'changeMe'),
 		'html'							=> __('HTML', 'changeMe'),
 		'css'								=> __('CSS', 'changeMe'),
 		'git'								=> __('GIT', 'changeMe'),

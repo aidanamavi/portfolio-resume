@@ -166,7 +166,7 @@
 											Matomo<br /><br />
 											PHP<br />
 											MySQL<br />
-											Javascript<br />
+											JavaScript<br />
 											HTML<br />
 											CSS<br />
 											GIT<br />
