@@ -57,7 +57,8 @@ If you experience any issues or have enhancement suggestions, you can report the
 
 1. 16:9 images work best for several reasons.
 2. Avoid using external hosting services like YouTube.
-3. If you struggle with these tips, ask for help through the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues).
+3. Fill and complete excerpts for post descriptions to improve SEO.
+4. If you struggle with these tips, ask for help through the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues).
 
 
 ## Recommended Plug-ins
