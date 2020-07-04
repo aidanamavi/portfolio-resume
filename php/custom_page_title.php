@@ -14,13 +14,14 @@
 function custom_page_title() {
 	$title = bloginfo('name');
 	if (is_single()) {
-		$postType = get_post_type( $post );
+		$postType = get_post_type($post);
 		if ($postType === 'post') {
 			$postType = 'blog';
 		}
 		$title .= ' &rsaquo; '.ucwords($postType);
 	}
-	$title .= wp_title('&rsaquo;', false, 'left');
+	// $title .= wp_title('&rsaquo;', false, 'left');
+	$title .= ' &rsaquo; '.get_the_title($post);
 	echo $title;
 }
 
