@@ -16,7 +16,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="toggleFade">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title><?php custom_page_title();?></title>
+		<title><?php custom_page_title(); ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php if(!in_array('seo-by-rank-math/rank-math.php', apply_filters('active_plugins', get_option('active_plugins')))): ?>
 		<?php custom_meta_description(); ?>
@@ -67,17 +67,17 @@
 					<div id="navigation_wrapper">
 						<nav>
 							<div>
-								<a href="/work" data-link-type="headerNavigation" data-view-type="archive" data-post-type="work" class="underline">
+								<a href="<?php bloginfo('wpurl'); ?>/work" data-link-type="headerNavigation" data-view-type="archive" data-post-type="work" class="underline">
 									work
 								</a>
 							</div>
 							<div>
-								<a href="/blog" data-link-type="headerNavigation" data-view-type="archive" data-post-type="blog" class="underline">
+								<a href="<?php bloginfo('wpurl'); ?>/blog" data-link-type="headerNavigation" data-view-type="archive" data-post-type="blog" class="underline">
 									blog
 								</a>
 							</div>
 							<div>
-								<a href="/about" data-link-type="headerNavigation" data-view-type="archive" data-post-type="about" class="underline">
+								<a href="<?php bloginfo('wpurl'); ?>/about" data-link-type="headerNavigation" data-view-type="archive" data-post-type="about" class="underline">
 									about
 								</a>
 							</div>
