@@ -209,7 +209,7 @@ $toolGroups = array(
 		'shoutcast'					=> __('Shoutcast', 'changeMe'),
 	),
 	array(
-		'wordpress'					=> __('Wordpress', 'changeMe'),
+		'wordpress'					=> __('WordPress', 'changeMe'),
 		'matomo'							=> __('Matomo', 'changeMe'),
 	),
 	array(

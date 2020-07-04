@@ -1,4 +1,4 @@
-A [Wordpress](https://www.wordpress.org) portfolio theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+A [WordPress](https://www.wordpress.org) portfolio theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 
 ![Portfolio Theme Screen Shot](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/img/markdown_screenshot.jpg "Portfolio Theme Screen Shot")
 
@@ -6,7 +6,7 @@ A [Wordpress](https://www.wordpress.org) portfolio theme with minimalist design 
 
 ## Why is this so awesome?
 
-* :rocket: **Integration with world-class open-source software.** Tested with and built on Linux, Apache, MySQL, PHP, Wordpress, jQuery, Matomo, and Wordfence.
+* :rocket: **Integration with world-class open-source software.** Tested with and built on Linux, Apache, MySQL, PHP, WordPress, jQuery, Matomo, and Wordfence.
 * :zap: **Incredibly fast with built-in caching.** Front-end client-side caching with AJAX built-in.
 * :lock: **Works seamlessly with encrypted content.** Works automagically with your SSL certificates.
 * :+1: **Standards compliant & validated code.** HTML5, CSS3, and JSLint code analysis and verification.
@@ -28,7 +28,7 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-resume
 ## Requirements
 
 * [PHP](https://www.php.net/) >= 7
-* [Wordpress](https://www.wordpress.org) >= 5
+* [WordPress](https://www.wordpress.org) >= 5
 
 
 

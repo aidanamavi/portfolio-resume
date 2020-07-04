@@ -162,7 +162,7 @@
 											Apache<br /><br />
 											Icecast<br />
 											Shoutcast<br /><br />
-											Wordpress<br />
+											WordPress<br />
 											Matomo<br /><br />
 											PHP<br />
 											MySQL<br />
