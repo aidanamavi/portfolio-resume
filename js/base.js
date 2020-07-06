@@ -60,11 +60,11 @@ jQuery(document).ready( function() {
 	function showLoadingAnimation() {
 		// console.log('showLoadingAnimation()');
 		isPageLoading = true;
-		jQuery('#loading_animation').stop().show().animate({'opacity': '.85'},500);
+		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500);
 	}
 	function hideLoadingAnimation() {
 		// console.log('hideLoadingAnimation()');
-		jQuery('html, body').animate({ scrollTop: 0 }, 'slow', function(){
+		jQuery('html').animate({ scrollTop: 0 }, 1, function(){
 			jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
 				jQuery('#loading_animation').hide();
 				isPageLoading = false;
