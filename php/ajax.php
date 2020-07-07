@@ -90,7 +90,7 @@ function getAjaxData( ) {
 		);
 		$posts = get_posts( $args );
 		?>
-		<div id="page_category_<?php echo $categoryId; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($categoryId))); ?>">
+		<div id="page_category_<?php echo $categoryId; ?>"  data-page-title="<?php echo strip_tags(esc_attr(get_the_category_by_id($categoryId))); ?>" data-view-type="category" data-post-type="blog">
 			<div class="title_wrapper">
 				<div class="title">
 					<h2>
