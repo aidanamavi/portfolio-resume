@@ -37,14 +37,14 @@ jQuery(document).ready( function() {
 			var postType = jQuery('#'+visiblePage).data('postType');
 			var postId = jQuery('#'+visiblePage).data('postId');
 			var pageState = {'pageUrl': pageUrl, 'viewType': viewType, 'postType': postType, 'postId': postId};
-			// console.log('Missing state');
-			// console.log(pageState);
+			// console.log('Detected missing state');
 			// console.log('replaceState({pageUrl: ' + pageUrl + ', viewType: ' + viewType + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
 			history.replaceState(pageState, pageTitle, pageUrl);
 			// console.log('New state');
+			var state = window.history.state;
 			// console.log(state);
 		} else {
-			// console.log('State detected');
+			// console.log('Detected set state');
 			// console.log(state);
 		}
 	}
@@ -110,7 +110,7 @@ jQuery(document).ready( function() {
 		if (isPushHistory === undefined) { isPushHistory = true; }
 		// console.log('function loadPage(' + pageUrl + ',' + viewType + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
 		if (isPageLoading) { return; }
-		var pageDiv = getPageDiv(postType, postId);
+		var pageDiv = getPageDiv(viewType, postType, postId);
 		if (pageDiv === visiblePage) { return; }
 		// console.log('function ajax({action: getAjaxData, viewType: '+viewType+', postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
 		showLoadingAnimation();
@@ -154,7 +154,7 @@ jQuery(document).ready( function() {
 	// TODO: update visible page to fix category workflow
 	function displayPage(pageDiv, pageUrl, pageContent) {
 		// console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
-		// console.log('visiblePage: ' + visiblePage);
+		// console.log('Hiding visiblePage: ' + visiblePage);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
@@ -229,7 +229,7 @@ jQuery(document).ready( function() {
 		// console.log('updateTitle(' + pageTitle + ')');
 		var pageSeperator = ' › ';
 		var newSiteTitle = siteTitle;
-		if (window.categoryName.length > 0) {
+		if (typeof window.categoryName !== 'undefined' && window.categoryName.length > 0) {
 			if (window.categoryName === 'post') {
 				window.categoryName = 'blog';
 			}
@@ -250,20 +250,17 @@ jQuery(document).ready( function() {
 		pageReferrerUrl = document.location.href;
 		history.pushState(pageState, pageTitle, pageUrl);
 	}
-	function getPageDiv(postType, postId) {
-		var divId = postType;
-		var index = 0;
-		var seperator = '';
-		if (postId) {
-			// Add a seperator between words, i.e, work_402
-			divId = divId + '_' + postId;
-			if (postType === 'category'){
-				divId = 'page_'+divId;
-			} else {
-				divId = 'page_single_'+divId;
+	function getPageDiv(viewType, postType, postId) {
+		// console.log('getPageDiv('+viewType+','+postType+','+postId+')');
+		var divId = 'page';
+		if(viewType && postType){
+			divId = divId+'_'+viewType;
+			if(viewType !== 'category'){
+				divId = divId+'_'+postType;
 			}
-		} else {
-			divId = 'page_archive_'+divId;
+			if(postId){
+				divId = divId+'_'+postId;
+			}
 		}
 		return divId;
 	}
