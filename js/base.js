@@ -174,8 +174,7 @@ jQuery(document).ready( function() {
 					// if div doesnt exist, load. (needed for back history)
 				}
 				updateCategory(pageDiv);
-				var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
-				updateTitle(pageTitle);
+				updateTitle(pageDiv);
 				pageTitle = window.document.title;
 				trackPage(pageUrl, pageTitle);
 				// hideLoadingAnimation();
@@ -213,7 +212,6 @@ jQuery(document).ready( function() {
 		var categoryId = jQuery('#'+pageDiv).data('categoryId');
 		// console.log('postType(' + postType + ')');
 		// console.log('categoryId(' + categoryId + ')');
-
 		if (postType === 'category') {
 			window.categoryName = postType;
 			window.categoryId = categoryId;
@@ -222,25 +220,22 @@ jQuery(document).ready( function() {
 			window.categoryName = postType;
 			// console.log('New categoryName: '+window.categoryName);
 		}
-
-
 	}
-	function updateTitle(pageTitle) {
-		// console.log('updateTitle(' + pageTitle + ')');
+	function updateTitle(pageDiv) {
+		// console.log('updateTitle(' + pageDiv + ')');
+		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
+		var viewType = jQuery('#'+pageDiv).data('viewType');
+		var postType = jQuery('#'+pageDiv).data('postType');
 		var pageSeperator = ' › ';
-		var newSiteTitle = siteTitle;
-		if (typeof window.categoryName !== 'undefined' && window.categoryName.length > 0) {
-			if (window.categoryName === 'post') {
-				window.categoryName = 'blog';
-			}
-			if(pageTitle !== window.categoryName) {
-				pageTitle = pageTitle.capitalize();
-				newSiteTitle += pageSeperator+window.categoryName.capitalize();
-			}
+		var newSiteTitle;
+		if(viewType === 'category'){
+			newSiteTitle = siteTitle+pageSeperator+postType+pageSeperator+viewType+pageSeperator+pageTitle;
+		} else if (viewType === 'archive') {
+			newSiteTitle = siteTitle+pageSeperator+postType+pageSeperator+viewType;
+		} else if (viewType === 'single'){
+			newSiteTitle = siteTitle+pageSeperator+postType+pageSeperator+pageTitle;
 		}
-		pageTitle = pageTitle.capitalize();
-		newSiteTitle += pageSeperator+pageTitle;
-		window.document.title = newSiteTitle;
+		window.document.title = newSiteTitle.capitalize();
 	}
 	function updateBrowserHistory(pageState, pageTitle, pageUrl) {
 		// console.log('updateBrowserHistory(' + pageState + ',' + pageTitle + ',' + pageUrl + ')');
