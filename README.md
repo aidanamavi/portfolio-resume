@@ -42,7 +42,7 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-theme/
 4. Then visit `Customize > Homepage Settings` and select the radio button for "A static page" and select the page to use as your Homepage.
 5. Repeat steps 3 and 4 to create your posts page for your "Blog".
 
-If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
+If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-theme/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-theme/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
 
 
 
