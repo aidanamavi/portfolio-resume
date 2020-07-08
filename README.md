@@ -1,4 +1,6 @@
-A [WordPress](https://www.wordpress.org) portfolio theme with minimalist design principles. The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
+A minimalist [WordPress](https://www.wordpress.org) theme for your portfolio. Open-source, continuously supported, and free to use.
+
+The theme is clean, content-focused, and designed for clarity. It offers simple, straight forward typography readable on a wide variety of screen sizes, and suitable for multiple languages. It is designed using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer.
 
 ![Portfolio Theme Screen Shot](https://raw.githubusercontent.com/aidanamavi/portfolio-resume/master/img/markdown_screenshot.jpg "Portfolio Theme Screen Shot")
 
