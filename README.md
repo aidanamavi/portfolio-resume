@@ -19,7 +19,7 @@ The theme is clean, content-focused, and designed for clarity. It offers simple,
 * :wheelchair: **Accessible friendly.** W3C Web Accessibility Initiative (WAI) support across all devices.
 * :computer: **Flows like a modern web app.** Intelligent loading screens ensure your first impression is amazing.
 
-And in the works for [the future](https://github.com/aidanamavi/portfolio-resume/milestones/0.3):
+And in the works for [the future](https://github.com/aidanamavi/portfolio-theme/milestones/):
 * :rocket: **WP Integration** A post type for About content.
 * :zap: **Speed Optimization** Backend compression, and caching options.
 * :art: **UX/UI** Work navigation sub-menu: keywords, products, roles.
