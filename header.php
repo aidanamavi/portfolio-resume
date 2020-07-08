@@ -42,17 +42,13 @@
 <?php 	endif; ?>
 		<?php wp_head(); ?>
 <?php
-		global $cat;
 		global $current_user;
 		$userId = $current_user->ID;
 		$nonce = wp_create_nonce( 'ajax_fetch_nonce' );
-		$siteTitle = get_bloginfo('name');
-		$categoryName = single_cat_title('', false); ?>
+		$siteTitle = get_bloginfo('name'); ?>
 		<script>
 			userId = "<?php echo $userId; ?>";
 			nonce = "<?php echo $nonce; ?>";
-			categoryId = "<?php echo $cat; ?>";
-			categoryName = "<?php echo $categoryName; ?>";
 			siteTitle = "<?php echo $siteTitle; ?>";
 		</script>
 	</head>
