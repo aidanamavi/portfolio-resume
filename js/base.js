@@ -8,10 +8,15 @@
  * @copyright 2012 - 2020, Aidan Amavi
  * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
  */
+
 /**
- * To debug, find all "// console.log" and replace with "// console.log"
- */
- /*global _paq, alert, siteTitle, category, userId, nonce*/
+**	To debug, find all "// console.log" and replace with "// console.log"
+**/
+
+/**
+**	Globals set by backend:
+**	_paq, siteTitle, categoryId, categoryName, userId, nonce
+**/
 jQuery(document).ready( function() {
 	// Configurable settings.
 	var homepageDiv = 'page_archive_work';
@@ -368,7 +373,9 @@ jQuery(document).ready( function() {
 						isThumbnailLoading = false;
 						// trackAction
 						projectType = projectType.capitalize();
-						_paq.push(['trackEvent', 'Types', 'Work', projectType]);
+						if (isTrackingOn) {
+							_paq.push(['trackEvent', 'Types', 'Work', projectType]);
+						}
 					});
 				});
 			}
