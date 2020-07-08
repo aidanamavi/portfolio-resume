@@ -100,7 +100,7 @@ a.glow:hover, a.glow:active, a.glow:focus {
 	-o-transition: 20ms linear 0s;
 	transition: 20ms linear 0s;
 }
-a.underline:hover, a.underline:active, a.underline:focus {
+a.underline:hover, a.underline:active, a.underline:focus, a.underline.on {
 	color: #ffffff;
 	text-decoration: none;
 	-webkit-transition: 20ms linear 0s;

@@ -351,10 +351,15 @@ jQuery(document).ready( function() {
 			event.preventDefault();
 			event.stopPropagation();
 		}
+		function updateNavigationUnderline(linkType){
+			jQuery('a.underline.on[data-link-type='+linkType+']').removeClass('on');
+			link.addClass('on');
+		}
 		var link = jQuery(this);
 		var linkType = link.data('linkType');
 		var pageUrl = link.attr('href');
 		// console.log('Anchor clicked: ' + pageUrl);
+		updateNavigationUnderline(linkType);
 		if (linkType === 'headerNavigation') {
 			internalLink();
 			var postType = link.data('postType');
