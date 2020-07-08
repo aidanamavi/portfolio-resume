@@ -12,19 +12,33 @@
 
 // Add custom page title.
 function custom_page_title() {
-	$title = bloginfo('name');
-	if (is_single()) {
-		$postType = get_post_type();
-		if ($postType === 'post') {
-			$postType = 'blog';
+	$siteTitle = bloginfo('name');
+	$pageTitle = get_the_title();
+	$viewType;
+	$postType = get_post_type();
+	$pageSeperator = ' &rsaquo; ';
+	$newSiteTitle;
+
+	if(is_single()){
+		$viewType = 'single';
+	} else if (is_archive()){
+		if (is_category()){
+			global $cat;
+			$viewType = 'category';
+			$pageTitle = get_cat_name($cat);
+		} else {
+			$viewType = 'archive';
 		}
-		$title .= ' &rsaquo; '.ucwords($postType);
 	}
-	//$title .= wp_title('&rsaquo;', false, 'left');
-	if(!is_home() && !is_front_page() && !is_archive()){
-		$title .= ' &rsaquo; '.get_the_title();
+
+	if($viewType === 'category'){
+		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType.$pageSeperator.$pageTitle;
+	} else if ($viewType === 'archive') {
+		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType;
+	} else if ($viewType === 'single'){
+		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$pageTitle;
 	}
-	echo $title;
+	echo ucwords($newSiteTitle);
 }
 
 ?>
