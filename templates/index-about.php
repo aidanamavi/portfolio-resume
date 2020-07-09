@@ -12,7 +12,7 @@
 	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 	*/
 ?>
-				<div id="page_archive_about" data-page-title="about">
+				<div id="page_archive_about" data-page-title="about" data-view-type="single" data-post-type="work">
 					<div class="highlight_slides">
 						<div class="slide" data-slide="1">
 							<img src="https://aidanamavi.com/wp-content/uploads/2020/05/highlight_about_1.jpg" class="highlight" alt="">
