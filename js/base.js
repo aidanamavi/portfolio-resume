@@ -10,7 +10,7 @@
  */
 
 /**
-**	To debug, find all "// console.log" and replace with "// console.log"
+**	To debug, find all "console.log" and replace with "console.log"
 **/
 
 /**
@@ -33,7 +33,7 @@ jQuery(document).ready( function() {
 
 // TODO: Why does state still return null after replacing?
 	function initiateState() {
-		// console.log('initiateState()');
+		console.log('initiateState()');
 		// If missing a window history state
 		if (!state) {
 			var pageUrl = document.location.href;
@@ -42,15 +42,15 @@ jQuery(document).ready( function() {
 			var postType = jQuery('#'+visiblePage).data('postType');
 			var postId = jQuery('#'+visiblePage).data('postId');
 			var pageState = {'pageUrl': pageUrl, 'viewType': viewType, 'postType': postType, 'postId': postId};
-			// console.log('Detected missing state');
-			// console.log('replaceState({pageUrl: ' + pageUrl + ', viewType: ' + viewType + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
+			console.log('Detected missing state');
+			console.log('replaceState({pageUrl: ' + pageUrl + ', viewType: ' + viewType + ', postType: ' + postType + ', postId: ' + postId + '},' + pageTitle + ',' + pageUrl + ')');
 			history.replaceState(pageState, pageTitle, pageUrl);
-			// console.log('New state');
+			console.log('New state');
 			var state = window.history.state;
-			// console.log(state);
+			console.log(state);
 		} else {
-			// console.log('Detected set state');
-			// console.log(state);
+			console.log('Detected set state');
+			console.log(state);
 		}
 	}
 	String.prototype.capitalize = function() {
@@ -58,22 +58,23 @@ jQuery(document).ready( function() {
 	};
 	function updateVisiblePage() {
 		visiblePage = jQuery('#content_wrapper :visible').attr('id');
-		// console.log('updateVisiblePage('+visiblePage+')');
+		console.log('updateVisiblePage('+visiblePage+')');
 		// Enables checking for new posts since visiblePage was last viewed.
 		areAllPostsLoaded = false;
 	}
 	function showLoadingAnimation() {
-		// console.log('showLoadingAnimation()');
+		console.log('showLoadingAnimation()');
 		isPageLoading = true;
 		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500);
 	}
 	function hideLoadingAnimation() {
-		// console.log('hideLoadingAnimation()');
+		console.log('hideLoadingAnimation()');
 		jQuery('html').animate({ scrollTop: 0 }, 1, function(){
 			jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
 				jQuery('#loading_animation').hide();
 				isPageLoading = false;
 				updateVisiblePage();
+				adjustSlideHeight();
 			});
 		});
 	}
@@ -113,11 +114,11 @@ jQuery(document).ready( function() {
 	}
 	function loadPage(pageUrl, viewType, postType, postId, isPushHistory) {
 		if (isPushHistory === undefined) { isPushHistory = true; }
-		// console.log('function loadPage(' + pageUrl + ',' + viewType + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
+		console.log('function loadPage(' + pageUrl + ',' + viewType + ',' + postType + ',' + postId + ',' + isPushHistory + ')');
 		if (isPageLoading) { return; }
 		var pageDiv = getPageDiv(viewType, postType, postId);
 		if (pageDiv === visiblePage) { return; }
-		// console.log('function ajax({action: getAjaxData, viewType: '+viewType+', postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
+		console.log('function ajax({action: getAjaxData, viewType: '+viewType+', postType: '+postType+', postId: '+postId+', token: '+window.nonce+' })');
 		showLoadingAnimation();
 		if (isEmpty(jQuery('#'+pageDiv))) {
 			jQuery.ajax({
@@ -128,18 +129,18 @@ jQuery(document).ready( function() {
 					displayPage(pageDiv, pageUrl, pageContent);
 				},
 				error: function(xhr){
-					// console.log('AJAX error');
+					console.log('AJAX error');
 					if (xhr.status === 403) {
 						displayPage('page_error_403', false, xhr.responseText);
 					} else {
-						// console.log(xhr.responseText);
-						// console.log(xhr.status);
+						console.log(xhr.responseText);
+						console.log(xhr.status);
 						hideLoadingAnimation();
 					}
 				}
 			});
 		} else {
-			// console.log('Detected cached content');
+			console.log('Detected cached content');
 			displayPage(pageDiv, pageUrl);
 		}
 		// If not going back in history, add new history entry
@@ -153,19 +154,43 @@ jQuery(document).ready( function() {
 
 
 
+	function adjustSlideHeight(){
+		if (jQuery('#'+visiblePage).data('postType') === 'work'){
+			// TODO: and not page_Archive_work
+			var windowHeight = $(window).height();
+			var numbersWrapperHeight = 34; // 34.6px
+			var slideHeightImg = jQuery('.slide:visible img.highlight').height(); // 529px
+			var slideHeightText = jQuery('.slide:visible .highlight_text').height(); // 529px
+			var slideHeight = jQuery('.slide:visible').height();
+			var slideHeight2 = slideHeightImg + slideHeightText;
+			console.log('windowHeight: '+windowHeight);
+			console.log('numbersWrapperHeight: '+numbersWrapperHeight);
+			console.log('slideHeightImg: '+slideHeightImg);
+			console.log('slideHeightText: '+slideHeightText);
+			console.log('slideHeight: '+slideHeight);
+			console.log('slideHeight2: '+slideHeight2);
+			var cssHeight = numbersWrapperHeight + slideHeight2;
+			console.log('cssHeight: '+cssHeight);
+			jQuery('#'+visiblePage).css('height', cssHeight);
+		}
+	}
 
-
-
+	$(window).on('scroll resize', adjustSlideHeight);
 	// TODO: update visible page to fix category workflow
 	function displayPage(pageDiv, pageUrl, pageContent) {
-		// console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
-		// console.log('Hiding visiblePage: ' + visiblePage);
+
+
+		// adjustSlideHeight();
+
+
+		console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
+		console.log('Hiding visiblePage: ' + visiblePage);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
 			jQuery('#'+visiblePage).hide( function() {
 				if (pageContent) {
 					jQuery('#content_wrapper').css('opacity', '0');
 					jQuery('#content_wrapper').append(pageContent).imagesLoaded().then(function(){
-						// console.log('------ IMAGES LOADED ------');
+						console.log('------ IMAGES LOADED ------');
 						jQuery('#content_wrapper').animate({'opacity':'1'},1000);
 						hideLoadingAnimation();
         	});
@@ -187,12 +212,12 @@ jQuery(document).ready( function() {
 		});
 	}
 	function trackPage(pageUrl, pageTitle) {
-		// console.log('trackPage(' + pageUrl + ',' + pageTitle + ')');
+		console.log('trackPage(' + pageUrl + ',' + pageTitle + ')');
 		if (!isTrackingOn) {
-			// console.log('Tracking Disabled');
+			console.log('Tracking Disabled');
 			return;
 		}
-		// console.log('Tracking Enabled');
+		console.log('Tracking Enabled');
 		pageUrl = pageUrl || document.location.href;
 		pageTitle = pageTitle || window.document.title;
 		_paq.push(['setCustomUrl', pageUrl]);
@@ -202,9 +227,9 @@ jQuery(document).ready( function() {
 	}
 	function trackAction(pageName, slideNumber) {
 		// trackEvent(category, action, [name], [value])
-		// console.log('trackAction(' + pageName + ',' + slideNumber + ')');
+		console.log('trackAction(' + pageName + ',' + slideNumber + ')');
 		if (!isTrackingOn) {
-			// console.log('Tracking Disabled');
+			console.log('Tracking Disabled');
 			return;
 		}
 		pageName = jQuery('#'+pageName).data('pageTitle');
@@ -212,22 +237,22 @@ jQuery(document).ready( function() {
 		_paq.push(['trackEvent', 'Slides', pageName, slideNumber]);
 	}
 	function updateCategory(pageDiv) {
-		// console.log('updateCategory(' + pageDiv + ')');
+		console.log('updateCategory(' + pageDiv + ')');
 		var postType = jQuery('#'+pageDiv).data('postType');
 		var categoryId = jQuery('#'+pageDiv).data('categoryId');
-		// console.log('postType(' + postType + ')');
-		// console.log('categoryId(' + categoryId + ')');
+		console.log('postType(' + postType + ')');
+		console.log('categoryId(' + categoryId + ')');
 		if (postType === 'category') {
 			window.categoryName = postType;
 			window.categoryId = categoryId;
-			// console.log('New categoryName: '+window.categoryName);
+			console.log('New categoryName: '+window.categoryName);
 		} else {
 			window.categoryName = postType;
-			// console.log('New categoryName: '+window.categoryName);
+			console.log('New categoryName: '+window.categoryName);
 		}
 	}
 	function updateTitle(pageDiv) {
-		// console.log('updateTitle(' + pageDiv + ')');
+		console.log('updateTitle(' + pageDiv + ')');
 		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 		var viewType = jQuery('#'+pageDiv).data('viewType');
 		var postType = jQuery('#'+pageDiv).data('postType');
@@ -240,18 +265,19 @@ jQuery(document).ready( function() {
 		} else if (viewType === 'single'){
 			newSiteTitle = siteTitle+pageSeperator+postType+pageSeperator+pageTitle;
 		}
+		// TODO: viewType about
 		window.document.title = newSiteTitle.capitalize();
 	}
 	function updateBrowserHistory(pageState, pageTitle, pageUrl) {
-		// console.log('updateBrowserHistory(' + pageState + ',' + pageTitle + ',' + pageUrl + ')');
+		console.log('updateBrowserHistory(' + pageState + ',' + pageTitle + ',' + pageUrl + ')');
 		pageStateConsole = JSON.stringify(pageState, null, 4);
-		// console.log(pageStateConsole);
+		console.log(pageStateConsole);
 		// Update the pageReferrerUrl for tracking functionality
 		pageReferrerUrl = document.location.href;
 		history.pushState(pageState, pageTitle, pageUrl);
 	}
 	function getPageDiv(viewType, postType, postId) {
-		// console.log('getPageDiv('+viewType+','+postType+','+postId+')');
+		console.log('getPageDiv('+viewType+','+postType+','+postId+')');
 		var divId = 'page';
 		if(viewType && postType){
 			divId = divId+'_'+viewType;
@@ -266,7 +292,7 @@ jQuery(document).ready( function() {
 	}
 	// Fn to allow an event to fire after all images are loaded
 	$.fn.imagesLoaded = function () {
-		// console.log('------ IMAGES LOADING ------');
+		console.log('------ IMAGES LOADING ------');
     // Get all the images (excluding those with no src attribute)
     var $imgs = this.find('img[src!=""]');
     // If there's no images, just return an already resolved promise
@@ -290,7 +316,7 @@ jQuery(document).ready( function() {
 		jQuery('html').animate({'opacity':'1'},1, function(){
 			jQuery('#content_wrapper').imagesLoaded().then(function(){
 				// After images are loaded
-				// console.log('------ IMAGES LOADED ------');
+				console.log('------ IMAGES LOADED ------');
 				jQuery('#content_wrapper').animate({'opacity':'1'},750);
 				hideLoadingAnimation();
 			});
@@ -299,7 +325,7 @@ jQuery(document).ready( function() {
 		// List all images for debugging
 		// jQuery("img").each(function() {
     //   imgsrc = this.src;
-    // 	// console.log('Source: '+imgsrc);
+    // 	console.log('Source: '+imgsrc);
 		// });
 
 	};
@@ -310,14 +336,14 @@ jQuery(document).ready( function() {
 		event.preventDefault();
 		event.stopPropagation();
 		if (!state) {
-			// console.log('No history state..');
-			// console.log(state);
+			console.log('No history state..');
+			console.log(state);
 			// TODO: report issue via ajax
 		} else if (state) {
-			// console.log('Detected history state..');
-			// console.log(state); // page_archive_blog
-			// console.log('Event:');
-			// console.log(event);
+			console.log('Detected history state..');
+			console.log(state); // page_archive_blog
+			console.log('Event:');
+			console.log(event);
 			var pageUrl = state.pageUrl;
 			var viewType = state.viewType;
 			var postType = state.postType;
@@ -329,7 +355,7 @@ jQuery(document).ready( function() {
 	// Mouse over effects for the navigation.
 	jQuery('nav img.off').hover(
 		function() {
-			// console.log('hover');
+			console.log('hover');
 			jQuery(this).stop().animate({'opacity': '0'},250); },
 		function() {
 			jQuery(this).stop().animate({'opacity': '1'},250);
@@ -358,7 +384,7 @@ jQuery(document).ready( function() {
 		var link = jQuery(this);
 		var linkType = link.data('linkType');
 		var pageUrl = link.attr('href');
-		// console.log('Anchor clicked: ' + pageUrl);
+		console.log('Anchor clicked: ' + pageUrl);
 		updateNavigationUnderline(linkType);
 		if (linkType === 'headerNavigation') {
 			internalLink();
