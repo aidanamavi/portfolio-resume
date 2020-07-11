@@ -15,7 +15,7 @@
 
 /**
 **	Globals set by backend:
-**	_paq, siteTitle, categoryId, categoryName, userId, nonce
+**	_paq, siteTitle, userId, nonce
 **/
 jQuery(document).ready( function() {
 	// Configurable settings.
