@@ -181,6 +181,9 @@ body {
 	-khtml-user-select: none; /* Konqueror */
 	-moz-user-select: -moz-none; /* Firefox all */
 	-ms-user-select: none; /* IE 10+ / Opera */
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 #wrapper {
 	/* height: auto !important;
@@ -190,6 +193,8 @@ body {
 	margin: auto;
 	cursor: default;
 	outline: none;
+	flex-grow: 1;
+	flex-shrink: 0;
 }
 #wrapper:after {
   /* content: "";
