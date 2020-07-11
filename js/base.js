@@ -10,7 +10,7 @@
  */
 
 /**
-**	To debug, find all "console.log" and replace with "console.log"
+**	To debug, find and uncomment all "console.log"
 **/
 
 /**
@@ -150,12 +150,9 @@ jQuery(document).ready( function() {
 		}
 	} // loadpage()
 
-
-
-
-
 	function adjustSlideHeight(){
-		if (jQuery('#'+visiblePage).data('postType') === 'work'){
+		postType = jQuery('#'+visiblePage).data('postType');
+		if (postType === 'work' || postType === 'about'){
 			// TODO: and not page_Archive_work
 			var windowHeight = $(window).height();
 			var numbersWrapperHeight = 34; // 34.6px
@@ -178,11 +175,6 @@ jQuery(document).ready( function() {
 	$(window).on('scroll resize', adjustSlideHeight);
 	// TODO: update visible page to fix category workflow
 	function displayPage(pageDiv, pageUrl, pageContent) {
-
-
-		// adjustSlideHeight();
-
-
 		console.log('function displayPage(' + pageDiv + ',' + pageUrl + ', pageContent)');
 		console.log('Hiding visiblePage: ' + visiblePage);
 		jQuery('#'+visiblePage).stop().animate({'opacity':'0'},750, function() {
@@ -265,7 +257,6 @@ jQuery(document).ready( function() {
 		} else if (viewType === 'single'){
 			newSiteTitle = siteTitle+pageSeperator+postType+pageSeperator+pageTitle;
 		}
-		// TODO: viewType about
 		window.document.title = newSiteTitle.capitalize();
 	}
 	function updateBrowserHistory(pageState, pageTitle, pageUrl) {
@@ -327,7 +318,8 @@ jQuery(document).ready( function() {
     //   imgsrc = this.src;
     // 	console.log('Source: '+imgsrc);
 		// });
-
+		postType = jQuery('#'+visiblePage).data('postType');
+		jQuery('#navigation_wrapper a.underline[data-post-type='+postType+']').addClass('on');
 	};
 	addHighlightSlideCursor();
 	// Back and forward navigation event handlers.
