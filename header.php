@@ -1,16 +1,14 @@
 <?php
 /**
-	* The template for displaying the header
-	*
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
-	*/
+* The template for displaying the header
+*
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
+*/
 ?>
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="toggleFade">

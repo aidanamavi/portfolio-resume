@@ -1,16 +1,14 @@
 <?php
 /**
-	* The template for displaying all portfolio content.
-	*
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
-	*/
+* The template for displaying all portfolio content.
+*
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
+*/
 ?>
 				<div id="page_archive_work" data-page-title="work" data-view-type="archive" data-post-type="work">
 					<nav>

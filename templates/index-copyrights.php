@@ -1,16 +1,14 @@
 <?php
 /**
-	* The template for displaying about page content.
-	*
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
-	*/
+* The template for displaying about page content.
+*
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
+*/
 ?>
 				<div id="page_info_copyright" data-page-title="copyrights">
 					<div class="highlight_slides">

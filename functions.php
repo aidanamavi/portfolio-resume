@@ -1,14 +1,12 @@
 <?php
 /**
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
-	*/
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
+*/
 
 // Block direct file requests.
 if (!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME']))

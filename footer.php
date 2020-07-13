@@ -1,16 +1,14 @@
 <?php
 /**
-	* The template for displaying the footer
-	*
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
-	*/
+* The template for displaying the footer
+*
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
+*/
 ?>
 			</div>
 		</div>
@@ -18,7 +16,7 @@
 			<div class="copyright">
 				All third party trademarks are the property of their respective owners. Copyright <?php echo date("Y"); ?>. All rights reserved.
 			</div>
-<?php		$trackerUrl = get_theme_mod('matomo_tracker_url_textbox');
+<?php	$trackerUrl = get_theme_mod('matomo_tracker_url_textbox');
 			$trackerId = get_theme_mod('matomo_site_id_textbox');
 			if ($trackerUrl && $trackerId) : ?>
 			<!-- Matomo -->

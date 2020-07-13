@@ -1,16 +1,14 @@
 <?php
 /**
-	* The template for displaying all blog post content.
-	*
-	* @package WordPress
-	* @subpackage AidanAmavi
-	* @version 0.3
-	*
-	* @author Aidan Amavi <mail@aidanamavi.com>
-	* @link https://www.aidanamavi.com Author's Web Site
-	* @copyright 2012 - 2020, Aidan Amavi
-	* @license https://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
-	*/
+* The template for displaying all blog post content.
+*
+* @package WordPress Portfolio Theme
+* @version 0.4
+* @author Aidan Amavi <mail@aidanamavi.com>
+* @link https://www.aidanamavi.com Author's Web Site
+* @copyright 2012 - 2020, Aidan Amavi
+* @license https://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
+*/
 ?>
 				<div id="page_archive_blog" data-page-title="blog" data-view-type="archive" data-post-type="blog">
 					<div class="title_wrapper">
