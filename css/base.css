@@ -58,12 +58,8 @@
  url("../fonts/Metropolis-Black.otf") format("opentype"),
  url("../fonts/Metropolis-Black.eot") format("eot")
 }
-.hide {
-	display: none;
-}
-.toggleFade {
-	opacity: 0;
-}
+.hide {	display: none; }
+.toggleFade {	opacity: 0; }
 a {
 	-webkit-transition: 200ms linear 0s;
 	-moz-transition: 200ms linear 0s;
@@ -160,11 +156,6 @@ iframe {
 	max-height: 31px;
 	max-width: 31px;
 }
-html, body,
-#wrapper, #content_wrapper {
-	/* height: 100% !important;
-	min-height: 100% !important; */
-}
 html {
 	background-color: #000;
 	color: #ccc;
@@ -186,8 +177,7 @@ body {
 	flex-direction: column;
 }
 #wrapper {
-	/* height: auto !important;
-	min-height: 100%; */
+	width: 100%;
 	max-width: 960px;
 	min-width: 330px;
 	margin: auto;
@@ -195,12 +185,6 @@ body {
 	outline: none;
 	flex-grow: 1;
 	flex-shrink: 0;
-}
-#wrapper:after {
-  /* content: "";
-  display: block;
-  height: 50px;  */
-	/* the footer's total height */
 }
 #header_wrapper {
 	padding-top: 40px;
@@ -417,7 +401,6 @@ input[type=submit]:active {
 }
 .row {
 	width: 100%;
-	overflow: auto;
 	text-align: center;
 }
 .column {

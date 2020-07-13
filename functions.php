@@ -60,6 +60,7 @@ require_once(get_template_directory().'/php/admin_remove_menus.php');
 // Add the individual sections, settings, and controls to the theme customizer.
 require_once(get_template_directory().'/php/customize_seo_keywords.php');
 require_once(get_template_directory().'/php/customize_matomo_tracking.php');
+require_once(get_template_directory().'/php/customize_showcase_settings.php');
 
 // Add AJAX support for the theme.
 require_once(get_template_directory().'/php/ajax.php');

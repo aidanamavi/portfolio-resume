@@ -23,6 +23,7 @@
 <?php endif; ?>
 		<meta name="keywords" content="<?php echo get_theme_mod( 'seo_keywords_textbox' ); ?>">
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/base.min.css?<?php echo rand(); ?>" type="text/css" media="all" />
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/animate.min.css?<?php echo rand(); ?>" type="text/css" media="screen" />
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery.min.js?<?php echo rand(); ?>"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/base.min.js?<?php echo rand(); ?>"></script>
 <?php if (preg_match('/iPhone/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPod/', $_SERVER['HTTP_USER_AGENT']) || preg_match('/iPad/',$_SERVER['HTTP_USER_AGENT']) || preg_match('/android/',$_SERVER['HTTP_USER_AGENT'])): ?>
@@ -50,6 +51,8 @@
 			userId = "<?php echo $userId; ?>";
 			nonce = "<?php echo $nonce; ?>";
 			siteTitle = "<?php echo $siteTitle; ?>";
+			showcaseAnimationIn = "<?php echo get_theme_mod('showcase_animation_in');; ?>";
+			showcaseAnimationOut = "<?php echo get_theme_mod('showcase_animation_out');; ?>";
 		</script>
 	</head>
 	<body>
