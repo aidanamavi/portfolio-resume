@@ -285,6 +285,9 @@ div.highlight_text div.masonry_wrapper {
 div.highlight_text div.masonry_wrapper div.masonry_column {
 	width: 100%;
 }
+div.masonry_column {
+	margin-bottom: 30px;
+}
 div.highlight_text div.skills {
 	display: table;
 	width: 100%;

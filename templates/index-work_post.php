@@ -84,14 +84,12 @@ echo '										'.do_shortcode(nl2br($description)).PHP_EOL;
 										<div class="masonry_column">
 <?php								foreach ($roles as $role) :
 											if (!empty($prevRole) && isSeparateGroup('roles', $prevRole, $role)) : ?>
-											<br />
 										</div>
 										<div class="masonry_column">
 <?php									endif;
 echo '											'.displayMetaLabel('roles', $role).'<br />'.PHP_EOL;
 											$prevRole = $role;
 										endforeach; unset($prevRole); ?>
-											<br />
 										</div>
 									</div>
 								</div>
@@ -109,14 +107,12 @@ echo '											'.displayMetaLabel('roles', $role).'<br />'.PHP_EOL;
 										<div class="masonry_column">
 <?php							foreach ($disciplines as $discipline) :
 											if (!empty($prevDiscipline) && isSeparateGroup('disciplines', $prevDiscipline, $discipline)) : ?>
-											<br />
 										</div>
 										<div class="masonry_column">
 <?php									endif;
 echo '											'.displayMetaLabel('disciplines', $discipline).'<br />'.PHP_EOL;
 											$prevDiscipline = $discipline;
 										endforeach; unset($prevDiscipline); ?>
-											<br />
 										</div>
 									</div>
 								</div>
@@ -134,14 +130,12 @@ echo '											'.displayMetaLabel('disciplines', $discipline).'<br />'.PHP_EOL
 										<div class="masonry_column">
 <?php							foreach ($tools as $tool) :
 											if (!empty($prevTool) && isSeparateGroup('tools', $prevTool, $tool)) : ?>
-											<br />
 										</div>
 										<div class="masonry_column">
 <?php									endif;
 echo '											'.displayMetaLabel('tools', $tool).'<br />'.PHP_EOL;
 											$prevTool = $tool;
 										endforeach; unset($prevTool); ?>
-											<br />
 										</div>
 									</div>
 								</div>
@@ -159,14 +153,12 @@ echo '											'.displayMetaLabel('tools', $tool).'<br />'.PHP_EOL;
 										<div class="masonry_column">
 <?php							foreach ($products as $product) :
 											if (!empty($prevProduct) && isSeparateGroup('products', $prevProduct, $product)) : ?>
-											<br />
 										</div>
 										<div class="masonry_column">
 <?php									endif;
 echo '											'.displayMetaLabel('products', $product).'<br />'.PHP_EOL;
 											$prevProduct = $product;
 										endforeach; unset($prevProduct); ?>
-											<br />
 										</div>
 									</div>
 								</div>
@@ -184,14 +176,12 @@ echo '											'.displayMetaLabel('products', $product).'<br />'.PHP_EOL;
 										<div class="masonry_column">
 <?php							foreach ($presentations as $presentation) :
 											if (!empty($prevPresentation) && isSeparateGroup('presentations', $prevPresentation, $presentation)) : ?>
-											<br />
 										</div>
 										<div class="masonry_column">
 <?php									endif;
 echo '											'.displayMetaLabel('presentations', $presentation).'<br />'.PHP_EOL;
 											$prevPresentation = $presentation;
 										endforeach; unset($prevPresentation); ?>
-											<br />
 										</div>
 									</div>
 								</div>
