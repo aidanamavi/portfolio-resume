@@ -64,9 +64,11 @@
 											Digital Media<br />
 											New Media<br />
 											Social Media<br /><br />
+										</div>
+										<div class="masonry_column">
 											Marketing<br />
 											Market Research<br />
-											Advertising<br />
+											Advertising<br /><br />
 										</div>
 										<div class="masonry_column">
 											Experience Design<br />
@@ -75,22 +77,28 @@
 											Interactive Design<br />
 											Web Design<br />
 											Sound Design<br />
-											Lighting Design<br />
+											Lighting Design<br /><br />
 										</div>
 										<div class="masonry_column">
 											Systems Administration<br />
 											Information Architecture<br />
 											Web Development<br /><br />
+										</div>
+										<div class="masonry_column">
 											Photography<br />
 											Videography<br />
 											Audiography<br /><br />
 										</div>
 										<div class="masonry_column">
 											AM/FM Broadcasting<br /><br />
+										</div>
+										<div class="masonry_column">
 											Acting<br />
 											Copywriting<br />
 											Composition<br /><br />
-											Talent Acquisition<br />
+										</div>
+										<div class="masonry_column">
+											Talent Acquisition<br /><br />
 										</div>
 									</div>
 								</div><br />
@@ -105,20 +113,26 @@
 											Sennheiser<br />
 											Rode<br />
 											M-Audio<br /><br />
+										</div>
+										<div class="masonry_column">
 											Canon<br />
 											Nikon<br />
 											Sony<br />
 											RED<br /><br />
+										</div>
+										<div class="masonry_column">
 											Matthews Dolly<br />
 											Spider Dolly<br />
 											Losmandy Porta-Jib<br />
 											Easyrig Cinema 3<br /><br />
+										</div>
+										<div class="masonry_column">
 											Autopoles<br />
 											Backdrops<br />
 											Combo Stands<br />
 											C-Stands<br />
 											Cardellini Clamps<br />
-											Sand Bags<br />
+											Sand Bags<br /><br />
 										</div>
 										<div class="masonry_column">
 											Arri<br />
@@ -128,6 +142,8 @@
 											Litepanels<br />
 											Mole Richardson<br />
 											Profoto<br /><br />
+										</div>
+										<div class="masonry_column">
 											Beauty Dish<br />
 											Flag Kit<br />
 											Duvetyne/Muslin<br />
@@ -135,39 +151,55 @@
 											Reflectors<br />
 											Foil<br />
 											Tapes<br />
-											Stingers<br />
+											Stingers<br /><br />
 										</div>
 										<div class="masonry_column">
 											iWork<br />
 											Office<br />
 											OpenOffice<br /><br />
+										</div>
+										<div class="masonry_column">
 											Illustrator<br />
 											Lightroom<br />
 											Photoshop<br />
 											Premier<br />
 											After Effects<br />
 											Bridge<br /><br />
+										</div>
+										<div class="masonry_column">
 											Unreal Engine<br />
 											Chaoscope<br /><br />
+										</div>
+										<div class="masonry_column">
 											Final Cut Pro<br /><br />
-											Live<br />
+										</div>
+										<div class="masonry_column">
+											Live<br /><br />
 										</div>
 										<div class="masonry_column">
 											CentOS<br />
 											RHEL<br />
 											Mac OS<br />
 											Windows<br /><br />
+										</div>
+										<div class="masonry_column">
 											Apache<br /><br />
+										</div>
+										<div class="masonry_column">
 											Icecast<br />
 											Shoutcast<br /><br />
+										</div>
+										<div class="masonry_column">
 											WordPress<br />
 											Matomo<br /><br />
+										</div>
+										<div class="masonry_column">
 											PHP<br />
 											MySQL<br />
 											JavaScript<br />
 											HTML<br />
 											CSS<br />
-											GIT<br />
+											GIT<br /><br />
 										</div>
 									</div>
 								</div><br />
@@ -180,24 +212,26 @@
 											Web Sites<br />
 											Web Pages<br />
 											Web Apps<br /><br />
-											Fine Art<br />
+										</div>
+										<div class="masonry_column">
+											Fine Art<br /><br />
 										</div>
 										<div class="masonry_column">
 											Brand Names<br />
 											Brand Logos<br />
-											Photography<br />
+											Photography<br /><br />
 										</div>
 										<div class="masonry_column">
 											Films<br />
 											Television<br />
 											Music Videos<br />
-											Animations<br />
+											Animations<br /><br />
 										</div>
 										<div class="masonry_column">
 											Web Radio<br />
 											AM/FM Radio<br />
 											Music<br />
-											Field Recordings<br />
+											Field Recordings<br /><br />
 										</div>
 									</div>
 								</div><br />
