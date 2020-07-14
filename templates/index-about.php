@@ -10,7 +10,7 @@
 * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 */
 ?>
-				<div id="page_archive_about" data-page-title="about" data-view-type="single" data-post-type="about">
+				<div id="page_archive_about" data-page-title="about aidan amavi" data-view-type="single" data-post-type="about">
 					<div class="highlight_slides">
 						<div class="slide" data-slide="1">
 							<img src="https://aidanamavi.com/wp-content/uploads/2020/05/highlight_about_1.jpg" class="highlight" alt="">
@@ -23,7 +23,7 @@
 									</div>
 								</div>
 								<p>
-									Aidan Amavi is a creative professional who specializes in web, video, photo, graphic, and sound productions. He has over a decade of experience as a leader and facilitator for a variety of creative projects. His previous clients have included celebrities, models and artists as well as small, medium, and Fortune 500 companies.
+									Aidan Amavi is an information and communications technology professional. He has over a decade of experience as a leader and facilitator for a variety of technology driven projects. His previous clients include celebrities, models and artists as well as small, medium, and Fortune 500 companies.
 								</p>
 								<p>
 									Past clients and colleagues praise his ability and professionalism having said that he does “outstanding work,” is a “thought leader,” has an “advanced skill set,” and leaves them “impressed.”
@@ -226,7 +226,7 @@
 								</div><br />
 								<div class="skills">
 									<div class="skills_title">
-										<h3>responsibilities</h3>
+										<h3>experience</h3>
 									</div>
 									<div class="skills_column_wide">
 										<ul>
@@ -338,12 +338,8 @@
 										<a href="mailto:mail@aidanamavi.com" class="glow matomo_link" target="_blank">
 											Email: mail@aidanamavi.com
 										</a><br />
-										<br />
 										<a href="tel:16465358321" class="glow matomo_link" target="_blank">
 											Phone: +1 646.535.8321
-										</a><br />
-										<a href="skype:aidan.amavi.?add" class="glow matomo_link" target="_blank">
-											Skype: Aidan.Amavi.
 										</a>
 									</div>
 									<div class="skills_column_half">
@@ -353,10 +349,10 @@
 										<a href="https://aidanamavi.com/work" class="glow matomo_link" target="_blank">
 											Portfolio
 										</a><br />
-										<a href="https://www.linkedin.com/in/aidanamavi" class="glow matomo_link" target="_blank">
+										<a href="https://linkedin.com/in/aidanamavi" class="glow matomo_link" target="_blank">
 											LinkedIn
 										</a><br />
-										<a href="https://www.imdb.com/name/nm6377483/" class="glow matomo_link" target="_blank">
+										<a href="https://imdb.com/name/nm6377483/" class="glow matomo_link" target="_blank">
 											IMDb
 										</a><br />
 										<a href="https://github.com/aidanamavi" class="glow matomo_link" target="_blank">

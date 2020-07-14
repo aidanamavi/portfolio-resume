@@ -159,7 +159,7 @@ iframe {
 html {
 	background-color: #000;
 	color: #ccc;
-	font-family: 'Metropolis', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif !important;
+	font-family: 'Metropolis', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	font-weight: 300;
 	overflow-y: scroll;
 	overflow-x: hidden !important;
