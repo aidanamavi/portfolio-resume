@@ -469,21 +469,6 @@ function slide_info_html_custom_box($post, $arguments) {
 		esc_html($label)
   );
 
-	$saved = get_post_meta( $post->ID, $slideId.'_youtube_url', true );
-	$label = __('Slide YouTube URL', 'changeMe');
-	if ($saved) {
-		$imageUrl = $saved;
-	} else {
-		$imageUrl = '';
-	}
-  printf(
-    '<input type="text" name="'.$slideId.'_youtube_url" value="%1$s" id="'.$slideId.'_youtube_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
-    '<label for="'.$slideId.'_youtube_url"> %2$s </label>' .
-		'<br /><br />',
-    esc_attr($imageUrl),
-		esc_html($label)
-  );
-
 	$saved = get_post_meta( $post->ID, $slideId.'_demo_url', true );
 	$label = __('Slide Demo URL', 'changeMe');
 	if ($saved) {
@@ -757,21 +742,10 @@ function slide_info_save_postdata( $post_id )
 	  } else {
 	  	delete_post_meta($post_id, $slideId.'_url'  );
 	  }
-		if ( isset($_POST[$slideId.'_youtube_url']) && $_POST[$slideId.'_youtube_url'] !== '' ){
-			$slideYouTubeUrl = esc_url_raw($_POST[$slideId.'_youtube_url']);
-			$sanatizedUrl = filter_var($slideYouTubeUrl, FILTER_SANITIZE_URL);
-			if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
-	    	update_post_meta( $post_id, $slideId.'_youtube_url', $sanatizedUrl );
-				$slideDetected = true;
-			} else {
-				error_log('Invalid URL type detected for YouTube slide.');
-			}
-	  } else {
-	  	delete_post_meta($post_id, $slideId.'_youtube_url'  );
-	  }
+		// Add support for "demo URL"
 		if ( isset($_POST[$slideId.'_demo_url']) && $_POST[$slideId.'_demo_url'] !== '' ){
-			$slideYouTubeUrl = esc_url_raw($_POST[$slideId.'_demo_url']);
-			$sanatizedUrl = filter_var($slideYouTubeUrl, FILTER_SANITIZE_URL);
+			$slideDemoUrl = esc_url_raw($_POST[$slideId.'_demo_url']);
+			$sanatizedUrl = filter_var($slideDemoUrl, FILTER_SANITIZE_URL);
 			if (filter_var($sanatizedUrl, FILTER_VALIDATE_URL)) {
 	    	update_post_meta( $post_id, $slideId.'_demo_url', $sanatizedUrl );
 				$slideDetected = true;
