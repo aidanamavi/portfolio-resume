@@ -10,7 +10,7 @@
 * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 */
 ?>
-				<div id="page_archive_about" data-page-title="about aidan amavi" data-view-type="single" data-post-type="about">
+				<div id="page_archive_about" data-page-title="resume" data-view-type="single" data-post-type="about">
 					<div class="highlight_slides">
 						<div class="slide" data-slide="1">
 							<img src="https://aidanamavi.com/wp-content/uploads/2020/05/highlight_about_1.jpg" class="highlight" alt="">
