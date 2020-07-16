@@ -10,16 +10,19 @@
 
 // Add custom page title.
 function custom_page_title() {
-	$siteTitle = bloginfo('name');
+	$siteTitle = get_bloginfo('name');
 	$pageTitle = get_the_title();
 	$viewType;
 	$postType = get_post_type();
 	$pageSeperator = ' &rsaquo; ';
 	$newSiteTitle;
 
-	if(is_single()){
-		$viewType = 'single';
-	} else if (is_archive()){
+	if ( is_front_page() && is_home() ) {
+		$viewType = 'front_page';
+	} elseif (is_singular()){
+		// ‘is_page || is_attachment || is_single’
+		$viewType = 'singular';
+	} elseif (is_archive()){
 		if (is_category()){
 			global $cat;
 			$viewType = 'category';
@@ -31,12 +34,18 @@ function custom_page_title() {
 
 	if($viewType === 'category'){
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType.$pageSeperator.$pageTitle;
-	} else if ($viewType === 'archive') {
+	} elseif ($viewType === 'archive') {
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType;
-	} else if ($viewType === 'single'){
+	} elseif ($viewType === 'singular'){
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$pageTitle;
+		// TODO:  Remove hack when about postType is complete; make resume post with about postType
+		if(is_page('about') || is_page('146')){
+			$newSiteTitle = $siteTitle.$pageSeperator.'About'.$pageSeperator.$pageTitle;
+		}
+	} elseif ($viewType === 'front_page'){
+		$newSiteTitle = $siteTitle;
 	}
 	echo ucwords($newSiteTitle);
 }
-
+// Aidan Amavi >  About > Resume
 ?>
