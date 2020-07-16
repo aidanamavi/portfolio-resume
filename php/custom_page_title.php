@@ -10,6 +10,7 @@
 
 // Add custom page title.
 function custom_page_title() {
+	$siteDescription = get_bloginfo('description');
 	$siteTitle = get_bloginfo('name');
 	$pageTitle = get_the_title();
 	$viewType;
@@ -33,10 +34,15 @@ function custom_page_title() {
 	}
 
 	if($viewType === 'category'){
+		$postType = ucwords($postType);
+		$viewType = ucwords($viewType);
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType.$pageSeperator.$pageTitle;
 	} elseif ($viewType === 'archive') {
+		$postType = ucwords($postType);
+		$viewType = ucwords($viewType);
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$viewType;
 	} elseif ($viewType === 'singular'){
+		$postType = ucwords($postType);
 		$newSiteTitle = $siteTitle.$pageSeperator.$postType.$pageSeperator.$pageTitle;
 		// TODO:  Remove hack when about postType is complete; make resume post with about postType
 		if(is_page('about') || is_page('146')){
@@ -45,7 +51,7 @@ function custom_page_title() {
 	} elseif ($viewType === 'front_page'){
 		$newSiteTitle = $siteTitle;
 	}
-	echo ucwords($newSiteTitle);
+	echo $newSiteTitle;
 }
 // Aidan Amavi >  About > Resume
 ?>
