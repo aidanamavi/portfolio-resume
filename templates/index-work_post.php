@@ -32,7 +32,7 @@
 <?php 		while ($slideCount <= $slideTotal) :
 							$slideId = 'slide_'.$slideCount; ?>
 						<div class="slide<?php if ($slideCount > 1) : echo ' hide toggleFade'; endif; ?>" data-slide="<?php echo $slideCount; ?>">
-<?php					$slideImageUrl = remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true )));
+<?php					$slideImageUrl = remove_url_protocol(esc_url(get_post_meta( get_the_ID(), 'slide_'.$slideCount.'_url', true ))); ?>
 							<img src="<?php echo $slideImageUrl; ?>" class="highlight" alt="portfolio slide">
 							<div class="highlight_text">
 								<div class="title_wrapper">
