@@ -31,6 +31,7 @@ function add_post_type_work() {
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
+		'show_in_rest' => true,
 		'query_var' => true,
 		'rewrite' => true,
 		'capability_type' => 'post',
@@ -38,7 +39,7 @@ function add_post_type_work() {
 		'hierarchical' => true,
 		'menu_position' => 5,
 		'map_meta_cap' => true,
-		'supports' => array('author','title','thumbnail','excerpt')
+		'supports' => array('author','title','thumbnail','excerpt','editor')
 	);
 	register_post_type('work',$args);
 }
