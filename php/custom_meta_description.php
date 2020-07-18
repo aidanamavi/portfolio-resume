@@ -8,7 +8,6 @@
 * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 */
 
-
 function custom_meta_description() {
 	global $post;
 	function prepare_content($content){

@@ -8,7 +8,6 @@
 * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 */
 
-
 // Add browser classes to body tag.
 add_filter('body_class','browser_body_class');
 function browser_body_class($classes) {

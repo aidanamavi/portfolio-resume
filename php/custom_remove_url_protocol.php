@@ -8,7 +8,6 @@
 * @license https://www.gnu.org/licenses/agpl.html GNU Affero General Public License
 */
 
-
 function remove_url_protocol($parsed_url) {
 	$parsed_url = parse_url($parsed_url);
   $scheme   = '//';
