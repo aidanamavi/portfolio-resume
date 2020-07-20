@@ -62,18 +62,19 @@ jQuery(document).ready( function() {
 	}
 	function showLoadingAnimation() {
 		// console.log('showLoadingAnimation()');
+		if (isPageLoading) { console.log('isLoading: wants showing'); return; }
 		isPageLoading = true;
-		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500);
+		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500, function(){
+			jQuery('html').animate({ scrollTop: 0 }, 1);
+		});
 	}
 	function hideLoadingAnimation() {
 		// console.log('hideLoadingAnimation()');
-		jQuery('html').animate({ scrollTop: 0 }, 1, function(){
-			jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
-				jQuery('#loading_animation').hide();
-				isPageLoading = false;
-				updateVisiblePage();
-				adjustSlideHeight();
-			});
+		jQuery('#loading_animation').stop().animate({'opacity': '0'},500, function(){
+			isPageLoading = false;
+			updateVisiblePage();
+			adjustSlideHeight();
+			jQuery('#loading_animation').hide();
 		});
 	}
 	function addHighlightSlideCursor() {
@@ -242,6 +243,10 @@ jQuery(document).ready( function() {
 		}
 	}
 	function updateTitle(pageDiv) {
+		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
+		window.document.title = pageTitle;
+	}
+	function updateBreadcrumb(pageDiv) {
 		// console.log('updateTitle(' + pageDiv + ')');
 		var pageTitle = jQuery('#'+pageDiv).data('pageTitle');
 		var viewType = jQuery('#'+pageDiv).data('viewType');
@@ -306,6 +311,7 @@ jQuery(document).ready( function() {
 			jQuery('#content_wrapper').imagesLoaded().then(function(){
 				// After images are loaded
 				// console.log('------ IMAGES LOADED ------');
+				// TODO: add a show event and add a display none to content wrapper; fixes ovefflow issues when loading animation...
 				jQuery('#content_wrapper').animate({'opacity':'1'},750);
 				hideLoadingAnimation();
 			});
@@ -322,6 +328,7 @@ jQuery(document).ready( function() {
 	addHighlightSlideCursor();
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
+		if (isPageLoading) { // console.log('HALTED back history'); return; }
 		var state = window.history.state;
 		event.preventDefault();
 		event.stopPropagation();
