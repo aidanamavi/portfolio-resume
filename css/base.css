@@ -293,6 +293,9 @@ div.highlight_text div.skills {
 	width: 100%;
 	margin-bottom: 20px;
 }
+.skills p {
+  margin-block-start: 0;
+}
 div.highlight_text div.skills div.skills_title {
 	width: 100%;
 	height: 100%;

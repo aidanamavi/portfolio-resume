@@ -51,7 +51,7 @@
 <?php 				endif; ?>
 								</div>
 <?php
-							$description = get_post_meta( get_the_ID(), $slideId.'_description', true );
+							$description = apply_filters( 'the_content', get_the_content() );
 							if ($description) : ?>
 								<div class="skills">
 									<div class="skills_title">
@@ -61,7 +61,7 @@
 									</div>
 									<div>
 <?php
-echo '										'.do_shortcode(nl2br($description)).PHP_EOL;
+echo '										'.do_shortcode($description).PHP_EOL;
 										unset($description); ?>
 									</div>
 								</div>
