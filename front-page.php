@@ -1,3 +1,4 @@
+<?php /* Template Name: Homepage*/ ?>
 <?php
 /**
 * @package WordPress Portfolio Theme
