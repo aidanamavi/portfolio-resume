@@ -13,7 +13,8 @@
 
 /**
 **	Globals set by backend:
-**	_paq, siteTitle, userId, nonce
+**	_paq, userId, nonce, siteTitle
+**	showcaseAnimationIn, showcaseAnimationOut
 **/
 jQuery(document).ready( function() {
 	// Configurable settings.
