@@ -65,6 +65,9 @@ $roleGroups = array(
 		'graphicDesigner'				=> __('Graphic Designer', 'portfoliotheme'),
 	),
 	array(
+		'copywriter'					=> __('Copywriter', 'portfoliotheme'),
+	),
+	array(
 		'lightingDesigner'			=> __('Lighting Designer', 'portfoliotheme'),
 		'gaffer'								=> __('Gaffer', 'portfoliotheme'),
 		'keyGrip'								=> __('Key Grip', 'portfoliotheme'),
@@ -104,7 +107,7 @@ $disciplineGroups = array(
 	),
 	array(
 		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
-		'informationArchitecture'	=> __('Information Architecture', 'portfoliotheme'),
+		'informationArchitecture'	=> __('Information-Architecture', 'portfoliotheme'),
 		'webDevelopment'					=> __('Web Development', 'portfoliotheme'),
 	),
 	array(
