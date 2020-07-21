@@ -36,12 +36,24 @@ And in the works for [the future](https://github.com/aidanamavi/portfolio-theme/
 
 ## Installation
 
-1. Place the theme folder into the web folder located at `wp-content/themes/`.
-2. Login to WordPress, and navigate to `Appearance > Themes`, then click the 'Activate' button to activate the theme.
-3. Create a new page for your Homepage by clicking, `Pages > Add New`, and then enter 'Homepage' as the title.
-4. Then select the `Page Attributes > Template` named Homepage, and click Publish to save the page.
-4. Now, repeat steps 3 and 4 for a Work page, Blog page, and About page.
-5. Then visit `Customize > Homepage Settings` and select the radio button for "A static page" and select the Homepage to use as your Homepage.
+First upload the theme to your WordPress themes directory.
+1. Navigate to `Appearance > Themes > Add New > Upload Theme`
+2. Upload the theme zip file.
+
+To begin using the theme, we will activate it.
+1. Navigate to `Appearance > Themes`
+2. Click the 'Activate' button.
+
+To setup our home page, we will create a page for it.
+1. Navigate to `Pages > Add New`
+2. Enter 'Homepage' as the title.
+3. Select the `Page Attributes > Template` named Homepage
+4. Click Publish to save the page.
+
+To direct our visitors to our designated home page, we will forward traffic there.
+1. Navigate to `Customize > Homepage Settings`
+2. Select the radio button for "A static page".
+3. Select the Homepage to use as your home page.
 
 If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-theme/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-theme/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
 
