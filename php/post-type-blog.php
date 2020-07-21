@@ -49,7 +49,7 @@ add_filter( 'enter_title_here', 'add_post_type_blog_title' );
 function add_post_type_blog_title( $input ) {
 global $post_type;
 if ($post_type == 'blog') {
-	return __( 'Enter blog post title here', 'changeMe' );
+	return __( 'Enter blog post title here', 'portfoliotheme' );
 }
 return $input;
 }

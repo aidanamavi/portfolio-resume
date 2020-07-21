@@ -48,226 +48,226 @@ add_filter( 'enter_title_here', 'add_post_type_work_title' );
 function add_post_type_work_title( $input ) {
 global $post_type;
 if ($post_type == 'work') {
-	return __( 'Enter work title here', 'changeMe' );
+	return __( 'Enter work title here', 'portfoliotheme' );
 }
 return $input;
 }
 
 $roleGroups = array(
 	array(
-		'creativeProducer'			=> __('Creative Producer', 'changeMe'),
-		'creativeDirector'			=> __('Creative Director', 'changeMe'),
-		'assistantDirector'			=> __('Assistant Director', 'changeMe'),
+		'creativeProducer'			=> __('Creative Producer', 'portfoliotheme'),
+		'creativeDirector'			=> __('Creative Director', 'portfoliotheme'),
+		'assistantDirector'			=> __('Assistant Director', 'portfoliotheme'),
 	),
 	array(
-		'webDeveloper'					=> __('Web Developer', 'changeMe'),
-		'systemsAdministrator'	=> __('Systems Administrator', 'changeMe'),
-		'graphicDesigner'				=> __('Graphic Designer', 'changeMe'),
+		'webDeveloper'					=> __('Web Developer', 'portfoliotheme'),
+		'systemsAdministrator'	=> __('Systems Administrator', 'portfoliotheme'),
+		'graphicDesigner'				=> __('Graphic Designer', 'portfoliotheme'),
 	),
 	array(
-		'lightingDesigner'			=> __('Lighting Designer', 'changeMe'),
-		'gaffer'								=> __('Gaffer', 'changeMe'),
-		'keyGrip'								=> __('Key Grip', 'changeMe'),
-		'dollyGrip'							=> __('Dolly Grip', 'changeMe'),
-		'bestBoyGrip'						=> __('Best Boy Grip', 'changeMe'),
-		'bestBoyElectrician'		=> __('Best Boy Electrician', 'changeMe'),
+		'lightingDesigner'			=> __('Lighting Designer', 'portfoliotheme'),
+		'gaffer'								=> __('Gaffer', 'portfoliotheme'),
+		'keyGrip'								=> __('Key Grip', 'portfoliotheme'),
+		'dollyGrip'							=> __('Dolly Grip', 'portfoliotheme'),
+		'bestBoyGrip'						=> __('Best Boy Grip', 'portfoliotheme'),
+		'bestBoyElectrician'		=> __('Best Boy Electrician', 'portfoliotheme'),
 	),
 	array(
-		'cinematographer'				=> __('Cinematographer', 'changeMe'),
-		'photographer'					=> __('Photographer', 'changeMe'),
-		'assistantPhotographer'	=> __('Assistant Photographer', 'changeMe'),
-		'retoucher'							=> __('Retoucher', 'changeMe'),
-		'editor'								=> __('Editor', 'changeMe'),
-		'colorist'							=> __('Colorist', 'changeMe'),
-		'boradcastProgrammer'		=> __('Broadcast Programmer', 'changeMe'),
+		'cinematographer'				=> __('Cinematographer', 'portfoliotheme'),
+		'photographer'					=> __('Photographer', 'portfoliotheme'),
+		'assistantPhotographer'	=> __('Assistant Photographer', 'portfoliotheme'),
+		'retoucher'							=> __('Retoucher', 'portfoliotheme'),
+		'editor'								=> __('Editor', 'portfoliotheme'),
+		'colorist'							=> __('Colorist', 'portfoliotheme'),
+		'boradcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
 	)
 );
 $disciplineGroups = array(
 	array(
-		'broadcastMedia'		=> __('Broadcast Media', 'changeMe'),
-		'digitalMedia'			=> __('Digital Media', 'changeMe'),
-		'socialMedia'				=> __('Social Media', 'changeMe'),
+		'broadcastMedia'		=> __('Broadcast Media', 'portfoliotheme'),
+		'digitalMedia'			=> __('Digital Media', 'portfoliotheme'),
+		'socialMedia'				=> __('Social Media', 'portfoliotheme'),
 	),
 	array(
-		'marketing'					=> __('Marketing', 'changeMe'),
-		'marketResearch'		=> __('Market Research', 'changeMe'),
-		'advertising'				=> __('Advertising', 'changeMe'),
+		'marketing'					=> __('Marketing', 'portfoliotheme'),
+		'marketResearch'		=> __('Market Research', 'portfoliotheme'),
+		'advertising'				=> __('Advertising', 'portfoliotheme'),
 	),
 	array(
-		'experienceDesign'	=> __('Experience Design', 'changeMe'),
-		'networkDesign'			=> __('Network Design', 'changeMe'),
-		'graphicDesign'			=> __('Graphic Design', 'changeMe'),
-		'interactiveDesign'	=> __('Interactive Design', 'changeMe'),
-		'webDesign'					=> __('Web Design', 'changeMe'),
-		'soundDesign'				=> __('Sound Design', 'changeMe'),
-		'lightingDesign'		=> __('Lighting Design', 'changeMe'),
+		'experienceDesign'	=> __('Experience Design', 'portfoliotheme'),
+		'networkDesign'			=> __('Network Design', 'portfoliotheme'),
+		'graphicDesign'			=> __('Graphic Design', 'portfoliotheme'),
+		'interactiveDesign'	=> __('Interactive Design', 'portfoliotheme'),
+		'webDesign'					=> __('Web Design', 'portfoliotheme'),
+		'soundDesign'				=> __('Sound Design', 'portfoliotheme'),
+		'lightingDesign'		=> __('Lighting Design', 'portfoliotheme'),
 	),
 	array(
-		'systemsAdministration'		=> __('Systems Administration', 'changeMe'),
-		'informationArchitecture'	=> __('Information Architecture', 'changeMe'),
-		'webDevelopment'					=> __('Web Development', 'changeMe'),
+		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
+		'informationArchitecture'	=> __('Information Architecture', 'portfoliotheme'),
+		'webDevelopment'					=> __('Web Development', 'portfoliotheme'),
 	),
 	array(
-		'photography'				=> __('Photography', 'changeMe'),
-		'videography'				=> __('Videography', 'changeMe'),
-		'audiography'				=> __('Audiography', 'changeMe'),
+		'photography'				=> __('Photography', 'portfoliotheme'),
+		'videography'				=> __('Videography', 'portfoliotheme'),
+		'audiography'				=> __('Audiography', 'portfoliotheme'),
 	),
 	array(
-		'amFmBroadcasting'	=> __('AM/FM Broadcasting', 'changeMe'),
+		'amFmBroadcasting'	=> __('AM/FM Broadcasting', 'portfoliotheme'),
 	),
 	array(
-		'acting'						=> __('Acting', 'changeMe'),
-		'copywriting'				=> __('Copywriting', 'changeMe'),
-		'composition'				=> __('Composition', 'changeMe'),
+		'acting'						=> __('Acting', 'portfoliotheme'),
+		'copywriting'				=> __('Copywriting', 'portfoliotheme'),
+		'composition'				=> __('Composition', 'portfoliotheme'),
 	),
 	array(
-		'talentAcquisition'	=> __('Talent Acquisition', 'changeMe'),
+		'talentAcquisition'	=> __('Talent Acquisition', 'portfoliotheme'),
 	)
 );
 $toolGroups = array(
 	array(
-		'roland'						=> __('Roland', 'changeMe'),
-		'zoom'							=> __('Zoom', 'changeMe'),
-		'sennheiser'				=> __('Sennheiser', 'changeMe'),
-		'rode'							=> __('Rode', 'changeMe'),
-		'm-audio'						=> __('M-Audio', 'changeMe'),
+		'roland'						=> __('Roland', 'portfoliotheme'),
+		'zoom'							=> __('Zoom', 'portfoliotheme'),
+		'sennheiser'				=> __('Sennheiser', 'portfoliotheme'),
+		'rode'							=> __('Rode', 'portfoliotheme'),
+		'm-audio'						=> __('M-Audio', 'portfoliotheme'),
 	),
 	array(
-		'canon'							=> __('Canon', 'changeMe'),
-		'nikon'							=> __('Nikon', 'changeMe'),
-		'sony'							=> __('Sony', 'changeMe'),
-		'red'								=> __('RED', 'changeMe'),
+		'canon'							=> __('Canon', 'portfoliotheme'),
+		'nikon'							=> __('Nikon', 'portfoliotheme'),
+		'sony'							=> __('Sony', 'portfoliotheme'),
+		'red'								=> __('RED', 'portfoliotheme'),
 	),
 	array(
-		'matthewsDolly'			=> __('Matthews Dolly', 'changeMe'),
-		'spiderDolly'				=> __('Spider Dolly', 'changeMe'),
-		'losmandyPortaJib'	=> __('Losmandy Porta-Jib', 'changeMe'),
-		'easyrigCinema3'		=> __('Easyrig Cinema 3', 'changeMe'),
+		'matthewsDolly'			=> __('Matthews Dolly', 'portfoliotheme'),
+		'spiderDolly'				=> __('Spider Dolly', 'portfoliotheme'),
+		'losmandyPortaJib'	=> __('Losmandy Porta-Jib', 'portfoliotheme'),
+		'easyrigCinema3'		=> __('Easyrig Cinema 3', 'portfoliotheme'),
 	),
 	array(
-		'autopoles'					=> __('Autopoles', 'changeMe'),
-		'backdrops'					=> __('Backdrops', 'changeMe'),
-		'comboStands'				=> __('Combo Stands', 'changeMe'),
-		'cStands'						=> __('C-Stands', 'changeMe'),
-		'cardelliniClamps'	=> __('Cardellini Clamps', 'changeMe'),
-		'sandBags'					=> __('Sand Bags', 'changeMe'),
+		'autopoles'					=> __('Autopoles', 'portfoliotheme'),
+		'backdrops'					=> __('Backdrops', 'portfoliotheme'),
+		'comboStands'				=> __('Combo Stands', 'portfoliotheme'),
+		'cStands'						=> __('C-Stands', 'portfoliotheme'),
+		'cardelliniClamps'	=> __('Cardellini Clamps', 'portfoliotheme'),
+		'sandBags'					=> __('Sand Bags', 'portfoliotheme'),
 	),
 	array(
-		'arri'							=> __('Arri', 'changeMe'),
-		'bron'							=> __('Bron', 'changeMe'),
-		'chimera'						=> __('Chimera', 'changeMe'),
-		'kinoFlo'						=> __('Kino Flo', 'changeMe'),
-		'litepanels'				=> __('Litepanels', 'changeMe'),
-		'moleRichardson'		=> __('Mole Richardson', 'changeMe'),
-		'profoto'						=> __('Profoto', 'changeMe'),
+		'arri'							=> __('Arri', 'portfoliotheme'),
+		'bron'							=> __('Bron', 'portfoliotheme'),
+		'chimera'						=> __('Chimera', 'portfoliotheme'),
+		'kinoFlo'						=> __('Kino Flo', 'portfoliotheme'),
+		'litepanels'				=> __('Litepanels', 'portfoliotheme'),
+		'moleRichardson'		=> __('Mole Richardson', 'portfoliotheme'),
+		'profoto'						=> __('Profoto', 'portfoliotheme'),
 	),
 	array(
-		'beautyDish'				=> __('Beauty Dish', 'changeMe'),
-		'flagKit'						=> __('Flag Kit', 'changeMe'),
-		'duvetyneMuslin'		=> __('Duvetyne/Muslin', 'changeMe'),
-		'gelFilters'				=> __('Gel Filters', 'changeMe'),
-		'reflectors'				=> __('Reflectors', 'changeMe'),
-		'foils'							=> __('Foil', 'changeMe'),
-		'tapes'							=> __('Tapes', 'changeMe'),
-		'stingers'					=> __('Stingers', 'changeMe'),
+		'beautyDish'				=> __('Beauty Dish', 'portfoliotheme'),
+		'flagKit'						=> __('Flag Kit', 'portfoliotheme'),
+		'duvetyneMuslin'		=> __('Duvetyne/Muslin', 'portfoliotheme'),
+		'gelFilters'				=> __('Gel Filters', 'portfoliotheme'),
+		'reflectors'				=> __('Reflectors', 'portfoliotheme'),
+		'foils'							=> __('Foil', 'portfoliotheme'),
+		'tapes'							=> __('Tapes', 'portfoliotheme'),
+		'stingers'					=> __('Stingers', 'portfoliotheme'),
 	),
 	array(
-		'iWork'							=> __('iWork', 'changeMe'),
-		'office'						=> __('Office', 'changeMe'),
-		'openOffice'				=> __('Open Office', 'changeMe'),
+		'iWork'							=> __('iWork', 'portfoliotheme'),
+		'office'						=> __('Office', 'portfoliotheme'),
+		'openOffice'				=> __('Open Office', 'portfoliotheme'),
 	),
 	array(
-		'illustrator'				=> __('Illustrator', 'changeMe'),
-		'lightroom'					=> __('Lightroom', 'changeMe'),
-		'photoshop'					=> __('Photoshop', 'changeMe'),
-		'premiere'					=> __('Premiere', 'changeMe'),
-		'afterEffects'			=> __('After Effects', 'changeMe'),
-		'bridge'						=> __('Bridge', 'changeMe'),
+		'illustrator'				=> __('Illustrator', 'portfoliotheme'),
+		'lightroom'					=> __('Lightroom', 'portfoliotheme'),
+		'photoshop'					=> __('Photoshop', 'portfoliotheme'),
+		'premiere'					=> __('Premiere', 'portfoliotheme'),
+		'afterEffects'			=> __('After Effects', 'portfoliotheme'),
+		'bridge'						=> __('Bridge', 'portfoliotheme'),
 	),
 	array(
-		'unrealEngine'			=> __('Unreal Engine', 'changeMe'),
-		'chaosScope'				=> __('Chaos Scope', 'changeMe'),
+		'unrealEngine'			=> __('Unreal Engine', 'portfoliotheme'),
+		'chaosScope'				=> __('Chaos Scope', 'portfoliotheme'),
 	),
 	array(
-		'finalCutPro'				=> __('Final Cut Pro', 'changeMe'),
+		'finalCutPro'				=> __('Final Cut Pro', 'portfoliotheme'),
 	),
 	array(
-		'live'							=> __('Live', 'changeMe'),
+		'live'							=> __('Live', 'portfoliotheme'),
 	),
 	array(
-		'centOs'						=> __('CentOS', 'changeMe'),
-		'rhel'							=> __('RHEL', 'changeMe'),
-		'macOs'							=> __('Mac OS', 'changeMe'),
-		'windows'						=> __('Windows', 'changeMe'),
+		'centOs'						=> __('CentOS', 'portfoliotheme'),
+		'rhel'							=> __('RHEL', 'portfoliotheme'),
+		'macOs'							=> __('Mac OS', 'portfoliotheme'),
+		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
 	array(
-		'apache'						=> __('Apache', 'changeMe'),
+		'apache'						=> __('Apache', 'portfoliotheme'),
 	),
 	array(
-		'icecast'						=> __('Icecast', 'changeMe'),
-		'shoutcast'					=> __('Shoutcast', 'changeMe'),
+		'icecast'						=> __('Icecast', 'portfoliotheme'),
+		'shoutcast'					=> __('Shoutcast', 'portfoliotheme'),
 	),
 	array(
-		'wordpress'					=> __('WordPress', 'changeMe'),
-		'matomo'							=> __('Matomo', 'changeMe'),
+		'wordpress'					=> __('WordPress', 'portfoliotheme'),
+		'matomo'							=> __('Matomo', 'portfoliotheme'),
 	),
 	array(
-		'php'								=> __('PHP', 'changeMe'),
-		'mySql'							=> __('MySQL', 'changeMe'),
-		'javascript'				=> __('JavaScript', 'changeMe'),
-		'html'							=> __('HTML', 'changeMe'),
-		'css'								=> __('CSS', 'changeMe'),
-		'git'								=> __('GIT', 'changeMe'),
+		'php'								=> __('PHP', 'portfoliotheme'),
+		'mySql'							=> __('MySQL', 'portfoliotheme'),
+		'javascript'				=> __('JavaScript', 'portfoliotheme'),
+		'html'							=> __('HTML', 'portfoliotheme'),
+		'css'								=> __('CSS', 'portfoliotheme'),
+		'git'								=> __('GIT', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
 	array(
-		'brandName'				=> __('Brand Name', 'changeMe'),
-		'brandLogo'				=> __('Brand Logo', 'changeMe'),
-		'fineArt'					=> __('Fine Art', 'changeMe'),
-		'graphic'					=> __('Graphic', 'changeMe'),
-		'literature'			=> __('Literature', 'changeMe'),
-		'photography'			=> __('Photography', 'changeMe'),
+		'brandName'				=> __('Brand Name', 'portfoliotheme'),
+		'brandLogo'				=> __('Brand Logo', 'portfoliotheme'),
+		'fineArt'					=> __('Fine Art', 'portfoliotheme'),
+		'graphic'					=> __('Graphic', 'portfoliotheme'),
+		'literature'			=> __('Literature', 'portfoliotheme'),
+		'photography'			=> __('Photography', 'portfoliotheme'),
 	),
 	array(
-		'act'							=> __('Act', 'changeMe'),
-		'show'						=> __('Show', 'changeMe'),
-		'commercial'			=> __('Commercial', 'changeMe'),
-		'trailer'					=> __('Trailer', 'changeMe'),
-		'film'						=> __('Film', 'changeMe'),
-		'musicVideo'			=> __('Music Video', 'changeMe'),
-		'animation'				=> __('Animation', 'changeMe'),
+		'act'							=> __('Act', 'portfoliotheme'),
+		'show'						=> __('Show', 'portfoliotheme'),
+		'commercial'			=> __('Commercial', 'portfoliotheme'),
+		'trailer'					=> __('Trailer', 'portfoliotheme'),
+		'film'						=> __('Film', 'portfoliotheme'),
+		'musicVideo'			=> __('Music Video', 'portfoliotheme'),
+		'animation'				=> __('Animation', 'portfoliotheme'),
 	),
 	array(
-		'music'						=> __('Music', 'changeMe'),
-		'fieldRecording'	=> __('Field Recording', 'changeMe'),
+		'music'						=> __('Music', 'portfoliotheme'),
+		'fieldRecording'	=> __('Field Recording', 'portfoliotheme'),
 	),
 	array(
-		'webSite'					=> __('Web Site', 'changeMe'),
-		'webPage'					=> __('Web Page', 'changeMe'),
-		'webApp'					=> __('Web App', 'changeMe'),
+		'webSite'					=> __('Web Site', 'portfoliotheme'),
+		'webPage'					=> __('Web Page', 'portfoliotheme'),
+		'webApp'					=> __('Web App', 'portfoliotheme'),
 	),
 );
 $presentationGroups = array(
 	array(
-		'goods'						=> __('Goods', 'changeMe'),
-		'print'						=> __('Print', 'changeMe'),
-		'recording'				=> __('Recording', 'changeMe'),
-		'theater'					=> __('Theater', 'changeMe'),
-		'cinema'					=> __('Cinema', 'changeMe'),
-		'tv'							=> __('TV', 'changeMe'),
-		'radio'						=> __('Radio', 'changeMe'),
-		'internet'				=> __('Internet', 'changeMe'),
+		'goods'						=> __('Goods', 'portfoliotheme'),
+		'print'						=> __('Print', 'portfoliotheme'),
+		'recording'				=> __('Recording', 'portfoliotheme'),
+		'theater'					=> __('Theater', 'portfoliotheme'),
+		'cinema'					=> __('Cinema', 'portfoliotheme'),
+		'tv'							=> __('TV', 'portfoliotheme'),
+		'radio'						=> __('Radio', 'portfoliotheme'),
+		'internet'				=> __('Internet', 'portfoliotheme'),
 	)
 );
 $shortcutGroups = array(
 	array(
-		'all'							=> __('All', 'changeMe'),
-		'web'							=> __('Web', 'changeMe'),
-		'video'						=> __('Video', 'changeMe'),
-		'photo'						=> __('Photo', 'changeMe'),
-		'graphic'					=> __('Graphic', 'changeMe'),
-		'sound'						=> __('Sound', 'changeMe'),
+		'all'							=> __('All', 'portfoliotheme'),
+		'web'							=> __('Web', 'portfoliotheme'),
+		'video'						=> __('Video', 'portfoliotheme'),
+		'photo'						=> __('Photo', 'portfoliotheme'),
+		'graphic'					=> __('Graphic', 'portfoliotheme'),
+		'sound'						=> __('Sound', 'portfoliotheme'),
 	)
 );
 
@@ -357,7 +357,7 @@ add_action( 'add_meta_boxes_work', 'project_info_meta_boxes' );
 function project_info_meta_boxes() {
 	add_meta_box(
     'project_info_meta_boxes',
-    __('Project Info', 'changeMe'),
+    __('Project Info', 'portfoliotheme'),
     'project_info_meta_boxes_html',
     'work',
     'normal',
@@ -390,7 +390,7 @@ function work_post_type_styles() {
 function project_info_meta_boxes_html($post, $arguments) {
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Shortcut Keywords', 'changeMe')
+		__('Shortcut Keywords', 'portfoliotheme')
 	);
 	$saved = get_post_meta( $post->ID, 'shortcut_keywords', true );
   global $shortcutGroups;
@@ -433,7 +433,7 @@ function slide_info_add_custom_box() {
 		--$numberOfSlides;
 		add_meta_box(
 	    'slide_info_sectionid'.$slideNumber,
-	    __('Slide Info', 'changeMe').' '.$slideNumber,
+	    __('Slide Info', 'portfoliotheme').' '.$slideNumber,
 	    'slide_info_html_custom_box',
 	    'work',
 	    'normal',
@@ -452,10 +452,10 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Slide', 'changeMe')
+		__('Project Slide', 'portfoliotheme')
 	);
 	$saved = get_post_meta( $post->ID, $slideId.'_url', true );
-	$label = __('Enter a URL or upload an image', 'changeMe');
+	$label = __('Enter a URL or upload an image', 'portfoliotheme');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
@@ -471,7 +471,7 @@ function slide_info_html_custom_box($post, $arguments) {
   );
 
 	$saved = get_post_meta( $post->ID, $slideId.'_demo_url', true );
-	$label = __('Slide Demo URL', 'changeMe');
+	$label = __('Slide Demo URL', 'portfoliotheme');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
@@ -489,7 +489,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Roles', 'changeMe')
+		__('Project Roles', 'portfoliotheme')
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_roles', true );
   global $roleGroups;
@@ -526,7 +526,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Disciplines', 'changeMe')
+		__('Project Disciplines', 'portfoliotheme')
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_disciplines', true );
   global $disciplineGroups;
@@ -563,7 +563,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Tools', 'changeMe')
+		__('Project Tools', 'portfoliotheme')
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_tools', true );
   global $toolGroups;
@@ -600,7 +600,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Products', 'changeMe')
+		__('Project Products', 'portfoliotheme')
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_products', true );
   global $productGroups;
@@ -637,7 +637,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Project Presentation', 'changeMe')
+		__('Project Presentation', 'portfoliotheme')
 	);
   $saved = get_post_meta( $post->ID, $slideId.'_presentations', true );
   global $presentationGroups;
@@ -674,7 +674,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
-		__('Description', 'changeMe')
+		__('Description', 'portfoliotheme')
 	);
 	$saved = get_post_meta( $post->ID, $slideId.'_description', true );
 	printf(
