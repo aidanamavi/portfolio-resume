@@ -220,7 +220,7 @@ $toolGroups = array(
 		'javascript'				=> __('JavaScript', 'portfoliotheme'),
 		'html'							=> __('HTML', 'portfoliotheme'),
 		'css'								=> __('CSS', 'portfoliotheme'),
-		'git'								=> __('GIT', 'portfoliotheme'),
+		'git'								=> __('Git', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
