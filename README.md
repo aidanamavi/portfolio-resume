@@ -44,7 +44,14 @@ To begin using the theme, we will activate it.
 1. Navigate to `Appearance > Themes`
 2. Click the 'Activate' button.
 
-To setup our home page, we will create a page for it.
+
+If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-theme/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-theme/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
+
+
+
+## Setup
+
+To setup our Home page, we will create a page for it.
 1. Navigate to `Pages > Add New`
 2. Enter 'Homepage' as the title.
 3. Select the `Page Attributes > Template` named Homepage
@@ -55,27 +62,20 @@ To direct our visitors to our designated home page, we will forward traffic ther
 2. Select the radio button for "A static page".
 3. Select the Homepage to use as your home page.
 
-If you experience any issues or have enhancement suggestions, you can report them in the [issue tracker](https://github.com/aidanamavi/portfolio-theme/issues). If it's a challenging issue, it's suggested that you follow the [issue template](https://raw.githubusercontent.com/aidanamavi/portfolio-theme/master/issues-template.md), so all the necessary info to debug and fix the issue is available. Thanks!
+To set up our About page.
+1. Navigate to `Pages > Add New`
+2. Enter 'About' as the title.
+3. Select the `Page Attributes > Template` named About
+4. Click Publish to save the page.
 
-
-
-## Setup
-
-### Set up your About page.
-
-1. Select 'Pages' and then 'Add New'
-2. Set the page title to 'About'
-3. Set the page template to 'About'
-4. Click 'Publish'
-5. Ensure your permalink points to yourdomain.com/about/
-6. To edit your new page, manually edit the code in the index-about.php template file.
 
 ### Tips
 
 1. 16:9 images work best for several reasons.
 2. Avoid using external hosting services like YouTube.
-3. Rename your homepage, give it a description, and perform other SEO optimizations.
-4. If you struggle with these tips, ask for help through the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues).
+3. Rename your Home page, give it a description, and perform other SEO optimizations.
+5. Ensure your permalinks look similar: yourdomain.com/about/
+6. If you struggle with these tips, ask for help through the [issue tracker](https://github.com/aidanamavi/portfolio-resume/issues).
 
 
 ## Recommended Plug-ins
