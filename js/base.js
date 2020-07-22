@@ -63,7 +63,10 @@ jQuery(document).ready( function() {
 	}
 	function showLoadingAnimation() {
 		// console.log('showLoadingAnimation()');
-		if (isPageLoading) { console.log('isLoading: wants showing'); return; }
+		if (isPageLoading) {
+			// console.log('isLoading: wants showing');
+			return;
+		}
 		isPageLoading = true;
 		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500, function(){
 			jQuery('html').animate({ scrollTop: 0 }, 1);
@@ -155,7 +158,7 @@ jQuery(document).ready( function() {
 		if (postType === 'work' || postType === 'about'){
 			// TODO: and not page_Archive_work
 			var windowHeight = $(window).height();
-			var numbersWrapperHeight = 34; // 34.6px
+			var numbersWrapperHeight = 70; // 34.6px
 			var slideHeightImg = jQuery('.slide:visible img.highlight').height(); // 529px
 			var slideHeightText = jQuery('.slide:visible .highlight_text').height(); // 529px
 			var slideHeight = jQuery('.slide:visible').height();
@@ -329,7 +332,10 @@ jQuery(document).ready( function() {
 	addHighlightSlideCursor();
 	// Back and forward navigation event handlers.
 	window.addEventListener('popstate', function(event) {
-		if (isPageLoading) { // console.log('HALTED back history'); return; }
+		if (isPageLoading) {
+			// console.log('HALTED back history');
+			return;
+		}
 		var state = window.history.state;
 		event.preventDefault();
 		event.stopPropagation();
