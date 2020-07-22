@@ -107,7 +107,7 @@ $disciplineGroups = array(
 	),
 	array(
 		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
-		'informationArchitecture'	=> __('Information-Architecture', 'portfoliotheme'),
+		'informationArchitecture'	=> __('Information Architecture', 'portfoliotheme'),
 		'webDevelopment'					=> __('Web Development', 'portfoliotheme'),
 	),
 	array(

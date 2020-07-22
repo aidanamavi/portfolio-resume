@@ -10,7 +10,7 @@
 * @license https://creativecommons.org/licenses/by-sa/4.0/ Attribution-ShareAlike 4.0 International
 */
 ?>
-				<div id="page_archive_blog" data-page-title="blog" data-view-type="archive" data-post-type="blog">
+				<div id="page_archive_blog" data-page-title="Blog" data-view-type="archive" data-post-type="blog">
 					<div class="title_wrapper">
 						<div class="title">
 							<h2>
