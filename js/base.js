@@ -52,7 +52,7 @@ jQuery(document).ready( function() {
 			// console.log(state);
 		}
 	}
-	//  Allows an event to fire after all images are loaded
+	//  Enables an event to fire after all images are loaded
 	jQuery.prototype.imagesLoaded = function() {
 		// console.log('------ IMAGES LOADING ------');
     // Get all the images (excluding those with no src attribute)
@@ -69,8 +69,8 @@ jQuery(document).ready( function() {
       img.onerror = function(){dfd.resolve();}
       img.src = this.src;
     });
-    // Return a master promise object, which will resolve when all the deferred objects have resolved
-    // IE - when all the images are loaded
+    // Return a master promise object, which resolves when all deferred objects have resolved
+    // resolved by loading or by error
     return $.when.apply($,dfds);
 	}
 	String.prototype.capitalize = function() {
@@ -315,7 +315,7 @@ jQuery(document).ready( function() {
 		jQuery('html').animate({'opacity':'1'},1, function(){
 			jQuery('#content_wrapper').imagesLoaded().then(function(){
 				// After images are loaded
-				console.log('------ IMAGES LOADED ------');
+				// console.log('------ IMAGES LOADED ------');
 				// TODO: add a show event and add a display none to content wrapper; fixes ovefflow issues when loading animation...
 				jQuery('#content_wrapper').animate({'opacity':'1'},750);
 				hideLoadingAnimation();
