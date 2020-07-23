@@ -14,7 +14,7 @@ function customize_showcase_settings( $wp_customize ) {
       array(
         'title' => 'Theme Settings',
         'priority' => 10,
-				'description' => __( 'Choose which animation styles you prefer for your Work transitions.', 'textDomain' ),
+				'description' => __( 'Choose which animation styles you prefer for your Work transitions.', 'portfoliotheme' ),
       )
   );
 	$wp_customize->add_setting(
@@ -29,7 +29,7 @@ function customize_showcase_settings( $wp_customize ) {
     array(
       'label' => 'Animation In',
       'section' => 'showcase_section',
-			'description' => __( 'The animation of the incoming content.', 'textDomain' ),
+			'description' => __( 'The animation of the incoming content.', 'portfoliotheme' ),
       'type' => 'select',
 			'choices'  => array(
 				'animate__fadeInLeftBig'  => __( 'Fade In Left Big' ),
@@ -50,7 +50,7 @@ function customize_showcase_settings( $wp_customize ) {
     array(
       'label' => 'Animation Out',
       'section' => 'showcase_section',
-			'description' => __( 'The animation of the outgoing content.', 'textDomain' ),
+			'description' => __( 'The animation of the outgoing content.', 'portfoliotheme' ),
       'type' => 'select',
 			'choices'  => array(
 				'animate__fadeOutRightBig'  => __( 'Fade Out Right Big' ),
