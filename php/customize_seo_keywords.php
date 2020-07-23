@@ -14,6 +14,7 @@ function customize_seo_keywords( $wp_customize ) {
       array(
         'title' => 'SEO Keywords',
         'priority' => 35,
+				'panel' => 'theme_panel',
       )
   );
 	$wp_customize->add_setting(

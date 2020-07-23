@@ -14,6 +14,7 @@ function customize_matomo_tracking( $wp_customize ) {
       array(
         'title' => 'Matomo Settings',
         'priority' => 35,
+				'panel' => 'theme_panel',
       )
   );
 	$wp_customize->add_setting(

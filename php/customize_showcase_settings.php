@@ -9,12 +9,13 @@
 */
 
 function customize_showcase_settings( $wp_customize ) {
-  $wp_customize->add_section(
+	$wp_customize->add_section(
       'showcase_section',
       array(
-        'title' => __( 'Theme Settings', 'portfoliotheme' ),
+        'title' => __( 'Showcase Settings', 'portfoliotheme' ),
         'priority' => 10,
 				'description' => __( 'Choose which animation styles you prefer for your Work transitions.', 'portfoliotheme' ),
+				'panel' => 'theme_panel',
       )
   );
 	$wp_customize->add_setting(

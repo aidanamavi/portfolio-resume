@@ -19,9 +19,6 @@ add_filter('show_admin_bar', '__return_false');
 add_filter( 'the_generator', create_function('$a', "return null;") );
 add_filter('the_generator', '__return_false');
 
-// Add browser classes to body tag.
-require_once(get_template_directory().'/php/custom_body_class.php');
-
 // Add shortcodes.
 require_once(get_template_directory().'/php/custom_shortcodes.php');
 
@@ -56,6 +53,7 @@ require_once(get_template_directory().'/php/category_query_post_type.php');
 require_once(get_template_directory().'/php/admin_remove_menus.php');
 
 // Add the individual sections, settings, and controls to the theme customizer.
+require_once(get_template_directory().'/php/customize_theme_settings.php');
 require_once(get_template_directory().'/php/customize_seo_keywords.php');
 require_once(get_template_directory().'/php/customize_matomo_tracking.php');
 require_once(get_template_directory().'/php/customize_showcase_settings.php');
