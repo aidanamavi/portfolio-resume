@@ -12,7 +12,7 @@ function customize_showcase_settings( $wp_customize ) {
   $wp_customize->add_section(
       'showcase_section',
       array(
-        'title' => 'Theme Settings',
+        'title' => __( 'Theme Settings', 'portfoliotheme' ),
         'priority' => 10,
 				'description' => __( 'Choose which animation styles you prefer for your Work transitions.', 'portfoliotheme' ),
       )
@@ -21,13 +21,13 @@ function customize_showcase_settings( $wp_customize ) {
     'showcase_animation_in',
     array(
       'default' => 'animate__fadeIn',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
     )
 	);
 	$wp_customize->add_control(
     'showcase_animation_in',
     array(
-      'label' => 'Animation In',
+      'label' => __( 'Animation In', 'portfoliotheme' ),
       'section' => 'showcase_section',
 			'description' => __( 'The animation of the incoming content.', 'portfoliotheme' ),
       'type' => 'select',
@@ -42,13 +42,13 @@ function customize_showcase_settings( $wp_customize ) {
     'showcase_animation_out',
     array(
       'default' => 'animate__fadeOut',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
     )
 	);
 	$wp_customize->add_control(
     'showcase_animation_out',
     array(
-      'label' => 'Animation Out',
+			'label' => __( 'Animation Out', 'portfoliotheme' ),
       'section' => 'showcase_section',
 			'description' => __( 'The animation of the outgoing content.', 'portfoliotheme' ),
       'type' => 'select',
