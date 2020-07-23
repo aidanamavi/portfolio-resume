@@ -52,6 +52,27 @@ jQuery(document).ready( function() {
 			// console.log(state);
 		}
 	}
+	//  Allows an event to fire after all images are loaded
+	jQuery.prototype.imagesLoaded = function() {
+		// console.log('------ IMAGES LOADING ------');
+    // Get all the images (excluding those with no src attribute)
+    var $imgs = this.find('img[src!=""]');
+    // If there are no images, just return an already resolved promise
+    if (!$imgs.length) {return $.Deferred().resolve().promise();}
+    // For each image, add a deferred object to the array, which resolves when the image is loaded (or if loading fails)
+    var dfds = [];
+    $imgs.each(function(){
+      var dfd = $.Deferred();
+      dfds.push(dfd);
+      var img = new Image();
+      img.onload = function(){dfd.resolve();}
+      img.onerror = function(){dfd.resolve();}
+      img.src = this.src;
+    });
+    // Return a master promise object, which will resolve when all the deferred objects have resolved
+    // IE - when all the images are loaded
+    return $.when.apply($,dfds);
+	}
 	String.prototype.capitalize = function() {
 	  return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	};
@@ -288,33 +309,13 @@ jQuery(document).ready( function() {
 		}
 		return divId;
 	}
-	// Fn to allow an event to fire after all images are loaded
-	$.fn.imagesLoaded = function () {
-		// console.log('------ IMAGES LOADING ------');
-    // Get all the images (excluding those with no src attribute)
-    var $imgs = this.find('img[src!=""]');
-    // If there's no images, just return an already resolved promise
-    if (!$imgs.length) {return $.Deferred().resolve().promise();}
-    // For each image, add a deferred object to the array, which resolves when the image is loaded (or if loading fails)
-    var dfds = [];
-    $imgs.each(function(){
-      var dfd = $.Deferred();
-      dfds.push(dfd);
-      var img = new Image();
-      img.onload = function(){dfd.resolve();}
-      img.onerror = function(){dfd.resolve();}
-      img.src = this.src;
-    });
-    // Return a master promise object, which will resolve when all the deferred objects have resolved
-    // IE - when all the images are loaded
-    return $.when.apply($,dfds);
-	}
+
 	// First page load.
 	window.onload = function() {
 		jQuery('html').animate({'opacity':'1'},1, function(){
 			jQuery('#content_wrapper').imagesLoaded().then(function(){
 				// After images are loaded
-				// console.log('------ IMAGES LOADED ------');
+				console.log('------ IMAGES LOADED ------');
 				// TODO: add a show event and add a display none to content wrapper; fixes ovefflow issues when loading animation...
 				jQuery('#content_wrapper').animate({'opacity':'1'},750);
 				hideLoadingAnimation();
