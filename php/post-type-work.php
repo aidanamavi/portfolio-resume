@@ -218,6 +218,7 @@ $toolGroups = array(
 	),
 	array(								# apis and integrations
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
+		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
 		'paypal'						=> __('PayPal', 'portfoliotheme'),
 		'square'						=> __('Square', 'portfoliotheme'),
 		'stripe'						=> __('Stripe', 'portfoliotheme'),
