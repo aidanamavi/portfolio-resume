@@ -208,14 +208,15 @@ $toolGroups = array(
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
-	array(								# web services
+	array(								# web page servers
 		'apache'						=> __('Apache', 'portfoliotheme'),
+		'nginx'							=> __('NGINX', 'portfoliotheme'),
 	),
-	array(								# streaming media
+	array(								# audio and video servers
 		'icecast'						=> __('Icecast', 'portfoliotheme'),
 		'shoutcast'					=> __('Shoutcast', 'portfoliotheme'),
 	),
-	array(								# apis and integrations 
+	array(								# apis and integrations
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
 		'paypal'						=> __('PayPal', 'portfoliotheme'),
 		'square'						=> __('Square', 'portfoliotheme'),
