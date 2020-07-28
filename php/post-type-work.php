@@ -211,8 +211,11 @@ $toolGroups = array(
 		'shoutcast'					=> __('Shoutcast', 'portfoliotheme'),
 	),
 	array(
+		'matomo'						=> __('Matomo', 'portfoliotheme'),
+		'paypal'						=> __('PayPal', 'portfoliotheme'),
+		'square'						=> __('Square', 'portfoliotheme'),
+		'stripe'						=> __('Stripe', 'portfoliotheme'),
 		'wordpress'					=> __('WordPress', 'portfoliotheme'),
-		'matomo'							=> __('Matomo', 'portfoliotheme'),
 	),
 	array(
 		'php'								=> __('PHP', 'portfoliotheme'),
