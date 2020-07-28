@@ -208,6 +208,10 @@ $toolGroups = array(
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
+	array(								# file clients
+		'cyberduck'					=> __('Cyberduck', 'portfoliotheme'),
+		'winscp'						=> __('WinSCP', 'portfoliotheme'),
+	),
 	array(								# web browsers
 		'chrome'						=> __('Chrome', 'portfoliotheme'),
 		'edge'							=> __('Edge', 'portfoliotheme'),
