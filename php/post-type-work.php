@@ -198,6 +198,13 @@ $toolGroups = array(
 		'live'							=> __('Live', 'portfoliotheme'),
 	),
 	array(
+		'aws'								=> __('AWS', 'portfoliotheme'),
+		'azure'							=> __('Azure', 'portfoliotheme'),
+		'digitalocean'			=> __('DigitalOcean', 'portfoliotheme'),
+		'googlecloud'				=> __('Google Cloud', 'portfoliotheme'),
+		'heroku'						=> __('Heroku', 'portfoliotheme'),
+	),
+	array(
 		'centOs'						=> __('CentOS', 'portfoliotheme'),
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'macOs'							=> __('Mac OS', 'portfoliotheme'),
