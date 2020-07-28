@@ -203,8 +203,11 @@ $toolGroups = array(
 		'heroku'						=> __('Heroku', 'portfoliotheme'),
 	),
 	array(								# operating systems
+		'android'						=> __('Android', 'portfoliotheme'),
 		'centOs'						=> __('CentOS', 'portfoliotheme'),
-		'macOs'							=> __('macOS', 'portfoliotheme'),
+		'ios'								=> __('iOS', 'portfoliotheme'),
+		'ipados'						=> __('iPadOS', 'portfoliotheme'),
+		'macos'							=> __('macOS', 'portfoliotheme'),
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
