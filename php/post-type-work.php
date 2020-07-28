@@ -232,6 +232,9 @@ $toolGroups = array(
 		'stripe'						=> __('Stripe', 'portfoliotheme'),
 		'wordpress'					=> __('WordPress', 'portfoliotheme'),
 	),
+	array(								# code editors
+		'atom'								=> __('Atom', 'portfoliotheme'),
+	),
 	array(								# programming languages
 		'php'								=> __('PHP', 'portfoliotheme'),
 		'mySql'							=> __('MySQL', 'portfoliotheme'),
