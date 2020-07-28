@@ -204,7 +204,7 @@ $toolGroups = array(
 	),
 	array(								# operating systems
 		'centOs'						=> __('CentOS', 'portfoliotheme'),
-		'macOs'							=> __('Mac OS', 'portfoliotheme'),
+		'macOs'							=> __('macOS', 'portfoliotheme'),
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
