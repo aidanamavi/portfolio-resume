@@ -208,6 +208,14 @@ $toolGroups = array(
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
+	array(								# web browsers
+		'chrome'						=> __('Chrome', 'portfoliotheme'),
+		'edge'							=> __('Edge', 'portfoliotheme'),
+		'firefox'						=> __('Firefox', 'portfoliotheme'),
+		'internetExplorer'	=> __('Internet Explorer', 'portfoliotheme'),
+		'opera'							=> __('Opera', 'portfoliotheme'),
+		'safari'						=> __('Safari', 'portfoliotheme'),
+	),
 	array(								# web page servers
 		'apache'						=> __('Apache', 'portfoliotheme'),
 		'nginx'							=> __('NGINX', 'portfoliotheme'),
