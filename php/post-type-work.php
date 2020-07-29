@@ -245,12 +245,12 @@ $toolGroups = array(
 	array(								# code editors
 		'atom'								=> __('Atom', 'portfoliotheme'),
 	),
-	array(								# programming languages
-		'php'								=> __('PHP', 'portfoliotheme'),
-		'mySql'							=> __('MySQL', 'portfoliotheme'),
-		'javascript'				=> __('JavaScript', 'portfoliotheme'),
-		'html'							=> __('HTML', 'portfoliotheme'),
+	array(								# languages
 		'css'								=> __('CSS', 'portfoliotheme'),
+		'html'							=> __('HTML', 'portfoliotheme'),
+		'javascript'				=> __('JavaScript', 'portfoliotheme'),
+		'sql'								=> __('SQL', 'portfoliotheme'),
+		'php'								=> __('PHP', 'portfoliotheme'),
 		'git'								=> __('Git', 'portfoliotheme'),
 	)
 );
