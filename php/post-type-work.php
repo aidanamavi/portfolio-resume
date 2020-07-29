@@ -250,11 +250,16 @@ $toolGroups = array(
 		'svc'								=> __('SVC', 'portfoliotheme'),
 	),
 	array(								# languages
+		'batch'							=> __('Batch', 'portfoliotheme'),
 		'css'								=> __('CSS', 'portfoliotheme'),
 		'html'							=> __('HTML', 'portfoliotheme'),
 		'javascript'				=> __('JavaScript', 'portfoliotheme'),
-		'sql'								=> __('SQL', 'portfoliotheme'),
+		'perl'							=> __('Perl', 'portfoliotheme'),
 		'php'								=> __('PHP', 'portfoliotheme'),
+		'powershell'				=> __('PowerShell', 'portfoliotheme'),
+		'sql'								=> __('SQL', 'portfoliotheme'),
+		'shell'							=> __('Shell', 'portfoliotheme'),
+		'visualbasic'				=> __('Visual Basic', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
@@ -412,6 +417,17 @@ function image_upload_scripts() {
     wp_enqueue_script('upload-slide-image');
   }
 }
+/* Adds the upload functions for the images. */
+add_action('admin_enqueue_scripts', 'form_copy_scripts');
+function form_copy_scripts() {
+	global $post_type;
+	$post_type = $post_type ? $post_type : $_GET['post_type'];
+	$action = $_GET['action'];
+	if ($post_type === 'work') {
+    wp_register_script('copy-slide-info', get_bloginfo('template_url').'/js/copy-slide-info.js', array('jquery'));
+    wp_enqueue_script('copy-slide-info');
+  }
+}
 /* Adds the styles for the forms. */
 add_action('admin_enqueue_scripts', 'work_post_type_styles');
 function work_post_type_styles() {
@@ -517,12 +533,22 @@ function slide_info_html_custom_box($post, $arguments) {
   printf(
     '<input type="text" name="'.$slideId.'_demo_url" value="%1$s" id="'.$slideId.'_demo_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
     '<label for="'.$slideId.'_demo_url"> %2$s ' .
-    '</label><br />',
+    '</label><br /><br />',
     esc_attr($imageUrl),
 		esc_html($label)
   );
 
-	echo '</p><hr>';
+	echo '<hr><br />';
+
+	echo '<button type="button" id="'.$slideId.'_copy_button" class="button button-small copy_button">';
+		echo 'Copy Slide Info';
+	echo '</button>';
+	echo '<label for="'.$slideId.'_copy_button">';
+		echo ' Copy slide info from the previous slide.';
+	echo '</label>';
+
+	echo '<br /><br /><hr>';
+
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
