@@ -223,9 +223,12 @@ $toolGroups = array(
 		'opera'							=> __('Opera', 'portfoliotheme'),
 		'safari'						=> __('Safari', 'portfoliotheme'),
 	),
-	array(								# web page servers
+	array(								# servers
 		'apache'						=> __('Apache', 'portfoliotheme'),
+		'bind'							=> __('BIND', 'portfoliotheme'),
+		'dovecot'						=> __('Dovecot', 'portfoliotheme'),
 		'nginx'							=> __('NGINX', 'portfoliotheme'),
+		'postfix'						=> __('Postfix', 'portfoliotheme'),
 	),
 	array(								# audio and video servers
 		'icecast'						=> __('Icecast', 'portfoliotheme'),
