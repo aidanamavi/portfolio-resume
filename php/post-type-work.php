@@ -243,7 +243,11 @@ $toolGroups = array(
 		'wordpress'					=> __('WordPress', 'portfoliotheme'),
 	),
 	array(								# code editors
-		'atom'								=> __('Atom', 'portfoliotheme'),
+		'atom'							=> __('Atom', 'portfoliotheme'),
+	),
+	array(								# code version control
+		'git'								=> __('Git', 'portfoliotheme'),
+		'svc'								=> __('SVC', 'portfoliotheme'),
 	),
 	array(								# languages
 		'css'								=> __('CSS', 'portfoliotheme'),
@@ -251,7 +255,6 @@ $toolGroups = array(
 		'javascript'				=> __('JavaScript', 'portfoliotheme'),
 		'sql'								=> __('SQL', 'portfoliotheme'),
 		'php'								=> __('PHP', 'portfoliotheme'),
-		'git'								=> __('Git', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
