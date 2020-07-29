@@ -128,14 +128,7 @@ $disciplineGroups = array(
 	)
 );
 $toolGroups = array(
-	array(								# audio recording
-		'm-audio'						=> __('M-Audio', 'portfoliotheme'),
-		'rode'							=> __('Rode', 'portfoliotheme'),
-		'roland'						=> __('Roland', 'portfoliotheme'),
-		'sennheiser'				=> __('Sennheiser', 'portfoliotheme'),
-		'zoom'							=> __('Zoom', 'portfoliotheme'),
-	),
-	array(
+	array(								# lighting
 		'easyrigCinema3'		=> __('Easyrig Cinema 3', 'portfoliotheme'),
 		'losmandyPortaJib'	=> __('Losmandy Porta-Jib', 'portfoliotheme'),
 		'matthewsDolly'			=> __('Matthews Dolly', 'portfoliotheme'),
@@ -168,34 +161,38 @@ $toolGroups = array(
 		'stingers'					=> __('Stingers', 'portfoliotheme'),
 		'tapes'							=> __('Tapes', 'portfoliotheme'),
 	),
-	array(								# desktop publishing
-		'iWork'							=> __('iWork', 'portfoliotheme'),
-		'office'						=> __('Office', 'portfoliotheme'),
-		'openOffice'				=> __('Open Office', 'portfoliotheme'),
-	),
-	array(								# photo and video recording
+	array(								# media recording
 		'canon'							=> __('Canon', 'portfoliotheme'),
+		'm-audio'						=> __('M-Audio', 'portfoliotheme'),
 		'nikon'							=> __('Nikon', 'portfoliotheme'),
 		'red'								=> __('RED', 'portfoliotheme'),
+		'rode'							=> __('Rode', 'portfoliotheme'),
+		'roland'						=> __('Roland', 'portfoliotheme'),
+		'sennheiser'				=> __('Sennheiser', 'portfoliotheme'),
 		'sony'							=> __('Sony', 'portfoliotheme'),
+		'zoom'							=> __('Zoom', 'portfoliotheme'),
 	),
-	array(								# photo and video editors
+	array(								# media editors
 		'afterEffects'			=> __('After Effects', 'portfoliotheme'),
 		'bridge'						=> __('Bridge', 'portfoliotheme'),
 		'illustrator'				=> __('Illustrator', 'portfoliotheme'),
 		'finalCutPro'				=> __('Final Cut Pro', 'portfoliotheme'),
 		'lightroom'					=> __('Lightroom', 'portfoliotheme'),
+		'live'							=> __('Live', 'portfoliotheme'),
 		'photoshop'					=> __('Photoshop', 'portfoliotheme'),
 		'premiere'					=> __('Premiere', 'portfoliotheme'),
 	),
+	array(								# media publishing
+		'iWork'							=> __('iWork', 'portfoliotheme'),
+		'office'						=> __('Office', 'portfoliotheme'),
+		'openOffice'				=> __('Open Office', 'portfoliotheme'),
+	),
 	array(								# 3d environment engines and rendering
 		'chaosScope'				=> __('Chaos Scope', 'portfoliotheme'),
+		'unityEngine'				=> __('Unity Engine', 'portfoliotheme'),
 		'unrealEngine'			=> __('Unreal Engine', 'portfoliotheme'),
 	),
-	array(								# digital audio workstations
-		'live'							=> __('Live', 'portfoliotheme'),
-	),
-	array(								# infrastructure as a service
+	array(								# infrastructure
 		'aws'								=> __('AWS', 'portfoliotheme'),
 		'azure'							=> __('Azure', 'portfoliotheme'),
 		'digitalocean'			=> __('DigitalOcean', 'portfoliotheme'),
@@ -211,11 +208,7 @@ $toolGroups = array(
 		'rhel'							=> __('RHEL', 'portfoliotheme'),
 		'windows'						=> __('Windows', 'portfoliotheme'),
 	),
-	array(								# file clients
-		'cyberduck'					=> __('Cyberduck', 'portfoliotheme'),
-		'winscp'						=> __('WinSCP', 'portfoliotheme'),
-	),
-	array(								# web browsers
+	array(								# network browsers
 		'chrome'						=> __('Chrome', 'portfoliotheme'),
 		'edge'							=> __('Edge', 'portfoliotheme'),
 		'firefox'						=> __('Firefox', 'portfoliotheme'),
@@ -223,24 +216,18 @@ $toolGroups = array(
 		'opera'							=> __('Opera', 'portfoliotheme'),
 		'safari'						=> __('Safari', 'portfoliotheme'),
 	),
-	array(								# servers
+	array(								# network servers
 		'apache'						=> __('Apache', 'portfoliotheme'),
 		'bind'							=> __('BIND', 'portfoliotheme'),
 		'dovecot'						=> __('Dovecot', 'portfoliotheme'),
+		'icecast'						=> __('Icecast', 'portfoliotheme'),
 		'nginx'							=> __('NGINX', 'portfoliotheme'),
 		'postfix'						=> __('Postfix', 'portfoliotheme'),
-	),
-	array(								# audio and video servers
-		'icecast'						=> __('Icecast', 'portfoliotheme'),
 		'shoutcast'					=> __('Shoutcast', 'portfoliotheme'),
 	),
-	array(								# apis and integrations
-		'matomo'						=> __('Matomo', 'portfoliotheme'),
-		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
-		'paypal'						=> __('PayPal', 'portfoliotheme'),
-		'square'						=> __('Square', 'portfoliotheme'),
-		'stripe'						=> __('Stripe', 'portfoliotheme'),
-		'wordpress'					=> __('WordPress', 'portfoliotheme'),
+	array(								# file clients
+		'cyberduck'					=> __('Cyberduck', 'portfoliotheme'),
+		'winscp'						=> __('WinSCP', 'portfoliotheme'),
 	),
 	array(								# code editors
 		'atom'							=> __('Atom', 'portfoliotheme'),
@@ -249,7 +236,7 @@ $toolGroups = array(
 		'git'								=> __('Git', 'portfoliotheme'),
 		'svc'								=> __('SVC', 'portfoliotheme'),
 	),
-	array(								# languages
+	array(								# code languages
 		'batch'							=> __('Batch', 'portfoliotheme'),
 		'css'								=> __('CSS', 'portfoliotheme'),
 		'html'							=> __('HTML', 'portfoliotheme'),
@@ -259,7 +246,16 @@ $toolGroups = array(
 		'powershell'				=> __('PowerShell', 'portfoliotheme'),
 		'sql'								=> __('SQL', 'portfoliotheme'),
 		'shell'							=> __('Shell', 'portfoliotheme'),
+		'vbscript'					=> __('VBScript', 'portfoliotheme'),
 		'visualbasic'				=> __('Visual Basic', 'portfoliotheme'),
+	),
+	array(								# apis and integrations
+		'matomo'						=> __('Matomo', 'portfoliotheme'),
+		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
+		'paypal'						=> __('PayPal', 'portfoliotheme'),
+		'square'						=> __('Square', 'portfoliotheme'),
+		'stripe'						=> __('Stripe', 'portfoliotheme'),
+		'wordpress'					=> __('WordPress', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
