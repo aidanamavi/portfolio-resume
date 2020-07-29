@@ -193,11 +193,24 @@ $toolGroups = array(
 		'unrealEngine'			=> __('Unreal Engine', 'portfoliotheme'),
 	),
 	array(								# infrastructure
+		'a2Hosting'					=> __('A2Hosting', 'portfoliotheme'),
+		'atlanticnet'				=> __('Atlantic.net', 'portfoliotheme'),
 		'aws'								=> __('AWS', 'portfoliotheme'),
 		'azure'							=> __('Azure', 'portfoliotheme'),
+		'cloudWays'					=> __('CloudWays', 'portfoliotheme'),
 		'digitalocean'			=> __('DigitalOcean', 'portfoliotheme'),
+		'dreamHost'					=> __('DreamHost', 'portfoliotheme'),
 		'googlecloud'				=> __('Google Cloud', 'portfoliotheme'),
 		'heroku'						=> __('Heroku', 'portfoliotheme'),
+		'ibmCloud'					=> __('IBM Cloud', 'portfoliotheme'),
+		'kamatera'					=> __('Kamatera', 'portfoliotheme'),
+		'linode'						=> __('Linode', 'portfoliotheme'),
+		'mediaTemple'				=> __('MediaTemple', 'portfoliotheme'),
+		'rackSpace'					=> __('RackSpace', 'portfoliotheme'),
+		'scaleway'					=> __('Scaleway', 'portfoliotheme'),
+		'softLayer'					=> __('SoftLayer', 'portfoliotheme'),
+		'toggleBox'					=> __('ToggleBox', 'portfoliotheme'),
+		'vultr'							=> __('Vultr', 'portfoliotheme'),
 	),
 	array(								# operating systems
 		'android'						=> __('Android', 'portfoliotheme'),
@@ -234,6 +247,7 @@ $toolGroups = array(
 	),
 	array(								# code version control
 		'git'								=> __('Git', 'portfoliotheme'),
+		'mercurial'					=> __('Mercurial', 'portfoliotheme'),
 		'svc'								=> __('SVC', 'portfoliotheme'),
 	),
 	array(								# code languages
@@ -250,6 +264,7 @@ $toolGroups = array(
 		'visualbasic'				=> __('Visual Basic', 'portfoliotheme'),
 	),
 	array(								# apis and integrations
+		'authorizenet'			=> __('Authorize.net', 'portfoliotheme'),
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
 		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
 		'paypal'						=> __('PayPal', 'portfoliotheme'),
