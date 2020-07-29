@@ -82,7 +82,7 @@ $roleGroups = array(
 		'retoucher'							=> __('Retoucher', 'portfoliotheme'),
 		'editor'								=> __('Editor', 'portfoliotheme'),
 		'colorist'							=> __('Colorist', 'portfoliotheme'),
-		'boradcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
+		'broadcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
 	)
 );
 $disciplineGroups = array(
