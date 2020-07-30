@@ -263,8 +263,9 @@ $toolGroups = array(
 		'vbscript'					=> __('VBScript', 'portfoliotheme'),
 		'visualbasic'				=> __('Visual Basic', 'portfoliotheme'),
 	),
-	array(								# apis and integrations
+	array(								# apis, libraries and frameworks
 		'authorizenet'			=> __('Authorize.net', 'portfoliotheme'),
+		'jquery'						=> __('jQuery', 'portfoliotheme'),
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
 		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
 		'paypal'						=> __('PayPal', 'portfoliotheme'),
