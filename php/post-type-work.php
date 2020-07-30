@@ -513,6 +513,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	$slideNumber = $arguments['args']['slideNumber'];
 	$slideId = 'slide_'.$slideNumber;
+	$prevSlideNumber = $slideNumber-1;
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
@@ -544,22 +545,36 @@ function slide_info_html_custom_box($post, $arguments) {
   printf(
     '<input type="text" name="'.$slideId.'_demo_url" value="%1$s" id="'.$slideId.'_demo_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
     '<label for="'.$slideId.'_demo_url"> %2$s ' .
-    '</label><br /><br />',
+    '</label>',
     esc_attr($imageUrl),
 		esc_html($label)
   );
 
-	echo '<hr><br />';
-
-	echo '<button type="button" id="'.$slideId.'_copy_button" class="button button-small copy_button">';
-		echo 'Copy Slide Info';
-	echo '</button>';
-	echo '<label for="'.$slideId.'_copy_button">';
-		echo ' Copy slide info from the previous slide.';
-	echo '</label>';
-
 	echo '<br /><br /><hr>';
 
+	if ($prevSlideNumber>0) {
+		echo '<br />';
+		echo '<button type="button" id="'.$slideId.'_copy_button" class="button button-small copy_button">';
+		echo 'Copy Slide '.$prevSlideNumber.' Info';
+		echo '</button>';
+		echo '<label for="'.$slideId.'_copy_button">';
+		echo ' Copy slide info from the previous slide.';
+		echo '</label>';
+
+		echo '<br /><br /><hr>';
+	}
+
+	if ($prevSlideNumber>0) {
+		echo '<br />';
+		echo '<button type="button" id="'.$slideId.'_clear_button" class="button button-small clear_button">';
+		echo 'Clear Slide '.$slideId.' Info';
+		echo '</button>';
+		echo '<label for="'.$slideId.'_clear_button">';
+		echo ' Clear slide info for the current slide.';
+		echo '</label>';
+
+		echo '<br /><br /><hr>';
+	}
 
 	printf(
 		'<p><strong>%1$s</strong></p>',
