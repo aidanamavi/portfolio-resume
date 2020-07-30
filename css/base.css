@@ -135,16 +135,18 @@ iframe {
 }
 #loading_animation {
     position: fixed;
+		margin: 0;
     top: 0;
+		bottom: 0;
+		right: 0;
     left: 0;
     z-index: 100;
     width: 100%;
     height: 100%;
     vertical-align: middle;
     text-align: center;
-    background-color: #000;
-    text-align: center;
-		margin: 0;
+		background-color: #000;
+		overflow: hidden;
 }
 #loading_animation .helper {
     display: inline-block;
@@ -161,8 +163,7 @@ html {
 	color: #ccc;
 	font-family: 'Metropolis', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	font-weight: 300;
-	overflow-y: scroll;
-	overflow-x: hidden !important;
+	overflow: hidden;
 }
 body {
 	padding: 0;
