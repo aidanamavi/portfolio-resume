@@ -567,7 +567,7 @@ function slide_info_html_custom_box($post, $arguments) {
 	if ($prevSlideNumber>0) {
 		echo '<br />';
 		echo '<button type="button" id="'.$slideId.'_clear_button" class="button button-small clear_button">';
-		echo 'Clear Slide '.$slideId.' Info';
+		echo 'Clear Slide '.$slideNumber.' Info';
 		echo '</button>';
 		echo '<label for="'.$slideId.'_clear_button">';
 		echo ' Clear slide info for the current slide.';
