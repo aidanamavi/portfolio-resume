@@ -264,6 +264,7 @@ $toolGroups = array(
 		'visualbasic'				=> __('Visual Basic', 'portfoliotheme'),
 	),
 	array(								# apis, libraries and frameworks
+		'animatecss'				=> __('Animate.css', 'portfoliotheme'),
 		'authorizenet'			=> __('Authorize.net', 'portfoliotheme'),
 		'jquery'						=> __('jQuery', 'portfoliotheme'),
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
