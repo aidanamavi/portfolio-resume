@@ -55,9 +55,9 @@
 							if ($description) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											description
-										</h3>
+										</h2>
 									</div>
 									<div>
 <?php
@@ -71,9 +71,9 @@ echo '										'.do_shortcode($description).PHP_EOL;
 							if ($roles) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											roles
-										</h3>
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -94,9 +94,9 @@ echo '											'.displayMetaLabel('roles', $role).'<br />'.PHP_EOL;
 							if ($disciplines) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											disciplines
-										</h3>
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -117,9 +117,9 @@ echo '											'.displayMetaLabel('disciplines', $discipline).'<br />'.PHP_EOL
 							if ($tools) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											tools
-										</h3>
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -140,9 +140,9 @@ echo '											'.displayMetaLabel('tools', $tool).'<br />'.PHP_EOL;
 							if ($products) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											products
-										</h3>
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
@@ -163,9 +163,9 @@ echo '											'.displayMetaLabel('products', $product).'<br />'.PHP_EOL;
 							if ($presentations) : ?>
 								<div class="skills">
 									<div class="skills_title">
-										<h3>
+										<h2>
 											presentations
-										</h3>
+										</h2>
 									</div>
 									<div class="masonry_wrapper">
 										<div class="masonry_column">
