@@ -187,6 +187,13 @@ $toolGroups = array(
 		'office'						=> __('Office', 'portfoliotheme'),
 		'openOffice'				=> __('Open Office', 'portfoliotheme'),
 	),
+	array(								# project management
+		'basecamp'					=> __('Basecamp', 'portfoliotheme'),
+		'facetime'					=> __('Facetime', 'portfoliotheme'),
+		'trello'						=> __('Trello', 'portfoliotheme'),
+		'wrike'							=> __('Wrike', 'portfoliotheme'),
+		'zoomconference'		=> __('Zoom', 'portfoliotheme'),
+	),
 	array(								# 3d environment engines and rendering
 		'chaosScope'				=> __('Chaos Scope', 'portfoliotheme'),
 		'unityEngine'				=> __('Unity Engine', 'portfoliotheme'),
