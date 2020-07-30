@@ -54,11 +54,14 @@ jQuery(document).ready( function() {
 	}
 	//  Enables an event to fire after all images are loaded
 	jQuery.prototype.imagesLoaded = function() {
-		// console.log('------ IMAGES LOADING ------');
+		console.log('------ IMAGES LOADING ------');
     // Get all the images (excluding those with no src attribute)
     var $imgs = this.find('img[src!=""]');
     // If there are no images, just return an already resolved promise
     if (!$imgs.length) {return $.Deferred().resolve().promise();}
+		var remainingImgs = $imgs.length;
+		var percentComplete = 0;
+		console.log('images: '+remainingImgs+'/'+$imgs.length+'='+percentComplete+'%');
     // For each image, add a deferred object to the array, which resolves when the image is loaded (or if loading fails)
     var dfds = [];
     $imgs.each(function(){
@@ -68,7 +71,12 @@ jQuery(document).ready( function() {
       img.onload = function(){dfd.resolve();}
       img.onerror = function(){dfd.resolve();}
       img.src = this.src;
-    });
+
+			remainingImgs = remainingImgs-1;
+			percentComplete = (100-((remainingImgs/$imgs.length)*100));
+			console.log('images: '+remainingImgs+'/'+$imgs.length+'='+percentComplete+'%');
+	    });
+		console.log('complete: '+remainingImgs+'/'+$imgs.length);
     // Return a master promise object, which resolves when all deferred objects have resolved
     // resolved by loading or by error
     return $.when.apply($,dfds);
