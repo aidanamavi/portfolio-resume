@@ -91,7 +91,7 @@ jQuery(document).ready( function() {
 		isPageLoading = true;
 		jQuery('html').css("overflow", "hidden");
 		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500, function(){
-			jQuery('html').animate({ scrollTop: 0 }, 1);
+			jQuery('html').scrollTop(0);
 		});
 	}
 	function hideLoadingAnimation() {
