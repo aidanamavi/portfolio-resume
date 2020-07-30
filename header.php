@@ -55,7 +55,7 @@
 	<body>
 		<div id="loading_animation">
 		  <span class="helper"></span>
-		  <img src="<?php bloginfo('template_url'); ?>/img/loading.gif" alt="" />
+		  <img src="<?php bloginfo('template_url'); ?>/img/loading.gif" title="Loading.." alt="Loading.." />
 		</div>
 		<div id="wrapper">
 			<div id="header_wrapper">
