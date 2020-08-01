@@ -89,7 +89,6 @@ jQuery(document).ready( function() {
 			return;
 		}
 		isPageLoading = true;
-		jQuery('html').css("overflow", "hidden");
 		jQuery('#loading_animation').stop().show().animate({'opacity': '1'},500, function(){
 			jQuery('html').scrollTop(0);
 		});
@@ -100,7 +99,6 @@ jQuery(document).ready( function() {
 			isPageLoading = false;
 			updateVisiblePage();
 			adjustSlideHeight();
-			jQuery('html').css("overflow", "auto");
 			jQuery('#loading_animation').hide();
 		});
 	}

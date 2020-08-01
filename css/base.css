@@ -158,12 +158,21 @@ iframe {
 	max-height: 31px;
 	max-width: 31px;
 }
+/* Chrome, Edge, Safari, Opera, all browsers on iOS, and others */
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-thumb {
+	width: 0 !important;
+	color: transparent;
+}
 html {
 	background-color: #000;
 	color: #ccc;
 	font-family: 'Metropolis', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	font-weight: 300;
-	overflow: hidden;
+	overflow: -moz-scrollbars-none; /* Firefox <63 */
+	-ms-overflow-style: none; /* IE 10+ */
+	scrollbar-width: none; /* Firefox 64+ */
+	scrollbar-color: transparent transparent; /* Firefox 64+ */
 }
 body {
 	padding: 0;
