@@ -367,13 +367,13 @@
 									</div>
 									<div class="skills_column_half">
 										<a href="https://maps.google.com/maps?q=New+York,+NY,+United+States" class="glow matomo_link" target="_blank">
-											Address: New York, NY, United States
+											New York, NY, US
 										</a><br />
 										<a href="mailto:mail@aidanamavi.com" class="glow matomo_link" target="_blank">
-											Email: mail@aidanamavi.com
+											Email
 										</a><br />
 										<a href="tel:16465358321" class="glow matomo_link" target="_blank">
-											Phone: +1 646.535.8321
+											Phone
 										</a>
 									</div>
 									<div class="skills_column_half">
