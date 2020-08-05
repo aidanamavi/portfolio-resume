@@ -46,28 +46,57 @@ function add_post_type_work() {
 
 add_filter( 'enter_title_here', 'add_post_type_work_title' );
 function add_post_type_work_title( $input ) {
-global $post_type;
-if ($post_type == 'work') {
-	return __( 'Enter work title here', 'portfoliotheme' );
-}
-return $input;
+	global $post_type;
+	if ($post_type == 'work') {
+		return __( 'Enter work title here', 'portfoliotheme' );
+	}
+	return $input;
 }
 
 $roleGroups = array(
-	array(
+	array(										# entertainment and sports
+		'actor'									=> __('Actor', 'portfoliotheme'),
 		'creativeProducer'			=> __('Creative Producer', 'portfoliotheme'),
 		'creativeDirector'			=> __('Creative Director', 'portfoliotheme'),
 		'assistantDirector'			=> __('Assistant Director', 'portfoliotheme'),
 	),
-	array(
-		'webDeveloper'					=> __('Web Developer', 'portfoliotheme'),
-		'systemsAdministrator'	=> __('Systems Administrator', 'portfoliotheme'),
+	array(										# arts and design
+		'artDirector'						=> __('Art Director', 'portfoliotheme'),
 		'graphicDesigner'				=> __('Graphic Designer', 'portfoliotheme'),
+		'multimediaAnimator'		=> __('Multimedia Animator', 'portfoliotheme'),
 	),
-	array(
-		'copywriter'					=> __('Copywriter', 'portfoliotheme'),
+	array(										# computer and information technology: coding
+		'computerProgramer'			=> __('Computer Programmer', 'portfoliotheme'),
+		'softwareDeveloper'			=> __('Software Developer', 'portfoliotheme'),
+		'webDeveloper'					=> __('Web Developer', 'portfoliotheme'),
 	),
-	array(
+	array(										# computer and information technology: admin
+		'databaseAdministrator'	=> __('Database Administrator', 'portfoliotheme'),
+		'networkAdministrator'	=> __('Network Administrator', 'portfoliotheme'),
+		'systemsAdministrator'	=> __('Systems Administrator', 'portfoliotheme'),
+	),
+	array(										# computer and information technology: analysts
+		'systemsAnalyst'				=> __('Systems Analyst', 'portfoliotheme'),
+		'securityAnalyst'				=> __('Security Analyst', 'portfoliotheme'),
+	),
+	array(										# computer and information technology: network
+		'networkArchitect'			=> __('Network Architect', 'portfoliotheme'),
+		'supportSpecialist'			=> __('Support Specialist', 'portfoliotheme'),
+	),
+	array(										# media and communication: photographers
+		'assistantPhotographer'	=> __('Assistant Photographer', 'portfoliotheme'),
+		'cameraOperator'				=> __('Camera Operator', 'portfoliotheme'),
+		'cinematographer'				=> __('Cinematographer', 'portfoliotheme'),
+		'photographer'					=> __('Photographer', 'portfoliotheme'),
+		'videographer'					=> __('Videographer', 'portfoliotheme'),
+	),
+	array(										# media and communication: photo/video editors
+		'colorist'							=> __('Colorist', 'portfoliotheme'),
+		'editor'								=> __('Editor', 'portfoliotheme'),
+		'retoucher'							=> __('Retoucher', 'portfoliotheme'),
+	),
+	array(										# media and communication: technichians
+		'broadcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
 		'lightingDesigner'			=> __('Lighting Designer', 'portfoliotheme'),
 		'gaffer'								=> __('Gaffer', 'portfoliotheme'),
 		'keyGrip'								=> __('Key Grip', 'portfoliotheme'),
@@ -75,42 +104,44 @@ $roleGroups = array(
 		'bestBoyGrip'						=> __('Best Boy Grip', 'portfoliotheme'),
 		'bestBoyElectrician'		=> __('Best Boy Electrician', 'portfoliotheme'),
 	),
-	array(
-		'cinematographer'				=> __('Cinematographer', 'portfoliotheme'),
-		'photographer'					=> __('Photographer', 'portfoliotheme'),
-		'assistantPhotographer'	=> __('Assistant Photographer', 'portfoliotheme'),
-		'retoucher'							=> __('Retoucher', 'portfoliotheme'),
-		'editor'								=> __('Editor', 'portfoliotheme'),
-		'colorist'							=> __('Colorist', 'portfoliotheme'),
-		'broadcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
-	)
+	array(										# media and communication: announcers & writers
+		'announcer'							=> __('Announcer', 'portfoliotheme'),
+		'copywriter'						=> __('Copywriter', 'portfoliotheme'),
+		'journalist'						=> __('Journalist', 'portfoliotheme'),
+	),
 );
 $disciplineGroups = array(
-	array(
+	array(								# media
 		'broadcastMedia'		=> __('Broadcast Media', 'portfoliotheme'),
 		'digitalMedia'			=> __('Digital Media', 'portfoliotheme'),
 		'socialMedia'				=> __('Social Media', 'portfoliotheme'),
 	),
-	array(
+	array(								# marketing & advertising
 		'marketing'					=> __('Marketing', 'portfoliotheme'),
 		'marketResearch'		=> __('Market Research', 'portfoliotheme'),
 		'advertising'				=> __('Advertising', 'portfoliotheme'),
 	),
-	array(
+	array(								# design
 		'experienceDesign'	=> __('Experience Design', 'portfoliotheme'),
-		'networkDesign'			=> __('Network Design', 'portfoliotheme'),
 		'graphicDesign'			=> __('Graphic Design', 'portfoliotheme'),
 		'interactiveDesign'	=> __('Interactive Design', 'portfoliotheme'),
-		'webDesign'					=> __('Web Design', 'portfoliotheme'),
-		'soundDesign'				=> __('Sound Design', 'portfoliotheme'),
 		'lightingDesign'		=> __('Lighting Design', 'portfoliotheme'),
+		'networkDesign'			=> __('Network Design', 'portfoliotheme'),
+		'soundDesign'				=> __('Sound Design', 'portfoliotheme'),
+		'webDesign'					=> __('Web Design', 'portfoliotheme'),
 	),
-	array(
+	array(											# computers and systems
 		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
-		'informationArchitecture'	=> __('Information Architecture', 'portfoliotheme'),
+		'softwareArchitecture'		=> __('Software Architecture', 'portfoliotheme'),
 		'webDevelopment'					=> __('Web Development', 'portfoliotheme'),
 	),
-	array(
+	array(											# enterpirse architecture domain
+		'businessArchitecture'		=> __('Business Architecture', 'portfoliotheme'),
+		'dataArchitecture'				=> __('Data Architecture', 'portfoliotheme'),
+		'applicationsArchitecture'=> __('Applications Architecture', 'portfoliotheme'),
+		'technologyrchitecture'		=> __('Technology Architecture', 'portfoliotheme'),
+	),
+	array(								# audio video
 		'photography'				=> __('Photography', 'portfoliotheme'),
 		'videography'				=> __('Videography', 'portfoliotheme'),
 		'audiography'				=> __('Audiography', 'portfoliotheme'),
@@ -506,7 +537,7 @@ function slide_info_add_custom_box() {
 		--$numberOfSlides;
 		add_meta_box(
 	    'slide_info_sectionid'.$slideNumber,
-	    __('Slide Info', 'portfoliotheme').' '.$slideNumber,
+	    __('Project Slide', 'portfoliotheme').' '.$slideNumber,
 	    'slide_info_html_custom_box',
 	    'work',
 	    'normal',
@@ -525,35 +556,62 @@ function slide_info_html_custom_box($post, $arguments) {
 	$prevSlideNumber = $slideNumber-1;
 
 	printf(
-		'<p><strong>%1$s</strong></p>',
-		__('Project Slide', 'portfoliotheme')
-	);
-	$saved = get_post_meta( $post->ID, $slideId.'_url', true );
-	$label = __('Enter a URL or upload an image', 'portfoliotheme');
+		'<p><strong><label for="'.$slideId.'_title">%1$s</label></strong></p>',
+ 		__('Featured Title', 'portfoliotheme')
+  );
+	$saved = get_post_meta( $post->ID, $slideId.'_title', true );
+	$placeholder = __('Enter a title for this slide', 'portfoliotheme');
+	$label = __('Title', 'portfoliotheme');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="'.$slideId.'_url" value="%1$s" id="'.$slideId.'_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
-		'<input type="button" value="Upload Image" class="button button-small upload_button" id="'.$slideId.'_button" />'.
-    '<label for="'.$slideId.'_url"> %2$s </label>'.
+    '<input type="text" name="'.$slideId.'_title" value="%1$s" id="'.$slideId.'_title" placeholder="%2$s" style="width: 100&#37;; margin-bottom: 10px;" />'.
 		'<br /><br />',
-    esc_attr($imageUrl),
+		esc_attr($imageUrl),
+		esc_attr($placeholder)
+  );
+
+	printf(
+		'<p><strong><label for="'.$slideId.'_url">%1$s</label></strong></p>',
+		__('Featured Image', 'portfoliotheme')
+	);
+	$saved = get_post_meta( $post->ID, $slideId.'_url', true );
+	$placeholder = __('Choose an image for this slide', 'portfoliotheme');
+	$label = __('Web Address', 'portfoliotheme');
+	$button = __('Browse Images', 'portfoliotheme');
+	if ($saved) {
+		$imageUrl = $saved;
+	} else {
+		$imageUrl = '';
+	}
+  printf(
+		// '<label for="'.$slideId.'_url"> %4$s </label>'.
+    '<input type="text" name="'.$slideId.'_url" value="%1$s" id="'.$slideId.'_url" placeholder="%2$s" style="width: 100&#37;; margin-bottom: 10px;" />'.
+		'<input type="button" value="%3$s" class="button components-button upload_button" id="'.$slideId.'_button" />'.
+		'<br /><br />',
+		esc_attr($imageUrl),
+		esc_attr($placeholder),
+		esc_attr($button),
 		esc_html($label)
   );
 
+	printf(
+		'<p><strong><label for="'.$slideId.'_demo_url">%1$s</label></strong></p>',
+		__('Featured Demo', 'portfoliotheme')
+	);
 	$saved = get_post_meta( $post->ID, $slideId.'_demo_url', true );
-	$label = __('Slide Demo URL', 'portfoliotheme');
+	$label = __('For example, www.my-demo-website.com', 'portfoliotheme');
 	if ($saved) {
 		$imageUrl = $saved;
 	} else {
 		$imageUrl = '';
 	}
   printf(
-    '<input type="text" name="'.$slideId.'_demo_url" value="%1$s" id="'.$slideId.'_demo_url" style="width: 100&#37;; margin-bottom: 10px;" />'.
-    '<label for="'.$slideId.'_demo_url"> %2$s ' .
+    '<input type="text" name="'.$slideId.'_demo_url" value="%1$s" id="'.$slideId.'_demo_url" placeholder="%2$s" style="width: 100&#37;; margin-bottom: 10px;" />'.
+    // '<label for="'.$slideId.'_demo_url"> %2$s ' .
     '</label>',
     esc_attr($imageUrl),
 		esc_html($label)
@@ -563,7 +621,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	if ($prevSlideNumber>0) {
 		echo '<br />';
-		echo '<button type="button" id="'.$slideId.'_copy_button" class="button button-small copy_button">';
+		echo '<button type="button" id="'.$slideId.'_copy_button" class="button components-button copy_button">';
 		echo 'Copy Slide '.$prevSlideNumber.' Info';
 		echo '</button>';
 		echo '<label for="'.$slideId.'_copy_button">';
@@ -575,7 +633,7 @@ function slide_info_html_custom_box($post, $arguments) {
 
 	if ($prevSlideNumber>0) {
 		echo '<br />';
-		echo '<button type="button" id="'.$slideId.'_clear_button" class="button button-small clear_button">';
+		echo '<button type="button" id="'.$slideId.'_clear_button" class="button components-button clear_button">';
 		echo 'Clear Slide '.$slideNumber.' Info';
 		echo '</button>';
 		echo '<label for="'.$slideId.'_clear_button">';
@@ -827,7 +885,14 @@ function slide_info_save_postdata( $post_id )
 		--$numberOfSlides;
 		$slideId = 'slide_'.$slideNumber;
 		$slideDetected = false;
-
+		// Add support for "Title
+		if ( isset($_POST[$slideId.'_title']) && $_POST[$slideId.'_title'] !== '' ){
+			$slideDescription = trim(esc_textarea($_POST[$slideId.'_title']));
+			update_post_meta( $post_id, $slideId.'_title', $slideDescription );
+	  } else {
+	  	delete_post_meta($post_id, $slideId.'_title'  );
+	  }
+		// Add support for "URL"
 		if ( isset($_POST[$slideId.'_url']) && $_POST[$slideId.'_url'] !== '' ){
 			$slideImageUrl = esc_url_raw($_POST[$slideId.'_url']);
 			$sanatizedUrl = filter_var($slideImageUrl, FILTER_SANITIZE_URL);

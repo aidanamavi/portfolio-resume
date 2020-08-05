@@ -1,6 +1,6 @@
 /**
  * @package WordPress Portfolio Theme
- 
+
  * @version 0.4
  *
  * @author Aidan Amavi <mail@aidanamavi.com>
@@ -10,18 +10,16 @@
  */
 
 jQuery(document).ready( function() {
-	var custom_uploader;
-	var input;
+	let custom_uploader;
+	let input;
   jQuery(document).on('click', '.upload_button', function(event) {
     event.preventDefault();
-		var button = jQuery(this);
+		let button = jQuery(this);
 		input = button.prev('input').attr('id');
-    // If the uploader object has already been created, reopen the dialog.
 		if (custom_uploader) {
       custom_uploader.open();
       return;
     }
-    // Extend the wp.media object.
     custom_uploader = wp.media.frames.file_frame = wp.media({
       title: 'Choose Image',
       button: {
@@ -29,12 +27,13 @@ jQuery(document).ready( function() {
       },
       multiple: false
     });
-    // When a file is selected, grab the URL and set it as the text field's value.
     custom_uploader.on('select', function() {
-      attachment = custom_uploader.state().get('selection').first().toJSON();
+      let attachment = custom_uploader.state().get('selection').first().toJSON
       jQuery('#'+input).val(attachment.url);
+			let slideId = input.substr(0, 7);
+			let elementId = slideId + '_title';
+			jQuery('#' + elementId).val(attachment.title);
     });
-    // Open the uploader dialog.
     custom_uploader.open();
   });
 });

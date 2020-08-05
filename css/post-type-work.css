@@ -18,5 +18,17 @@
 }
 textarea {
 	width: 100%;
-	height: 100px;
+	height: 250px;
+}
+hr {
+	margin: 40px 0;
+}
+button.handlediv[aria-expanded="true"] + h2 {
+	border-bottom: none !important;
+}
+#editor .postbox {
+	background: #f2f2f2;
+}
+#editor .postbox.closed {
+	background: #ffffff !important;
 }
