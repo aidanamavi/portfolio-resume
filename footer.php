@@ -34,7 +34,7 @@
 			</script>
 			<noscript>
 				<p>
-					<img src="<?php echo $trackerUrl; ?>matomo.php?idsite=<?php echo $trackerId; ?>&amp;rec=1" style="border:0;" alt="" />
+					<img src="<?php echo $trackerUrl; ?>matomo.php?idsite=<?php echo $trackerId; ?>&amp;rec=1" style="border:0;" alt="JavaScript required. Please enable." />
 				</p>
 			</noscript>
 			<!-- End Matomo Code -->
