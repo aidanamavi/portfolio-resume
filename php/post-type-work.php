@@ -196,6 +196,7 @@ $toolGroups = array(
 		'canon'							=> __('Canon', 'portfoliotheme'),
 		'm-audio'						=> __('M-Audio', 'portfoliotheme'),
 		'nikon'							=> __('Nikon', 'portfoliotheme'),
+		'panasonic'					=> __('Panasonic', 'portfoliotheme'),
 		'red'								=> __('RED', 'portfoliotheme'),
 		'rode'							=> __('Rode', 'portfoliotheme'),
 		'roland'						=> __('Roland', 'portfoliotheme'),
