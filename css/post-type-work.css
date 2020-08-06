@@ -16,7 +16,7 @@
 	display: inline-block !important;
 	width: 100%;
 }
-textarea {
+.meta-box-sortables textarea {
 	width: 100%;
 	height: 250px;
 }
