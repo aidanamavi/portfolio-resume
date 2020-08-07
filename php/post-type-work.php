@@ -117,9 +117,9 @@ $disciplineGroups = array(
 		'socialMedia'				=> __('Social Media', 'portfoliotheme'),
 	),
 	array(								# marketing & advertising
+		'advertising'				=> __('Advertising', 'portfoliotheme'),
 		'marketing'					=> __('Marketing', 'portfoliotheme'),
 		'marketResearch'		=> __('Market Research', 'portfoliotheme'),
-		'advertising'				=> __('Advertising', 'portfoliotheme'),
 	),
 	array(								# design
 		'experienceDesign'	=> __('Experience Design', 'portfoliotheme'),
@@ -131,8 +131,8 @@ $disciplineGroups = array(
 		'webDesign'					=> __('Web Design', 'portfoliotheme'),
 	),
 	array(											# computers and systems
-		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
 		'softwareArchitecture'		=> __('Software Architecture', 'portfoliotheme'),
+		'systemsAdministration'		=> __('Systems Administration', 'portfoliotheme'),
 		'webDevelopment'					=> __('Web Development', 'portfoliotheme'),
 	),
 	array(											# enterpirse architecture domain
@@ -142,9 +142,9 @@ $disciplineGroups = array(
 		'technologyrchitecture'		=> __('Technology Architecture', 'portfoliotheme'),
 	),
 	array(								# audio video
+		'audiography'				=> __('Audiography', 'portfoliotheme'),
 		'photography'				=> __('Photography', 'portfoliotheme'),
 		'videography'				=> __('Videography', 'portfoliotheme'),
-		'audiography'				=> __('Audiography', 'portfoliotheme'),
 	),
 	array(
 		'amFmBroadcasting'	=> __('AM/FM Broadcasting', 'portfoliotheme'),
@@ -239,6 +239,7 @@ $toolGroups = array(
 		'cloudWays'					=> __('CloudWays', 'portfoliotheme'),
 		'digitalocean'			=> __('DigitalOcean', 'portfoliotheme'),
 		'dreamHost'					=> __('DreamHost', 'portfoliotheme'),
+		'goDaddy'						=> __('GoDaddy', 'portfoliotheme'),
 		'googlecloud'				=> __('Google Cloud', 'portfoliotheme'),
 		'heroku'						=> __('Heroku', 'portfoliotheme'),
 		'ibmCloud'					=> __('IBM Cloud', 'portfoliotheme'),
@@ -290,7 +291,7 @@ $toolGroups = array(
 		'svc'								=> __('SVC', 'portfoliotheme'),
 	),
 	array(								# code languages
-		'batch'							=> __('Batch', 'portfoliotheme'),
+		'bash'							=> __('Bash', 'portfoliotheme'),
 		'css'								=> __('CSS', 'portfoliotheme'),
 		'html'							=> __('HTML', 'portfoliotheme'),
 		'javascript'				=> __('JavaScript', 'portfoliotheme'),
@@ -309,34 +310,42 @@ $toolGroups = array(
 		'matomo'						=> __('Matomo', 'portfoliotheme'),
 		'metatrader'				=> __('MetaTrader', 'portfoliotheme'),
 		'paypal'						=> __('PayPal', 'portfoliotheme'),
+		'shopify'						=> __('Shopify', 'portfoliotheme'),
 		'square'						=> __('Square', 'portfoliotheme'),
+		'squareSpace'				=> __('SquareSpace', 'portfoliotheme'),
 		'stripe'						=> __('Stripe', 'portfoliotheme'),
+		'wix'								=> __('Wix', 'portfoliotheme'),
 		'wordpress'					=> __('WordPress', 'portfoliotheme'),
 	)
 );
 $productGroups = array(
-	array(
+	array(							# words
 		'brandName'				=> __('Brand Name', 'portfoliotheme'),
+		'copy'						=> __('Copy', 'portfoliotheme'),
+		'literature'			=> __('Literature', 'portfoliotheme'),
+	),
+	array(							# visuals
 		'brandLogo'				=> __('Brand Logo', 'portfoliotheme'),
 		'fineArt'					=> __('Fine Art', 'portfoliotheme'),
 		'graphic'					=> __('Graphic', 'portfoliotheme'),
-		'literature'			=> __('Literature', 'portfoliotheme'),
 		'photography'			=> __('Photography', 'portfoliotheme'),
+		'styleGuide'			=> __('Style Guide', 'portfoliotheme'),
 	),
-	array(
-		'act'							=> __('Act', 'portfoliotheme'),
-		'show'						=> __('Show', 'portfoliotheme'),
+	array(							# motion
+		'animation'				=> __('Animation', 'portfoliotheme'),
 		'commercial'			=> __('Commercial', 'portfoliotheme'),
-		'trailer'					=> __('Trailer', 'portfoliotheme'),
 		'film'						=> __('Film', 'portfoliotheme'),
 		'musicVideo'			=> __('Music Video', 'portfoliotheme'),
-		'animation'				=> __('Animation', 'portfoliotheme'),
+		'tvShow'					=> __('TV Show', 'portfoliotheme'),
+		'trailer'					=> __('Trailer', 'portfoliotheme'),
 	),
-	array(
-		'music'						=> __('Music', 'portfoliotheme'),
+	array(							# sound
 		'fieldRecording'	=> __('Field Recording', 'portfoliotheme'),
+		'livePerformance'	=> __('Live Performance', 'portfoliotheme'),
+		'music'						=> __('Music', 'portfoliotheme'),
+		'radioShow'				=> __('Radio Show', 'portfoliotheme'),
 	),
-	array(
+	array(							# code
 		'webSite'					=> __('Web Site', 'portfoliotheme'),
 		'webPage'					=> __('Web Page', 'portfoliotheme'),
 		'webApp'					=> __('Web App', 'portfoliotheme'),
