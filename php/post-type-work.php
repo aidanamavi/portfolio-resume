@@ -55,10 +55,10 @@ function add_post_type_work_title( $input ) {
 
 $roleGroups = array(
 	array(										# entertainment and sports
-		'actor'									=> __('Actor', 'portfoliotheme'),
 		'creativeProducer'			=> __('Creative Producer', 'portfoliotheme'),
 		'creativeDirector'			=> __('Creative Director', 'portfoliotheme'),
 		'assistantDirector'			=> __('Assistant Director', 'portfoliotheme'),
+		'programDirector'				=> __('Program Director', 'portfoliotheme'),
 	),
 	array(										# arts and design
 		'artDirector'						=> __('Art Director', 'portfoliotheme'),
@@ -96,7 +96,6 @@ $roleGroups = array(
 		'retoucher'							=> __('Retoucher', 'portfoliotheme'),
 	),
 	array(										# media and communication: technichians
-		'broadcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
 		'lightingDesigner'			=> __('Lighting Designer', 'portfoliotheme'),
 		'gaffer'								=> __('Gaffer', 'portfoliotheme'),
 		'keyGrip'								=> __('Key Grip', 'portfoliotheme'),
@@ -105,7 +104,9 @@ $roleGroups = array(
 		'bestBoyElectrician'		=> __('Best Boy Electrician', 'portfoliotheme'),
 	),
 	array(										# media and communication: announcers & writers
+		'actor'									=> __('Actor', 'portfoliotheme'),
 		'announcer'							=> __('Announcer', 'portfoliotheme'),
+		'broadcastProgrammer'		=> __('Broadcast Programmer', 'portfoliotheme'),
 		'copywriter'						=> __('Copywriter', 'portfoliotheme'),
 		'journalist'						=> __('Journalist', 'portfoliotheme'),
 	),
@@ -196,8 +197,31 @@ $toolGroups = array(
 		'cyberduck'					=> __('Cyberduck', 'portfoliotheme'),
 		'winscp'						=> __('WinSCP', 'portfoliotheme'),
 	),
-	array(								# code editors
+	array(								# integrated development environments
+		'androidStudio'			=> __('Android Studio', 'portfoliotheme'),
+		'appCode'						=> __('AppCode', 'portfoliotheme'),
 		'atom'							=> __('Atom', 'portfoliotheme'),
+		'clion'							=> __('Clion', 'portfoliotheme'),
+		'codeBlocks'				=> __('Code::Blocks', 'portfoliotheme'),
+		'eclipse'						=> __('Eclipse', 'portfoliotheme'),
+		'emacs'							=> __('Emacs', 'portfoliotheme'),
+		'geany'							=> __('Geany', 'portfoliotheme'),
+		'goLand'						=> __('GoLand', 'portfoliotheme'),
+		'intellijIdea'			=> __('IntelliJ IDEA', 'portfoliotheme'),
+		'komodo'						=> __('Komodo', 'portfoliotheme'),
+		'netBeans'					=> __('NetBeans', 'portfoliotheme'),
+		'notepad++'					=> __('Notepad++', 'portfoliotheme'),
+		'phpStorm'					=> __('PHPStorm', 'portfoliotheme'),
+		'pyCharm'						=> __('PyCharm', 'portfoliotheme'),
+		'qtCreator'					=> __('Qt Creator', 'portfoliotheme'),
+		'rStudio'						=> __('RStudio', 'portfoliotheme'),
+		'rubyMine'					=> __('RubyMine', 'portfoliotheme'),
+		'sublimeText'				=> __('Sublime Text', 'portfoliotheme'),
+		'vim'								=> __('Vim', 'portfoliotheme'),
+		'visualStudio'			=> __('Visual Studio', 'portfoliotheme'),
+		'visualStudioCode'	=> __('Visual Studio Code', 'portfoliotheme'),
+		'webStorm'					=> __('WebStorm', 'portfoliotheme'),
+		'xCode'							=> __('XCode', 'portfoliotheme'),
 	),
 	array(								# code version control
 		'git'								=> __('Git', 'portfoliotheme'),
