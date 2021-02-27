@@ -327,6 +327,15 @@ div.highlight_text div.skills div.skills_column_wide {
 	/* display: inline-block;
 	vertical-align: top; */
 }
+div.highlight_text div.skills div.skills_column_wide table {
+	width: 100%;
+}
+div.highlight_text div.skills div.skills_column_wide table td {
+	vertical-align: top;
+}
+div.highlight_text div#psychology.skills div.skills_column_wide table td:first-child {
+	width: 50%;
+}
 div.highlight_text div.skills div.skills_column_wide ul {
 	padding-left: 15px;
 	margin: 0;
@@ -491,6 +500,14 @@ img#matomo {
 	}
 	.title_wrapper div {
 		display: table-cell;
+	}
+
+	div.highlight_text div#languages.skills div.skills_column_wide table td:first-child,
+	div.highlight_text div#psychology.skills div.skills_column_wide table td:first-child {
+		width: 50%;
+	}
+	td:last-child {
+    text-align: right;
 	}
 }
 
