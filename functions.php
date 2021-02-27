@@ -40,10 +40,10 @@ require_once(get_template_directory().'/php/custom_remove_url_protocol.php');
 // Add thumbnail support for Work post type.
 require_once(get_template_directory().'/php/custom_thumbnail_support.php');
 
-// Add the work post type to the theme.
+// Add the work post type.
 require_once(get_template_directory().'/php/post-type-work.php');
 
-// Add the blog post type to the theme.
+// Add the blog post type.
 require_once(get_template_directory().'/php/post-type-blog.php');
 
 // Show blog post type content on our category and tag pages.
@@ -58,5 +58,5 @@ require_once(get_template_directory().'/php/customize_seo_keywords.php');
 require_once(get_template_directory().'/php/customize_matomo_tracking.php');
 require_once(get_template_directory().'/php/customize_showcase_settings.php');
 
-// Add AJAX support for the theme.
+// Add AJAX support.
 require_once(get_template_directory().'/php/ajax.php');
